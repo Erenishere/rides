@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FC Rides - AI-Enhanced Premium Transportation</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -29,8 +31,9 @@
             <h1 class="hero-title">
                 <span class="typewriter" id="typewriter-text">AI-Featured Systems.<br>Next-Level Rides.</span>
             </h1>
-            <p class="hero-subtitle">AI orchestrates every trip — predictive dispatch, personal comfort presets, and continuous feedback. Try one ride and see why people stop using Uber or Lyft.</p>
-            
+            <p class="hero-subtitle">AI orchestrates every trip — predictive dispatch, personal comfort presets, and
+                continuous feedback. Try one ride and see why people stop using Uber or Lyft.</p>
+
             <div class="hero-buttons">
                 <button class="btn-primary">Request an AI-Optimized Ride</button>
                 <button class="btn-secondary">See How It Works</button>
@@ -38,18 +41,18 @@
 
             <!-- Key Metrics -->
             <div class="metrics">
-                <div class="metric">
+                <button class="metric-btn">
                     <span class="metric-number" id="ontime-counter">0%</span>
                     <span class="metric-label">On Time</span>
-                </div>
-                <div class="metric">
+                </button>
+                <button class="metric-btn">
                     <span class="metric-number" id="rating-counter">0★</span>
                     <span class="metric-label">Avg Rating</span>
-                </div>
-                <div class="metric">
+                </button>
+                <button class="metric-btn">
                     <span class="metric-number" id="response-counter">0 min</span>
                     <span class="metric-label">Response</span>
-                </div>
+                </button>
             </div>
         </div>
 
@@ -61,7 +64,7 @@
                 <button class="tab">Date</button>
                 <button class="tab">Time</button>
             </div>
-            
+
             <form class="booking-inputs">
                 <div class="input-group">
                     <select class="form-input">
@@ -70,23 +73,23 @@
                         <option>Event</option>
                     </select>
                 </div>
-                
+
                 <div class="input-group">
                     <input type="text" class="form-input" placeholder="Pickup Location">
                 </div>
-                
+
                 <div class="input-group">
                     <input type="text" class="form-input" placeholder="Destination">
                 </div>
-                
+
                 <div class="input-row">
                     <input type="date" class="form-input">
                     <input type="time" class="form-input">
                 </div>
-                
+
                 <button type="submit" class="request-btn">Request Ride</button>
             </form>
-            
+
             <p class="form-note">No payment fees. We confirm details and send a secure link or invoice.</p>
         </div>
     </section>
@@ -102,7 +105,7 @@
                     <li><a href="#">Chauffeur Careers & Partners</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h3>SUPPORT</h3>
                 <ul>
@@ -112,7 +115,7 @@
                     <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h3>DISCOVER</h3>
                 <ul>
@@ -121,7 +124,7 @@
                     <li><a href="#">Cities We Serve</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section cities">
                 <h3>CITIES WE SERVE</h3>
                 <div class="cities-grid">
@@ -146,7 +149,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; 2025 FC Rides. All rights reserved.</p>
         </div>
@@ -159,15 +162,15 @@
             "Predictive Comfort.<br>Seamless Journey.",
             "AI-Enhanced Travel.<br>Luxury Redefined."
         ];
-        
+
         let currentPhrase = 0;
         const typewriterElement = document.getElementById('typewriter-text');
-        
+
         function typeWriter() {
             const text = phrases[currentPhrase];
             let i = 0;
             typewriterElement.innerHTML = '';
-            
+
             function type() {
                 if (i < text.length) {
                     if (text.charAt(i) === '<') {
@@ -185,7 +188,7 @@
                     setTimeout(deleteText, 2000);
                 }
             }
-            
+
             function deleteText() {
                 const currentText = typewriterElement.innerHTML;
                 if (currentText.length > 0) {
@@ -205,24 +208,24 @@
                     setTimeout(typeWriter, 500);
                 }
             }
-            
+
             type();
         }
-        
+
         // Counter Animation for Metrics
         function animateCounter(elementId, targetValue, suffix = '', duration = 2000) {
             const element = document.getElementById(elementId);
             const startValue = 0;
             const increment = targetValue / (duration / 16); // 60fps
             let currentValue = startValue;
-            
+
             const timer = setInterval(() => {
                 currentValue += increment;
                 if (currentValue >= targetValue) {
                     currentValue = targetValue;
                     clearInterval(timer);
                 }
-                
+
                 if (elementId === 'rating-counter') {
                     element.textContent = currentValue.toFixed(1) + suffix;
                 } else if (elementId === 'ontime-counter') {
@@ -232,11 +235,11 @@
                 }
             }, 16);
         }
-        
+
         // Intersection Observer for triggering animations when metrics come into view
         function startCounters() {
             const metricsSection = document.querySelector('.metrics');
-            
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -255,20 +258,21 @@
                                 }
                             }, 100);
                         }, 600);
-                        
+
                         observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.5 });
-            
+
             observer.observe(metricsSection);
         }
-        
+
         // Start the typewriter effect and counter animations when page loads
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             setTimeout(typeWriter, 1000);
             startCounters();
         });
     </script>
 </body>
+
 </html>
