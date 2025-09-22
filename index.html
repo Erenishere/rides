@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Rides - AI-Enhanced Premium Transportation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <span class="logo">FC Rides</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#why-us">Why Us?</a></li>
+                <li><a href="#fleet">Fleet</a></li>
+                <li><a href="#insights">Travel Insights</a></li>
+                <li><a href="#reserve">FC Reserve</a></li>
+            </ul>
+            <button class="book-btn">Book Now</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="typewriter" id="typewriter-text">AI-Featured Systems.<br>Next-Level Rides.</span>
+            </h1>
+            <p class="hero-subtitle">AI orchestrates every trip — predictive dispatch, personal comfort presets, and continuous feedback. Try one ride and see why people stop using Uber or Lyft.</p>
+            
+            <div class="hero-buttons">
+                <button class="btn-primary">Request an AI-Optimized Ride</button>
+                <button class="btn-secondary">See How It Works</button>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="metrics">
+                <div class="metric">
+                    <span class="metric-number" id="ontime-counter">0%</span>
+                    <span class="metric-label">On Time</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-number" id="rating-counter">0★</span>
+                    <span class="metric-label">Avg Rating</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-number" id="response-counter">0 min</span>
+                    <span class="metric-label">Response</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="booking-form">
+            <div class="form-tabs">
+                <button class="tab active">Trip</button>
+                <button class="tab">Pickup</button>
+                <button class="tab">Date</button>
+                <button class="tab">Time</button>
+            </div>
+            
+            <form class="booking-inputs">
+                <div class="input-group">
+                    <select class="form-input">
+                        <option>Airport</option>
+                        <option>Corporate</option>
+                        <option>Event</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" class="form-input" placeholder="Pickup Location">
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" class="form-input" placeholder="Destination">
+                </div>
+                
+                <div class="input-row">
+                    <input type="date" class="form-input">
+                    <input type="time" class="form-input">
+                </div>
+                
+                <button type="submit" class="request-btn">Request Ride</button>
+            </form>
+            
+            <p class="form-note">No payment fees. We confirm details and send a secure link or invoice.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>OUR SERVICES</h3>
+                <ul>
+                    <li><a href="#">Corporate Travel</a></li>
+                    <li><a href="#">Travel Agent Partnerships</a></li>
+                    <li><a href="#">Chauffeur Careers & Partners</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>SUPPORT</h3>
+                <ul>
+                    <li><a href="#">Call Us — [Phone Number]</a></li>
+                    <li><a href="#">Email Us — [Email Address]</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>DISCOVER</h3>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cities We Serve</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section cities">
+                <h3>CITIES WE SERVE</h3>
+                <div class="cities-grid">
+                    <div class="city-column">
+                        <a href="#">Los Angeles</a>
+                        <a href="#">San Francisco</a>
+                        <a href="#">San Diego</a>
+                        <a href="#">Sacramento</a>
+                    </div>
+                    <div class="city-column">
+                        <a href="#">Las Vegas</a>
+                        <a href="#">Phoenix</a>
+                        <a href="#">Seattle</a>
+                        <a href="#">Portland</a>
+                    </div>
+                    <div class="city-column">
+                        <a href="#">Denver</a>
+                        <a href="#">Austin</a>
+                        <a href="#">Dallas</a>
+                        <a href="#">Houston</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 FC Rides. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Typewriter effect with multiple phrases
+        const phrases = [
+            "AI-Featured Systems.<br>Next-Level Rides.",
+            "Smart Dispatch.<br>Premium Experience.",
+            "Predictive Comfort.<br>Seamless Journey.",
+            "AI-Enhanced Travel.<br>Luxury Redefined."
+        ];
+        
+        let currentPhrase = 0;
+        const typewriterElement = document.getElementById('typewriter-text');
+        
+        function typeWriter() {
+            const text = phrases[currentPhrase];
+            let i = 0;
+            typewriterElement.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    if (text.charAt(i) === '<') {
+                        // Handle HTML tags
+                        const tagEnd = text.indexOf('>', i);
+                        typewriterElement.innerHTML += text.substring(i, tagEnd + 1);
+                        i = tagEnd + 1;
+                    } else {
+                        typewriterElement.innerHTML += text.charAt(i);
+                        i++;
+                    }
+                    setTimeout(type, 100);
+                } else {
+                    // Wait before starting to delete
+                    setTimeout(deleteText, 2000);
+                }
+            }
+            
+            function deleteText() {
+                const currentText = typewriterElement.innerHTML;
+                if (currentText.length > 0) {
+                    // Remove last character, but handle HTML tags
+                    let newText = currentText;
+                    if (currentText.endsWith('>')) {
+                        const lastTagStart = currentText.lastIndexOf('<');
+                        newText = currentText.substring(0, lastTagStart);
+                    } else {
+                        newText = currentText.slice(0, -1);
+                    }
+                    typewriterElement.innerHTML = newText;
+                    setTimeout(deleteText, 50);
+                } else {
+                    // Move to next phrase
+                    currentPhrase = (currentPhrase + 1) % phrases.length;
+                    setTimeout(typeWriter, 500);
+                }
+            }
+            
+            type();
+        }
+        
+        // Counter Animation for Metrics
+        function animateCounter(elementId, targetValue, suffix = '', duration = 2000) {
+            const element = document.getElementById(elementId);
+            const startValue = 0;
+            const increment = targetValue / (duration / 16); // 60fps
+            let currentValue = startValue;
+            
+            const timer = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= targetValue) {
+                    currentValue = targetValue;
+                    clearInterval(timer);
+                }
+                
+                if (elementId === 'rating-counter') {
+                    element.textContent = currentValue.toFixed(1) + suffix;
+                } else if (elementId === 'ontime-counter') {
+                    element.textContent = currentValue.toFixed(1) + suffix;
+                } else {
+                    element.textContent = Math.ceil(currentValue) + suffix;
+                }
+            }, 16);
+        }
+        
+        // Intersection Observer for triggering animations when metrics come into view
+        function startCounters() {
+            const metricsSection = document.querySelector('.metrics');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Start counter animations
+                        setTimeout(() => animateCounter('ontime-counter', 98.7, '%'), 200);
+                        setTimeout(() => animateCounter('rating-counter', 4.9, '★'), 400);
+                        setTimeout(() => {
+                            const responseElement = document.getElementById('response-counter');
+                            let count = 0;
+                            const timer = setInterval(() => {
+                                count++;
+                                responseElement.textContent = count + ' min';
+                                if (count >= 3) {
+                                    responseElement.textContent = '< 3 min';
+                                    clearInterval(timer);
+                                }
+                            }, 100);
+                        }, 600);
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(metricsSection);
+        }
+        
+        // Start the typewriter effect and counter animations when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(typeWriter, 1000);
+            startCounters();
+        });
+    </script>
+</body>
+</html>
