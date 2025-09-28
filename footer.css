@@ -1,0 +1,174 @@
+/* Footer Styles */
+.footer {
+    background: linear-gradient(180deg,
+            #070707 0%,
+            #070707 30%,
+            #070707 60%,
+            #0d1421 70%,
+            #1a237e 100%);
+    padding: 80px 0 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Two-row layout */
+.footer-top-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(37, 150, 190, 0.2);
+}
+
+.footer-bottom-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.footer-section {
+    margin-bottom: 1.5rem;
+}
+
+.footer-section h3 {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #2596be;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #2596be;
+    padding-left: 5px;
+}
+
+/* Cities section */
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.city-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.city-column a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.city-column a:hover {
+    color: #2596be;
+    padding-left: 5px;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(37, 150, 190, 0.2);
+    margin-top: 3rem;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.85rem;
+    position: relative;
+    z-index: 1;
+    padding: 1rem 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .footer-top-row,
+    .footer-bottom-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .cities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 60px 0 30px;
+    }
+    
+    .footer-content {
+        padding: 0 1.5rem;
+    }
+    
+    .footer-top-row {
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .footer-bottom-row {
+        gap: 1.5rem;
+    }
+    
+    .cities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom {
+        margin-top: 2rem;
+        padding: 1rem 1.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-content {
+        padding: 0 1rem;
+    }
+    
+    .footer-section h3 {
+        font-size: 0.8rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-section a,
+    .city-column a {
+        font-size: 0.8rem;
+    }
+    
+    .footer-bottom {
+        font-size: 0.75rem;
+        padding: 0.75rem 1rem 0;
+    }
+}

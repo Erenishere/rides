@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - FC Rides - AI-Enhanced Premium Transportation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <span class="logo">FC Rides</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="fleet.html">Fleet</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Booking Steps -->
+        <section class="section">
+            <div class="container-sub">
+                <div class="box-booking-tabs">
+                    <div class="item-tab wow fadeInUp">
+                        <a href="booking.html">
+                            <div class="box-tab-step active">
+                                <div class="icon-tab">
+                                    <span class="icon-book icon-vehicle"></span>
+                                    <span class="text-tab">Vehicle</span>
+                                </div>
+                                <div class="number-tab"><span>01</span></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-tab wow fadeInUp">
+                        <a href="booking-extra.html">
+                            <div class="box-tab-step active">
+                                <div class="icon-tab">
+                                    <span class="icon-book icon-extra"></span>
+                                    <span class="text-tab">Extras</span>
+                                </div>
+                                <div class="number-tab"><span>02</span></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-tab wow fadeInUp">
+                        <a href="booking-details.html">
+                            <div class="box-tab-step">
+                                <div class="icon-tab">
+                                    <span class="icon-book icon-pax"></span>
+                                    <span class="text-tab">Details</span>
+                                </div>
+                                <div class="number-tab"><span>03</span></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-tab wow fadeInUp">
+                        <a href="booking-payment.html">
+                            <div class="box-tab-step">
+                                <div class="icon-tab">
+                                    <span class="icon-book icon-payment"></span>
+                                    <span class="text-tab">Payment</span>
+                                </div>
+                                <div class="number-tab"><span>04</span></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="box-row-tab mt-50">
+                    <div class="box-tab-left">
+                        <div class="box-content-detail">
+                            <h3 class="heading-24-medium color-text mb-30 wow fadeInUp">Extra Options & Preferences</h3>
+
+                            <!-- Flight/Train Information -->
+                            <div class="form-contact form-comment wow fadeInUp">
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label class="form-label" for="flight">Flight/Train Number (Optional)</label>
+                                                <input class="form-control" id="flight" type="text" placeholder="Example: AA1234 or AMTRAK 123">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- Extra Services -->
+                            <div class="list-extras wow fadeInUp">
+                                <div class="item-extra">
+                                    <div class="extra-info">
+                                        <h5 class="text-20-medium color-text mb-5">
+                                            Child Seat <span class="price">$15</span>
+                                        </h5>
+                                        <p class="text-14 color-grey">Safety-approved child seat for children under 4 years old</p>
+                                    </div>
+                                    <div class="extra-quantity">
+                                        <span class="minus"></span>
+                                        <input class="form-control" type="text" value="0">
+                                        <span class="plus"></span>
+                                    </div>
+                                </div>
+
+                                <div class="item-extra">
+                                    <div class="extra-info">
+                                        <h5 class="text-20-medium color-text mb-5">
+                                            Booster Seat <span class="price">$10</span>
+                                        </h5>
+                                        <p class="text-14 color-grey">For children 4-8 years old (40-80 lbs)</p>
+                                    </div>
+                                    <div class="extra-quantity">
+                                        <span class="minus"></span>
+                                        <input class="form-control" type="text" value="0">
+                                        <span class="plus"></span>
+                                    </div>
+                                </div>
+
+                                <div class="item-extra">
+                                    <div class="extra-info">
+                                        <h5 class="text-20-medium color-text mb-5">
+                                            Premium Refreshments <span class="price">$25</span>
+                                        </h5>
+                                        <p class="text-14 color-grey">Artisan coffee, fresh juices, and premium snacks</p>
+                                    </div>
+                                    <div class="extra-quantity">
+                                        <span class="minus"></span>
+                                        <input class="form-control" type="text" value="0">
+                                        <span class="plus"></span>
+                                    </div>
+                                </div>
+
+                                <div class="item-extra">
+                                    <div class="extra-info">
+                                        <h5 class="text-20-medium color-text mb-5">
+                                            Meet & Greet Service <span class="price">$35</span>
+                                        </h5>
+                                        <p class="text-14 color-grey">Airport assistance with name sign and luggage help</p>
+                                    </div>
+                                    <div class="extra-quantity">
+                                        <a class="btn btn-grey w-100" href="#">Select
+                                            <svg class="icon-16 ml-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="item-extra">
+                                    <div class="extra-info">
+                                        <h5 class="text-20-medium color-text mb-5">
+                                            Executive Protection <span class="price">$150</span>
+                                        </h5>
+                                        <p class="text-14 color-grey">Professional security detail for high-profile clients</p>
+                                    </div>
+                                    <div class="extra-quantity">
+                                        <a class="btn btn-grey w-100" href="#">Select
+                                            <svg class="icon-16 ml-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="item-extra">
+                                    <div class="extra-info">
+                                        <h5 class="text-20-medium color-text mb-5">
+                                            Concierge Shopping <span class="price">$75</span>
+                                        </h5>
+                                        <p class="text-14 color-grey">Personal shopping service during your ride</p>
+                                    </div>
+                                    <div class="extra-quantity">
+                                        <a class="btn btn-grey w-100" href="#">Select
+                                            <svg class="icon-16 ml-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Special Instructions -->
+                            <div class="mt-45 wow fadeInUp">
+                                <div class="form-contact form-comment">
+                                    <form action="#">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label class="form-label" for="notes">Special Instructions</label>
+                                                    <textarea class="form-control" id="notes" rows="5" placeholder="Any special requests, accessibility needs, or instructions for your chauffeur..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="mt-30 mb-120 wow fadeInUp">
+                                <a class="btn btn-primary btn-primary-big w-100" href="booking-details.html">Continue to Passenger Details
+                                    <svg class="icon-16 ml-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Summary -->
+                    <div class="box-tab-right">
+                        <div class="sidebar">
+                            <div class="d-flex align-items-center justify-content-between wow fadeInUp">
+                                <h6 class="text-20-medium color-text">Ride Summary</h6>
+                                <a class="text-14-medium color-text text-decoration-underline" href="booking.html">Edit</a>
+                            </div>
+
+                            <div class="mt-20 wow fadeInUp">
+                                <ul class="list-routes">
+                                    <li><span class="location-item">A</span><span class="info-location text-14-medium">Your Location</span></li>
+                                    <li><span class="location-item">B</span><span class="info-location text-14-medium">Destination</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-20 wow fadeInUp">
+                                <ul class="list-icons">
+                                    <li><span class="icon-item icon-plan"></span><span class="info-location text-14-medium">Date & Time</span></li>
+                                    <li><span class="icon-item icon-time"></span><span class="info-location text-14-medium">Duration</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-20 wow fadeInUp">
+                                <div class="box-info-route">
+                                    <div class="info-route-left">
+                                        <span class="text-14 color-grey">Distance</span>
+                                        <span class="text-14-medium color-text">XX miles</span>
+                                    </div>
+                                    <div class="info-route-left">
+                                        <span class="text-14 color-grey">Estimated Time</span>
+                                        <span class="text-14-medium color-text">XX minutes</span>
+                                    </div>
+                                </div>
+                                <div class="border-bottom mt-30 mb-25"></div>
+                                <div class="mt-0">
+                                    <span class="text-14 color-grey">Vehicle</span><br>
+                                    <span class="text-14-medium color-text">Business Class Sedan</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing Summary -->
+                        <div class="sidebar wow fadeInUp">
+                            <ul class="list-prices list-prices-2">
+                                <li><span class="text">Base Fare</span><span class="price">$XX.XX</span></li>
+                                <li><span class="text">Service Fee</span><span class="price">$X.XX</span></li>
+                                <li><span class="text">Taxes</span><span class="price">$X.XX</span></li>
+                            </ul>
+                            <div class="border-bottom mt-30 mb-15"></div>
+                            <ul class="list-prices">
+                                <li><span class="text text-20-medium">Subtotal</span><span class="price text-20-medium">$XX.XX</span></li>
+                            </ul>
+                            <div class="mt-20">
+                                <small class="text-12 color-grey">Final price may vary based on traffic and route</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>OUR SERVICES</h3>
+                <ul>
+                    <li><a href="corporate.html">Corporate Travel</a></li>
+                    <li><a href="airport.html">Airport Transfers</a></li>
+                    <li><a href="events.html">Event Services</a></li>
+                    <li><a href="booking.html">Book Now</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>SUPPORT</h3>
+                <ul>
+                    <li><a href="tel:+1-800-FC-RIDES">Call Us — 1-800-FC-RIDES</a></li>
+                    <li><a href="mailto:support@fcrides.com">Email Us — support@fcrides.com</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>COMPANY</h3>
+                <ul>
+                    <li><a href="about.html">About FC Rides</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="press.html">Press</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section cities">
+                <h3>CITIES WE SERVE</h3>
+                <div class="cities-grid">
+                    <div class="city-column">
+                        <a href="#">Los Angeles</a>
+                        <a href="#">San Francisco</a>
+                        <a href="#">San Diego</a>
+                        <a href="#">Las Vegas</a>
+                    </div>
+                    <div class="city-column">
+                        <a href="#">Phoenix</a>
+                        <a href="#">Seattle</a>
+                        <a href="#">Portland</a>
+                        <a href="#">Denver</a>
+                    </div>
+                    <div class="city-column">
+                        <a href="#">Austin</a>
+                        <a href="#">Dallas</a>
+                        <a href="#">Houston</a>
+                        <a href="#">Miami</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 FC Rides. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            // Handle tab clicks
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabType = this.getAttribute('data-tab');
+
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+
+                    // Hide all tab contents
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+
+                    // Show the corresponding tab content
+                    const targetContent = document.querySelector(`[data-content="${tabType}"]`);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+
+                    // Force reflow to ensure consistent heights
+                    const bookingForm = document.querySelector('.booking-form');
+                    if (bookingForm) {
+                        bookingForm.style.height = 'auto';
+                        // Reset to ensure consistent sizing
+                        setTimeout(() => {
+                            bookingForm.style.height = '';
+                        }, 10);
+                    }
+                });
+            });
+
+            // Optional: Auto-focus first input when tab is switched
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabType = this.getAttribute('data-tab');
+                    const targetContent = document.querySelector(`[data-content="${tabType}"]`);
+                    const firstInput = targetContent.querySelector('input, select');
+
+                    if (firstInput) {
+                        setTimeout(() => {
+                            firstInput.focus();
+                        }, 100);
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <!-- Main Footer Navigation -->
+        <div class="footer-main">
+            <div class="container-sub">
+                <div class="footer-nav">
+                    <div class="nav-column">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="#">Corporate Transport</a></li>
+                            <li><a href="#">Travel Agent Program</a></li>
+                            <li><a href="#">Drivers & Partners</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-column">
+                        <h4>Our Company</h4>
+                        <ul>
+                            <li><a href="#">Sustainability</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="tel:+1-555-123-4567"><i class="fas fa-phone"></i> +1 (555) 123-4567</a></li>
+                            <li><a href="#">Frequently Asked Questions</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-column">
+                        <h4>Learn More</h4>
+                        <ul>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider Line -->
+        <div class="footer-divider"></div>
+
+        <!-- Popular Locations Section -->
+        <div class="footer-locations">
+            <div class="container-sub">
+                <div class="locations-header">
+                    <h4>Popular Locations</h4>
+                </div>
+                <div class="locations-grid">
+                    <a href="#" class="location-link">New York</a>
+                    <a href="#" class="location-link">Los Angeles</a>
+                    <a href="#" class="location-link">Miami</a>
+                    <a href="#" class="location-link">San Francisco</a>
+                    <a href="#" class="location-link">Las Vegas</a>
+                    <a href="#" class="location-link">Seattle</a>
+                    <a href="#" class="location-link">Dallas</a>
+                    <a href="#" class="location-link">Honolulu</a>
+                    <a href="#" class="location-link">Chicago</a>
+                    <a href="#" class="location-link">Boston</a>
+                    <a href="#" class="location-link">Phoenix</a>
+                    <a href="#" class="location-link">Denver</a>
+                    <a href="#" class="location-link">Austin</a>
+                    <a href="#" class="location-link">Nashville</a>
+                    <a href="#" class="location-link">Portland</a>
+                    <button class="all-locations-btn">All Locations</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container-sub">
+                <div class="social-section">
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
