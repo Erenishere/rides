@@ -1031,6 +1031,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Remove button border on click for all buttons
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.style.outline = 'none';
+            this.style.border = 'none';
+        });
+        
+        // Also remove focus outline for better UX
+        button.addEventListener('focus', function() {
+            this.style.outline = 'none';
+        });
+    });
+    
     // Close mobile menu when clicking on a link
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
