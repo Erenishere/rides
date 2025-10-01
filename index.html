@@ -481,20 +481,7 @@
                     <p class="feature-text-modern">Comfortable travel between cities with transparent pricing and premium amenities.</p>
                 </div>
                 
-                <div class="feature-card-modern wow fadeInUp">
-                    <div class="feature-icon-modern">
-                        <div class="icon-bg">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M8 2v4"/>
-                                <path d="M16 2v4"/>
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                                <path d="M3 10h18"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="feature-title-modern">Event & Group Services</h3>
-                    <p class="feature-text-modern">Tailored transportation for conferences, weddings, premieres, and large-scale events.</p>
-                </div>
+               
             </div>
         </div>
     </section>
@@ -964,6 +951,15 @@
                     mobileMenu.classList.toggle('sidebar-visible');
                     document.body.classList.toggle('mobile-menu-active');
                     
+                    // Ensure proper positioning on mobile
+                    if (mobileMenu.classList.contains('sidebar-visible')) {
+                        mobileMenu.style.left = '0px';
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        mobileMenu.style.left = '-320px';
+                        document.body.style.overflow = '';
+                    }
+                    
                     console.log("🍔 Mobile menu toggled - visible:", mobileMenu.classList.contains('sidebar-visible'));
                 });
                 
@@ -973,6 +969,8 @@
                         burgerIcon.classList.remove('burger-close');
                         mobileMenu.classList.remove('sidebar-visible');
                         document.body.classList.remove('mobile-menu-active');
+                        mobileMenu.style.left = '-320px';
+                        document.body.style.overflow = '';
                     });
                 }
                 
@@ -982,6 +980,8 @@
                         burgerIcon.classList.remove('burger-close');
                         mobileMenu.classList.remove('sidebar-visible');
                         document.body.classList.remove('mobile-menu-active');
+                        mobileMenu.style.left = '-320px';
+                        document.body.style.overflow = '';
                     });
                 }
             } else {

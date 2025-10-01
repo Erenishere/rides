@@ -439,6 +439,8 @@
     padding: var(--spacing-sm);
     border-radius: var(--radius-sm);
     transition: all var(--transition-normal);
+    z-index: 1001;
+    position: relative;
 }
 
 .burger-icon:hover {
@@ -469,234 +471,18 @@
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* COOPERATE PAGE SPECIFIC FIX - Enhanced JavaScript */
-/*
-(function() {
-    'use strict';
-    
-    console.log('=== COOPERATE PAGE MOBILE NAV FIX ===');
-    
-    function initCooperateMobileNav() {
-        console.log('Initializing cooperate page mobile nav...');
-        console.log('Current page:', window.location.pathname);
-        console.log('Screen width:', window.innerWidth);
-        
-        // Wait for all elements to be fully loaded
-        setTimeout(function() {
-            const burgerIcon = document.querySelector('.burger-icon');
-            const mobileMenu = document.querySelector('.mobile-header-active');
-            const mobileMenuClose = document.querySelector('.mobile-menu-close');
-            const bodyOverlay = document.querySelector('.body-overlay-1');
-            
-            console.log('Elements found:', {
-                burgerIcon: !!burgerIcon,
-                mobileMenu: !!mobileMenu,
-                mobileMenuClose: !!mobileMenuClose,
-                bodyOverlay: !!bodyOverlay
-            });
-            
-            if (!burgerIcon || !mobileMenu) {
-                console.error('CRITICAL: Missing burger icon or mobile menu!');
-                return;
-            }
-            
-            // Detailed element inspection
-            console.log('Burger icon details:', {
-                className: burgerIcon.className,
-                display: window.getComputedStyle(burgerIcon).display,
-                visibility: window.getComputedStyle(burgerIcon).visibility,
-                zIndex: window.getComputedStyle(burgerIcon).zIndex
-            });
-            
-            console.log('Mobile menu details:', {
-                className: mobileMenu.className,
-                display: window.getComputedStyle(mobileMenu).display,
-                visibility: window.getComputedStyle(mobileMenu).visibility,
-                right: window.getComputedStyle(mobileMenu).right,
-                position: window.getComputedStyle(mobileMenu).position,
-                zIndex: window.getComputedStyle(mobileMenu).zIndex,
-                opacity: window.getComputedStyle(mobileMenu).opacity
-            });
-            
-            function forceToggleMobileMenu() {
-                console.log('=== FORCE TOGGLE MOBILE MENU ===');
-                
-                // Get current state
-                const wasOpen = burgerIcon.classList.contains('active');
-                console.log('Previous state:', wasOpen ? 'open' : 'closed');
-                
-                // Toggle classes
-                burgerIcon.classList.toggle('active');
-                mobileMenu.classList.toggle('sidebar-visible');
-                document.body.classList.toggle('mobile-menu-active');
-                
-                // Get new state
-                const isNowOpen = burgerIcon.classList.contains('active');
-                console.log('New state:', isNowOpen ? 'open' : 'closed');
-                console.log('Classes after toggle:', {
-                    burgerIcon: burgerIcon.className,
-                    mobileMenu: mobileMenu.className,
-                    body: document.body.className
-                });
-                
-                // FORCE VISIBILITY - This is the key fix for cooperate page
-                if (isNowOpen) {
-                    console.log('Forcing menu to be visible...');
-                    
-                    // Force display
-                    mobileMenu.style.setProperty('display', 'block', 'important');
-                    mobileMenu.style.setProperty('visibility', 'visible', 'important');
-                    mobileMenu.style.setProperty('opacity', '1', 'important');
-                    mobileMenu.style.setProperty('right', '0', 'important');
-                    mobileMenu.style.setProperty('transform', 'none', 'important');
-                    mobileMenu.style.setProperty('-webkit-transform', 'none', 'important');
-                    
-                    // Force overlay
-                    if (bodyOverlay) {
-                        bodyOverlay.style.setProperty('display', 'block', 'important');
-                        bodyOverlay.style.setProperty('visibility', 'visible', 'important');
-                        bodyOverlay.style.setProperty('opacity', '1', 'important');
-                    }
-                    
-                    // Force body lock
-                    document.body.style.setProperty('overflow', 'hidden', 'important');
-                    
-                } else {
-                    console.log('Forcing menu to be hidden...');
-                    
-                    // Reset styles
-                    mobileMenu.style.display = '';
-                    mobileMenu.style.visibility = '';
-                    mobileMenu.style.opacity = '';
-                    mobileMenu.style.right = '';
-                    mobileMenu.style.transform = '';
-                    mobileMenu.style.webkitTransform = '';
-                    
-                    if (bodyOverlay) {
-                        bodyOverlay.style.display = '';
-                        bodyOverlay.style.visibility = '';
-                        bodyOverlay.style.opacity = '';
-                    }
-                    
-                    document.body.style.overflow = '';
-                }
-                
-                // Verify final state
-                setTimeout(function() {
-                    const finalOpen = burgerIcon.classList.contains('active');
-                    const finalDisplay = window.getComputedStyle(mobileMenu).display;
-                    const finalVisibility = window.getComputedStyle(mobileMenu).visibility;
-                    const finalRight = window.getComputedStyle(mobileMenu).right;
-                    
-                    console.log('=== FINAL VERIFICATION ===');
-                    console.log('Final menu state:', finalOpen ? 'OPEN' : 'CLOSED');
-                    console.log('Final display:', finalDisplay);
-                    console.log('Final visibility:', finalVisibility);
-                    console.log('Final right position:', finalRight);
-                    
-                    // If still not visible, try emergency fix
-                    if (finalOpen && (finalDisplay === 'none' || finalVisibility === 'hidden')) {
-                        console.error('EMERGENCY: Menu still not visible, applying emergency fix...');
-                        mobileMenu.style.cssText = 'display: block !important; visibility: visible !important; opacity: 1 !important; right: 0 !important; position: fixed !important; top: 0 !important; width: 280px !important; height: 100vh !important; z-index: 99999 !important; background: #000 !important;';
-                    }
-                }, 100);
-                
-                // Update aria
-                burgerIcon.setAttribute('aria-expanded', isNowOpen);
-                mobileMenu.setAttribute('aria-hidden', !isNowOpen);
-                
-                console.log('=== TOGGLE COMPLETE ===');
-            }
-            
-            // Enhanced event listener
-            burgerIcon.addEventListener('click', function(e) {
-                console.log('Burger icon clicked!');
-                e.preventDefault();
-                e.stopPropagation();
-                forceToggleMobileMenu();
-            });
-            
-            if (mobileMenuClose) {
-                mobileMenuClose.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    forceToggleMobileMenu();
-                });
-            }
-            
-            if (bodyOverlay) {
-                bodyOverlay.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    forceToggleMobileMenu();
-                });
-            }
-            
-            // Mobile nav links
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    forceToggleMobileMenu();
-                });
-            });
-            
-            // Resize handler
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 580) {
-                    const isOpen = burgerIcon.classList.contains('active');
-                    if (isOpen) {
-                        forceToggleMobileMenu(); // This will close it
-                    }
-                }
-            });
-            
-            console.log('Cooperate page mobile nav initialized successfully!');
-            
-        }, 1000); // 1 second delay for cooperate page
-    }
-    
-    // Initialize with multiple strategies
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initCooperateMobileNav);
-    } else {
-        initCooperateMobileNav();
-    }
-    
-    window.addEventListener('load', function() {
-        setTimeout(initCooperateMobileNav, 2000); // Extra delay for cooperate page
-    });
-    
-    // Continuous monitoring for cooperate page
-    setInterval(function() {
-        const burgerIcon = document.querySelector('.burger-icon');
-        const mobileMenu = document.querySelector('.mobile-header-active');
-        
-        if (burgerIcon && mobileMenu) {
-            const isOpen = burgerIcon.classList.contains('active');
-            const isVisible = window.getComputedStyle(mobileMenu).display !== 'none';
-            
-            if (isOpen && !isVisible) {
-                console.error('MENU STATE MISMATCH: Should be open but not visible!');
-                mobileMenu.style.setProperty('display', 'block', 'important');
-                mobileMenu.style.setProperty('visibility', 'visible', 'important');
-            }
-        }
-    }, 2000);
-    
-    console.log('Cooperate page mobile nav fix loaded');
-})();
-*/
-
 /* Mobile Navigation - Base Rules (High Priority) */
 .mobile-header-active {
     position: fixed !important;
     top: 0 !important;
-    right: -320px !important;
+    left: -320px !important; /* Changed from right to left for better positioning */
     width: 320px !important;
     height: 100vh !important;
     background: var(--bg) !important;
     backdrop-filter: blur(20px) !important;
-    border-left: 1px solid var(--glass-border) !important;
+    border-right: 1px solid var(--glass-border) !important; /* Changed from border-left */
     z-index: 10000 !important;
-    transition: right 0.3s ease !important;
+    transition: left 0.3s ease !important; /* Changed from right to left */
     padding: var(--spacing-xl) !important;
     overflow-y: auto !important;
     display: block !important;
@@ -704,7 +490,7 @@
 }
 
 .mobile-header-active.sidebar-visible {
-    right: 0 !important;
+    left: 0 !important; /* Changed from right to left */
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -755,7 +541,7 @@
 }
 
 /* Mobile Navigation Media Query Rules */
-@media (max-width: 580px) {
+@media (max-width: 1020px) {
     /* Show burger icon */
     .burger-icon {
         display: flex !important;
@@ -771,12 +557,12 @@
     /* Ensure mobile header is properly positioned */
     .mobile-header-active {
         width: 280px !important;
-        right: -280px !important;
+        left: -280px !important; /* Changed from right to left */
         z-index: 1000 !important;
     }
 
     .mobile-header-active.sidebar-visible {
-        right: 0 !important;
+        left: 0 !important; /* Changed from right to left */
     }
 
     /* Ensure overlay is visible */
@@ -817,27 +603,32 @@
     .burger-icon.active .burger-line {
         background: var(--acc) !important;
     }
+    
+    /* Hide Book Now button in mobile view */
+    .nav-cta {
+        display: none !important;
+    }
 }
 
 /* Additional fix for very small screens (320px and below) */
 @media (max-width: 320px) {
     .mobile-header-active {
         width: 260px !important;
-        right: -260px !important;
+        left: -260px !important; /* Changed from right to left */
     }
 }
 
 /* Chauffeur-Alliance page specific fix */
 body[class*="chauffeur"] .mobile-header-active,
 body[class*="Chauffeur"] .mobile-header-active {
-    right: -320px !important;
+    left: -320px !important; /* Changed from right to left */
     width: 320px !important;
-    transition: right 0.3s ease !important;
+    transition: left 0.3s ease !important; /* Changed from right to left */
 }
 
 body[class*="chauffeur"] .mobile-header-active.sidebar-visible,
 body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
-    right: 0 !important;
+    left: 0 !important; /* Changed from right to left */
 }
 
 /* Responsive Navigation - Consolidated from fleet.css */
@@ -950,7 +741,7 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
 /* Enhanced Navigation Animation */
 @keyframes slideInRight {
     from {
-        transform: translateX(100%);
+        transform: translateX(-100%);
         opacity: 0;
     }
     to {
@@ -998,61 +789,4 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
     outline: 2px solid var(--acc);
     outline-offset: 2px;
     border-radius: var(--radius-sm);
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-    .nav-link,
-    .mobile-nav-link {
-        border: 1px solid transparent;
-    }
-
-    .nav-link:hover,
-    .nav-link.active,
-    .mobile-nav-link:hover,
-    .mobile-nav-link.active {
-        border-color: var(--ink);
-        background: var(--ink);
-        color: var(--bg);
-    }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-    .nav-link,
-    .mobile-nav-link,
-    .burger-icon,
-    .nav-cta,
-    .mobile-header-active,
-    .body-overlay-1,
-    .nav-hover-effect::after {
-        transition: none;
-        animation: none;
-    }
-
-    .mobile-header-active {
-        transition: transform 0.2s ease;
-    }
-
-    .body-overlay-1 {
-        transition: opacity 0.2s ease;
-    }
-}
-
-/* Skip to main content link for screen readers */
-.skip-to-main {
-    position: absolute;
-    top: -40px;
-    left: 6px;
-    background: var(--acc);
-    color: var(--ink);
-    padding: 8px;
-    text-decoration: none;
-    z-index: 10000;
-    border-radius: var(--radius-sm);
-    font-weight: var(--font-weight-bold);
-}
-
-.skip-to-main:focus {
-    top: 6px;
 }

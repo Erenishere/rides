@@ -142,6 +142,15 @@
                     mobileMenu.classList.toggle('sidebar-visible');
                     document.body.classList.toggle('mobile-menu-active');
                     
+                    // Ensure proper positioning on mobile
+                    if (mobileMenu.classList.contains('sidebar-visible')) {
+                        mobileMenu.style.left = '0px';
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        mobileMenu.style.left = '-320px';
+                        document.body.style.overflow = '';
+                    }
+                    
                     console.log("🍔 Mobile menu toggled - visible:", mobileMenu.classList.contains('sidebar-visible'));
                 });
                 
@@ -151,6 +160,8 @@
                         burgerIcon.classList.remove('burger-close');
                         mobileMenu.classList.remove('sidebar-visible');
                         document.body.classList.remove('mobile-menu-active');
+                        mobileMenu.style.left = '-320px';
+                        document.body.style.overflow = '';
                     });
                 }
                 
@@ -160,6 +171,8 @@
                         burgerIcon.classList.remove('burger-close');
                         mobileMenu.classList.remove('sidebar-visible');
                         document.body.classList.remove('mobile-menu-active');
+                        mobileMenu.style.left = '-320px';
+                        document.body.style.overflow = '';
                     });
                 }
             } else {

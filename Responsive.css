@@ -4,240 +4,225 @@
    Modern Feature Cards Responsive Fixes
    ========================================================================== */
 
-/* Extra Small Devices (phones less than 430px) */
-@media (max-width: 430px) {
-  /* Modern features grid container */
-  .features-grid-modern {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 100% !important;
-  }
-  
-  /* Individual modern feature cards */
-  .feature-card-modern {
-    width: calc(100% - 30px) !important;
-    max-width: 350px !important;
-    margin-left: 15px !important;
-    margin-right: 15px !important;
-    margin-bottom: 2rem !important;
-    box-sizing: border-box !important;
-  }
-  
-  /* Modern feature card content */
-  .feature-icon-modern {
-    display: flex !important;
-    justify-content: center !important;
-    margin-bottom: 1rem !important;
-  }
-  
-  .feature-title-modern {
-    text-align: center !important;
-    font-size: 1.1rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-  
-  .feature-text-modern {
-    text-align: center !important;
-    font-size: 0.9rem !important;
-    line-height: 1.5 !important;
-  }
-  
-  /* Icon background centering */
-  .icon-bg {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 0 auto !important;
-  }
-  
-  /* SVG icon sizing */
-  .feature-icon-modern svg {
-    width: 28px !important;
-    height: 28px !important;
-  }
-}
-
-/* Small devices (431px to 575px) */
-@media (min-width: 431px) and (max-width: 575px) {
-  .features-grid-modern {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-    padding: 0 20px !important;
-    max-width: 400px !important;
-    margin: 0 auto !important;
-  }
-  
-  .feature-card-modern {
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-  
-  .feature-title-modern {
-    text-align: center !important;
-  }
-  
-  .feature-text-modern {
-    text-align: center !important;
-  }
-}
-
-/* Small devices (576px to 767px) */
-@media (min-width: 576px) and (max-width: 767px) {
-  .features-grid-modern {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1.5rem !important;
-    padding: 0 20px !important;
-    max-width: 540px !important;
-    margin: 0 auto !important;
-  }
-  
-  .feature-card-modern {
-    width: 100% !important;
-    margin: 0 !important;
-  }
-  
-  .feature-title-modern {
-    font-size: 1rem !important;
-    text-align: center !important;
-  }
-  
-  .feature-text-modern {
-    font-size: 0.85rem !important;
-    text-align: center !important;
-  }
+/* Large devices (992px and up) - Desktop layout */
+@media (min-width: 992px) {
+    .features-grid-modern {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+        gap: 2rem !important;
+        padding: 0 20px !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+    }
+    
+    .feature-card-modern {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    /* Fleet grid - 4 cards per row on large screens */
+    .fleet-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
 }
 
 /* Medium devices (768px to 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
-  .features-grid-modern {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2rem !important;
-    padding: 0 20px !important;
-    max-width: 720px !important;
-    margin: 0 auto !important;
-  }
-  
-  .feature-card-modern {
-    width: 100% !important;
-    margin: 0 !important;
-  }
-}
-
-/* Large devices (992px and up) - Desktop layout */
-@media (min-width: 992px) {
-  .features-grid-modern {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-    gap: 2rem !important;
-    padding: 0 20px !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-  }
-  
-  .feature-card-modern {
-    width: 100% !important;
-    margin: 0 !important;
-  }
-}
-
-/* ==========================================================================
-   Extra Small Devices (phones less than 430px)
-   Fixes for very small screens
-   ========================================================================== */
-
-@media (max-width: 768px) {
-    .some-class {
-        font-size: 14px;
-    }
-    .another-class {
-        display: block;
-    }
-}
-
-@media (max-width: 992px) {
-    .col-lg-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
+    .features-grid-modern {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+        padding: 0 20px !important;
+        max-width: 720px !important;
+        margin: 0 auto !important;
     }
     
-    .why-content {
-        padding-right: 0;
-        margin-bottom: var(--spacing-xl);
+    .feature-card-modern {
+        width: 100% !important;
+        margin: 0 !important;
     }
     
-    .why-features {
-        padding-left: 0;
+    /* Fleet grid - 2 cards per row on medium screens */
+    .fleet-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
     
-    .why-stats {
-        justify-content: center;
-        gap: var(--spacing-lg);
+    .feature-title-modern {
+        font-size: 1rem !important;
+        text-align: center !important;
     }
-}
-@media (max-width: 992px) {
-    .bg-how-it-works .row {
-        flex-direction: column;
-        gap: var(--spacing-2xl);
+    
+    .feature-text-modern {
+        font-size: 0.85rem !important;
+        text-align: center !important;
     }
-
-    .bg-how-it-works .col-lg-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
-    .list-how li {
-        margin-bottom: var(--spacing-xl);
-        padding-left: var(--spacing-xl);
-    }
-
-    .list-how li h4 {
-        font-size: 1.1rem;
-    }
-
-    .list-how li p {
-        font-size: 0.95rem;
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 20px !important;
     }
 }
 
-@media (max-width: 768px) {
-    .bg-how-it-works {
-        padding: var(--spacing-2xl) 0;
+/* Small devices (576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .features-grid-modern {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+        padding: 0 20px !important;
+        max-width: 540px !important;
+        margin: 0 auto !important;
     }
-
-    .bg-how-it-works .container-sub {
-        padding: 0 var(--spacing-lg);
+    
+    .feature-card-modern {
+        width: 100% !important;
+        margin: 0 auto !important;
     }
-
-    .list-how li {
-        padding-left: var(--spacing-lg);
-        margin-bottom: var(--spacing-lg);
+    
+    .feature-title-modern {
+        text-align: center !important;
     }
-
-    .list-how li h4 {
-        font-size: 1rem;
-        margin-bottom: var(--spacing-sm);
+    
+    .feature-text-modern {
+        text-align: center !important;
     }
-
-    .list-how li p {
-        font-size: 0.9rem;
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 15px !important;
+    }
+    
+    .hero-content {
+        padding: 0 10px !important;
     }
 }
-/* Responsive Styles */
 
-/* ==========================================================================
-   Modern Feature Cards Responsive Fixes
-   ========================================================================== */
+/* Small devices (431px to 575px) */
+@media (min-width: 431px) and (max-width: 575px) {
+    .features-grid-modern {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 0 20px !important;
+        max-width: 400px !important;
+        margin: 0 auto !important;
+    }
+    
+    .feature-card-modern {
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    .feature-title-modern {
+        text-align: center !important;
+    }
+    
+    .feature-text-modern {
+        text-align: center !important;
+    }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 15px !important;
+    }
+    
+    .hero-content {
+        padding: 0 10px !important;
+    }
+    
+    .hero-title {
+        font-size: 2rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+    }
+}
+
+/* Extra Small Devices (phones less than 430px) */
+@media (max-width: 430px) {
+    /* Modern features grid container */
+    .features-grid-modern {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100% !important;
+    }
+    
+    /* Individual modern feature cards */
+    .feature-card-modern {
+        width: calc(100% - 30px) !important;
+        max-width: 350px !important;
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        margin-bottom: 2rem !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Modern feature card content */
+    .feature-icon-modern {
+        display: flex !important;
+        justify-content: center !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .feature-title-modern {
+        text-align: center !important;
+        font-size: 1.1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .feature-text-modern {
+        text-align: center !important;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Icon background centering */
+    .icon-bg {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto !important;
+    }
+    
+    /* SVG icon sizing */
+    .feature-icon-modern svg {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 10px !important;
+    }
+    
+    .hero-content {
+        padding: 0 5px !important;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Fleet grid - 1 card per row on extra small screens */
+    .fleet-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
 
 /* Responsive Design */
-@media (max-width: 992px) {
+@media (max-width: 992px) and (min-width: 769px) {
     .nav-menu {
         display: none !important;
         flex-direction: column !important;
@@ -257,9 +242,22 @@
     .burger-icon {
         display: flex !important;
     }
-
-    .fleet-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+    
+    /* Hero section adjustments */
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        padding: 0 var(--spacing-lg);
+    }
+    
+    .hero-content {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .booking-form {
+        margin-top: var(--spacing-xl);
+        max-width: 100%;
     }
 }
 
@@ -291,14 +289,31 @@
     
     .mobile-header-active {
         width: 280px !important;
+        left: -280px !important;
     }
     
-    .fleet-grid {
-        grid-template-columns: 1fr !important;
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 var(--spacing-md);
+        gap: var(--spacing-lg);
     }
-
-    .cardFleet {
-        margin-bottom: 2rem !important;
+    
+    .hero-content {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        margin-top: 70px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .booking-form {
+        padding: var(--spacing-sm);
+        margin-top: var(--spacing-md);
     }
 }
 
@@ -332,15 +347,35 @@
     
     .mobile-header-active {
         width: 100% !important;
-        right: -100% !important;
+        left: -100% !important;
+    }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 var(--spacing-sm);
+        gap: var(--spacing-md);
+    }
+    
+    .hero-content {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+        margin-top: 60px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .booking-form {
+        padding: var(--spacing-xs);
+        margin-top: var(--spacing-sm);
     }
 }
 
 @media (max-width: 768px) {
-    .fleet-grid {
-        grid-template-columns: 1fr;
-    }
-
     .cardFleet {
         margin-bottom: 2rem;
     }
@@ -560,6 +595,30 @@
         line-height: 1.5;
         opacity: 0.9;
     }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 var(--spacing-xs);
+        gap: var(--spacing-sm);
+    }
+    
+    .hero-content {
+        padding: 0;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+        margin-top: 50px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .booking-form {
+        padding: var(--spacing-xs);
+        margin-top: var(--spacing-sm);
+    }
 }
 
 @media (max-width: 1024px) {
@@ -617,6 +676,11 @@
         justify-content: center !important;
         flex: 1 !important;
     }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 var(--spacing-md);
+    }
 }
 
 @media (max-width: 768px) {
@@ -653,6 +717,15 @@
     .nav {
         padding: 5px var(--spacing-lg);
     }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .hero-title {
+        margin-top: 60px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -662,6 +735,7 @@
     
     .mobile-header-active {
         width: 280px;
+        left: -280px;
     }
     
     .logo {
@@ -695,6 +769,16 @@
         padding: 5px var(--spacing-sm);
         font-size: 0.8rem;
     }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .hero-title {
+        margin-top: 50px;
+        font-size: 1.4rem;
+    }
 } 
     
     .buttons-container { 
@@ -725,6 +809,21 @@
 
     .hero-content {
         text-align: center;
+    }
+    
+    /* Ensure mobile menu is properly positioned */
+    .mobile-header-active {
+        position: fixed !important;
+        top: 0 !important;
+        left: -320px !important;
+        width: 320px !important;
+        height: 100vh !important;
+        transition: left 0.3s ease !important;
+        z-index: 10000 !important;
+    }
+    
+    .mobile-header-active.sidebar-visible {
+        left: 0 !important;
     }
 }
 
@@ -835,6 +934,20 @@
     
     .input-group {
         width: 100%;
+    }
+    
+    /* Ensure mobile menu is properly positioned */
+    .mobile-header-active {
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        transition: left 0.3s ease !important;
+    }
+    
+    .mobile-header-active.sidebar-visible {
+        left: 0 !important;
     }
 }
 
@@ -953,6 +1066,17 @@
         font-size: 0.8rem;
         margin-top: var(--spacing-sm);
     }
+    
+    /* Ensure mobile menu is properly positioned */
+    .mobile-header-active {
+        left: -100% !important;
+        width: 100% !important;
+        max-width: 280px !important;
+    }
+    
+    .mobile-header-active.sidebar-visible {
+        left: 0 !important;
+    }
 }
 
 @media (max-width: 425px) {
@@ -998,23 +1122,25 @@
     
     .hero-buttons .btn-primary,
     .hero-buttons .btn-secondary {
+        max-width: none;
+        min-width: auto;
         width: 100%;
         padding: var(--spacing-sm) var(--spacing-md);
-        font-size: 0.95rem;
-        text-align: center;
+        font-size: 0.9rem;
         box-sizing: border-box;
     }
     
     .metrics {
         justify-content: flex-start;
-        gap: var(--spacing-xs);
+        gap: var(--spacing-lg);
         margin-bottom: var(--spacing-md);
         flex-wrap: wrap;
     }
     
     .metric-btn {
-        flex: 1 1 auto;
-        min-width: 80px;
+        flex: 0 0 auto;
+        min-width: auto;
+        max-width: none;
         padding: var(--spacing-xs) var(--spacing-sm);
         border-radius: var(--radius-sm);
     }
@@ -1029,312 +1155,43 @@
     
     .booking-form {
         padding: var(--spacing-sm);
-        margin-top: var(--spacing-md);
-    }
-    .feature-card-modern{
-        padding: var(--spacing-md);
-    }
-}
-
-/* Fix for screens at 420px and below */
-@media (max-width: 420px) and (min-width: 415px) {
-    .hero-content {
-        padding: 0 10px;
-        align-items: flex-start;
-        text-align: left;
+        max-width: none;
+        width: 95%;
     }
     
-    .hero-title {
-        font-size: 1.6rem;
-        text-align: left;
-        margin-bottom: 12px;
-        line-height: 1.2;
-        word-wrap: break-word;
-        max-width: 100%;
+    .form-tabs {
+        margin-bottom: var(--spacing-sm);
     }
     
-    .hero-subtitle {
-        font-size: 0.9rem;
-        text-align: left;
-        margin-bottom: 20px;
-        line-height: 1.4;
-        word-wrap: break-word;
-        max-width: 100%;
+    .tab {
+        padding: var(--spacing-xs);
+        font-size: 0.8rem;
     }
     
-    .hero-buttons {
-        align-items: stretch;
-        gap: 8px;
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+    .input-group {
+        margin-bottom: var(--spacing-xs);
     }
     
-    .hero-buttons .btn-primary,
-    .hero-buttons .btn-secondary {
-        width: 100%;
-        padding: 10px 12px;
-        font-size: 0.9rem;
-        text-align: center;
-        box-sizing: border-box;
-        min-height: 40px;
-    }
-    
-    .metrics {
-        justify-content: flex-start;
-        gap: 6px;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
-    }
-    
-    .metric-btn {
-        flex: 1 1 auto;
-        min-width: 70px;
-        padding: 6px 8px;
-        border-radius: var(--radius-sm);
-    }
-    
-    .metric-number {
-        font-size: 1rem;
-    }
-    
-    .metric-label {
-        font-size: 0.65rem;
-    }
-    
-    .booking-form {
-        padding: 10px;
-        margin-top: 15px;
-    }
-}
-
-/* Fix for screens below 415px */
-@media (max-width: 414px) {
-    .hero-content {
-        padding: 0 8px;
-        align-items: flex-start;
-        text-align: left;
-    }
-    .booking-form{
-        padding: 14px !important;
-    }
-    
-    .hero-title {
-        margin-top: 5px;
-        font-size: 1.5rem;
-        text-align: left;
-        margin-bottom: 10px;
-        line-height: 1.1;
-        word-wrap: break-word;
-        max-width: 100%;
-    }
-    
-    .hero-subtitle {
+    .form-label {
         font-size: 0.85rem;
-        text-align: left;
-        margin-bottom: 16px;
-        line-height: 1.3;
-        word-wrap: break-word;
-        max-width: 100%;
-    }
-    
-    .hero-buttons {
-        align-items: stretch;
-        gap: 6px;
-        margin-bottom: 16px;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .hero-buttons .btn-primary,
-    .hero-buttons .btn-secondary {
-        width: 100%;
-        padding: 8px 10px;
-        font-size: 0.85rem;
-        text-align: center;
-        box-sizing: border-box;
-        min-height: 36px;
-    }
-    
-    .metrics {
-        justify-content: flex-start;
-        gap: 5px;
-        margin-bottom: 16px;
-        flex-wrap: wrap;
-    }
-    
-    .metric-btn {
-        flex: 1 1 auto;
-        min-width: 60px;
-        padding: 5px 6px;
-        border-radius: var(--radius-sm);
-        margin-left: 0px;
-    }
-    
-    .metric-number {
-        font-size: 0.9rem;
-    }
-    
-    .metric-label {
-        font-size: 0.6rem;
-    }
-    
-    .booking-form {
-        padding: 8px;
-        margin-top: 12px;
-    }
-}
-
-/* Fix for screens at 375px and below - Booking card overflow issue */
-@media (max-width: 375px) {
-    
-    .item-vehicle {
-        flex-direction: column;
-        padding: 20px 15px;
-        gap: 20px;
-    }
-    
-    .item-vehicle .vehicle-left {
-        width: 100%;
-        padding: 0;
-        border-right: none;
-        border-bottom: 1px solid var(--glass-border);
-        margin-right: 0;
-        margin-bottom: 20px;
-        padding-bottom: 20px;
-    }
-    
-    .item-vehicle .vehicle-right {
-        width: 100%;
-        padding: 0;
-    }
-    
-    .item-vehicle .vehicle-left .vehicle-facilities .text-fact {
-        width: 100%;
-        padding: 5px 0 5px 25px;
-        line-height: 1.4;
-    }
-    
-    .item-vehicle .vehicle-right .vehicle-passenger-luggage {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    
-    .item-vehicle .vehicle-right .vehicle-passenger-luggage .passenger,
-    .item-vehicle .vehicle-right .vehicle-passenger-luggage .luggage {
-        padding: 0;
-        background-image: none;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-    
-    .booking-form {
-        padding: 10px;
-        margin-top: 20px;
+        margin-bottom: var(--spacing-xs);
     }
     
     .form-input {
-        padding: 10px;
+        padding: var(--spacing-xs);
         font-size: 0.9rem;
     }
     
     .request-btn {
-        padding: 12px;
-        font-size: 0.95rem;
-    }
-}
-/* Responsive Button Adjustments */
-@media (max-width: 768px) {
-    .btn-primary, .btn-secondary {
-        font-size: 0.95rem;
-        padding: 0.85rem 1.5rem;
-        min-height: 44px;
-    }
-    
-}
-
-@media (max-width: 480px) {
-    .btn-primary, .btn-secondary {
+        padding: var(--spacing-sm);
         font-size: 0.9rem;
-        padding: 0.75rem 1.25rem;
-        min-height: 42px;
+        margin-top: var(--spacing-xs);
+        box-sizing: border-box;
         width: 100%;
-        max-width: 280px;
     }
     
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-sm);
+    .form-note {
+        font-size: 0.75rem;
+        margin-top: var(--spacing-xs);
     }
 }
-
-/* Tab Content */
-.tab-content {
-    display: none;
-    min-height: 200px; /* Ensure consistent height across tabs */
-    flex-grow: 1; /* Allow tab content to expand */
-}
-
-.tab-content.active {
-    display: block;
-}
-
-.tab-content .input-group,
-.tab-content .input-row {
-    margin-bottom: var(--spacing-xs);
-}
-
-/* Large Screen Responsive Layout Fixes */
-@media (min-width: 1201px) {
-    /* Hero section full-width container for large screens */
-    .hero {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-        padding-top: 0px !important;
-    }
-    
-    .hero-container {
-        max-width: 1400px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 var(--spacing-xl) var(--spacing-3xl);
-    }
-    
-    /* Ensure hero content takes full available width */
-    .hero-content {
-        width: 100%;
-        max-width: none;
-    }
-    
-    /* Section containers for large screens */
-    .section {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .container-sub,
-    .bg-how-it-works .container-sub {
-        max-width: 1400px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 var(--spacing-xl);
-    }
-    
-    
-    /* Remove problematic vw units and negative margins from hero */
-    .hero {
-        width: 100%;
-        left: auto;
-        right: auto;
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-
