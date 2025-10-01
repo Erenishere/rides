@@ -487,6 +487,7 @@
     overflow-y: auto !important;
     display: block !important;
     box-sizing: border-box !important;
+    max-width: 100vw !important;
 }
 
 .mobile-header-active.sidebar-visible {
@@ -508,6 +509,7 @@
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
     box-sizing: border-box !important;
+    max-width: 100vw !important;
 }
 
 .body-overlay-1 {
@@ -523,6 +525,8 @@
     visibility: hidden !important;
     transition: all 0.3s ease !important;
     display: none !important;
+    box-sizing: border-box !important;
+    max-width: 100vw !important;
 }
 
 .body-overlay-1.mobile-menu-active {
@@ -777,6 +781,7 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
     position: relative !important;
     width: 100vw !important;
     max-width: 100vw !important;
+    box-sizing: border-box !important;
 }
 
 /* Enhanced Accessibility Features */

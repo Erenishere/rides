@@ -83,10 +83,21 @@
 }
 
 /* Reset and Base Styles */
-* {
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Enhanced Navigation Styles - Modern Glass Morphism Design */
@@ -632,9 +643,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
-body {
+html, body {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
     background: var(--bg);
@@ -643,7 +655,11 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
-  
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body::before {
@@ -658,6 +674,9 @@ body::before {
         radial-gradient(circle at 90% 80%, rgba(37, 150, 190, 0.03) 0%, transparent 20%);
     z-index: -1;
     pointer-events: none;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 /* Responsive Design */
@@ -666,13 +685,16 @@ body {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
     background: var(--gradient-background-opposite);
-  
     color: var(--ink);
     line-height: 1.6;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
-    
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body::before {
@@ -687,6 +709,9 @@ body::before {
         radial-gradient(circle at 90% 80%, rgba(37, 150, 190, 0.03) 0%, transparent 20%); */
     z-index: -1;
     pointer-events: none;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 /* Apply Helvetica Regular to main headers */
@@ -705,6 +730,22 @@ body::before {
     min-height: 100vh;
     display: flex;
     position: relative;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.box-slide-fleet {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .hero-container {
@@ -715,6 +756,8 @@ body::before {
     margin: 0 auto;
     padding: 0 var(--spacing-xl) var(--spacing-3xl);
     width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .section .container-sub { 
@@ -742,10 +785,15 @@ body::before {
 }
 
 .bg-how-it-works {
-   
     position: relative;
     overflow: hidden;
     padding: var(--spacing-3xl) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .bg-how-it-works::before {
@@ -768,60 +816,108 @@ body::before {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-xl);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* How It Works Layout */
 .bg-how-it-works .row {
     display: flex;
-    align-items: center;
-    gap: var(--spacing-3xl);
+    flex-direction: column;
+    gap: var(--spacing-xl);
     margin: 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .bg-how-it-works .col-lg-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 100%;
+    max-width: 100%;
     padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .how-it-works-content {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .steps-list {
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
-    padding-right: 2rem;
+    gap: var(--spacing-xl);
+    padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .step-item {
     display: flex;
-    gap: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
     position: relative;
-    padding-left: 4rem;
+    padding: 1.5rem;
     transition: all 0.3s ease;
     opacity: 0.7;
-    transform: translateX(-10px);
+    transform: translateY(-10px);
     cursor: pointer;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+    margin-bottom: var(--spacing-lg);
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .step-item.active,
 .step-item:hover {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
+    box-shadow: 0 10px 30px rgba(37, 150, 190, 0.25);
+    border-color: var(--acc);
+}
+
+/* Ensure step items are properly spaced on small screens */
+@media (max-width: 576px) {
+    .step-item {
+        padding: 1.25rem;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .step-title {
+        font-size: 1.25rem;
+    }
+    
+    .step-description {
+        font-size: 1rem;
+    }
 }
 
 .step-item::before {
     content: '';
     position: absolute;
-    left: 1.25rem;
+    left: 50%;
     top: 0;
     bottom: 0;
     width: 2px;
     background: linear-gradient(180deg, var(--acc) 0%, rgba(37, 150, 190, 0.3) 100%);
     transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
 .step-item:last-child::before {
@@ -833,11 +929,11 @@ body::before {
 }
 
 .step-number {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 40px;
-    height: 40px;
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 50px;
+    height: 50px;
     background: rgba(37, 150, 190, 0.1);
     border: 2px solid var(--acc);
     border-radius: 50%;
@@ -846,10 +942,11 @@ body::before {
     justify-content: center;
     font-weight: var(--font-weight-bold);
     color: var(--acc);
-    font-size: 1rem;
+    font-size: 1.2rem;
     transition: all 0.3s ease;
     flex-shrink: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 0 auto 1rem auto;
 }
 
 .step-item.active .step-number {
@@ -868,6 +965,12 @@ body::before {
 
 .step-content {
     flex: 1;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .step-title {
@@ -899,17 +1002,38 @@ body::before {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
-    padding: 2rem;
+    padding: 1.5rem;
     backdrop-filter: blur(20px);
     position: relative;
     overflow: hidden;
-    min-height: 480px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     transform: translateY(0);
     animation: float 6s ease-in-out infinite;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    margin-top: var(--spacing-xl);
+}
+
+/* Ensure dashboard preview looks good on small screens */
+@media (max-width: 576px) {
+    .ai-dashboard-preview {
+        padding: 1rem;
+        min-height: 350px;
+        margin-top: var(--spacing-lg);
+    }
+    
+    .dashboard-header {
+        gap: 0.75rem;
+    }
+    
+    .dashboard-time {
+        font-size: 0.85rem;
+    }
 }
 
 .ai-dashboard-preview:hover {
@@ -967,17 +1091,26 @@ body::before {
 /* Dashboard Header */
 .dashboard-header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
+    gap: var(--spacing-md);
+    margin-bottom: 1.5rem;
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .dashboard-logo {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .dashboard-logo .logo {
@@ -1008,10 +1141,14 @@ body::before {
 /* Dashboard Metrics */
 .dashboard-metrics {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .metric-card {
@@ -1019,15 +1156,19 @@ body::before {
     border: 1px solid rgba(37, 150, 190, 0.2);
     border-radius: var(--radius-md);
     padding: 1rem;
-    flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     transform: translateY(0);
     animation: pulse 4s ease-in-out infinite;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .metric-card:nth-child(2) {
@@ -1105,23 +1246,29 @@ body::before {
 /* Dashboard Main Area */
 .dashboard-main {
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
     flex: 1;
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .map-placeholder, .chart-area {
-    flex: 1;
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(37, 150, 190, 0.15);
     border-radius: var(--radius-md);
-    padding: 1.25rem;
+    padding: 1rem;
     position: relative;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .map-placeholder:hover, .chart-area:hover {
@@ -1288,6 +1435,9 @@ body::before {
     z-index: 1;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .activity-item {
@@ -1444,6 +1594,11 @@ body::before {
     background: var(--gradient-background-opposite) !important;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .bg-our-fleet::before {
@@ -1458,6 +1613,7 @@ body::before {
         radial-gradient(circle at 80% 70%, rgba(37, 150, 190, 0.05) 0%, transparent 25%);
     z-index: 0;
     pointer-events: none;
+    box-sizing: border-box;
 }
 
 .bg-our-fleet .container-sub {
@@ -1471,6 +1627,11 @@ body::before {
     gap: var(--spacing-xl);
     padding: 0 var(--spacing-xl);
     align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .form-tabs {
@@ -1498,6 +1659,10 @@ body::before {
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 1;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
 .cardFleet:hover {
@@ -1539,6 +1704,7 @@ body::before {
     padding: var(--spacing-xs);
     background: #000000;
     margin: 0 auto var(--spacing-lg);
+    box-sizing: border-box;
 }
 
 .cardImage img {
@@ -1665,15 +1831,21 @@ body::before {
 /* How It Works Layout */
 .bg-how-it-works .row {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: var(--spacing-3xl);
     margin: 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .bg-how-it-works .col-lg-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 100%;
+    max-width: 100%;
     padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 /* How It Works Text List */
@@ -1728,17 +1900,24 @@ body::before {
 .box-main-slider {
     position: relative;
     z-index: 3;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    margin: var(--spacing-2xl) 0;
 }
 
 .detail-gallery {
     position: relative;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 /* Animations */
 @keyframes fadeInUp {
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
@@ -1747,10 +1926,13 @@ body::before {
 
 /* Features Section - Modern Design - Match Fleet Hover */
 .features-grid-modern {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: var(--spacing-2xl);
     margin-top: var(--spacing-3xl);
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .feature-card-modern {
@@ -1763,6 +1945,10 @@ body::before {
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    margin-bottom: var(--spacing-xl);
 }
 
 .feature-card-modern:hover {
@@ -1783,6 +1969,8 @@ body::before {
     margin-bottom: var(--spacing-xl);
     display: flex;
     justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .icon-bg {
@@ -1796,6 +1984,7 @@ body::before {
     color: white;
     box-shadow: 0 8px 25px rgba(37, 150, 190, 0.3);
     transition: transform 0.3s ease;
+    margin: 0 auto;
 }
 
 .feature-title-modern {
@@ -1884,12 +2073,16 @@ body::before {
 }
 
 .why-features {
-    padding-left: var(--spacing-lg);
+    padding-left: 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .feature-highlight {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
     padding: var(--spacing-lg);
@@ -1899,6 +2092,10 @@ body::before {
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .feature-highlight:hover {
@@ -1928,10 +2125,13 @@ body::before {
     flex-shrink: 0;
     box-shadow: 0 4px 15px rgba(37, 150, 190, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto var(--spacing-md) auto;
 }
 
 .feature-content {
     flex: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .feature-title-small {
@@ -2278,6 +2478,9 @@ body::before {
     background: var(--gradient-background-opposite);
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .bg-our-fleet::before {
@@ -2294,10 +2497,15 @@ body::before {
 
 .fleet-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-xl);
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
 }
 
 .cardFleet {
@@ -2309,6 +2517,8 @@ body::before {
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .cardFleet::before {
@@ -2338,12 +2548,17 @@ body::before {
     overflow: hidden;
     border-radius: var(--radius-md);
     margin-bottom: var(--spacing-md);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
 }
 
 .cardImage img {
     width: 100%;
     height: auto;
     transition: transform var(--transition-normal);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .cardFleet:hover .cardImage img {
@@ -2366,6 +2581,8 @@ body::before {
     align-items: center;
     padding-top: var(--spacing-md);
     border-top: 1px solid var(--glass-border);
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .passenger, .luggage {
@@ -2374,6 +2591,7 @@ body::before {
     gap: var(--spacing-xs);
     color: var(--muted);
     font-size: 0.9rem;
+    box-sizing: border-box;
 }
 
 .icon-circle {
@@ -2424,6 +2642,8 @@ body::before {
     margin-top: 120px;
     margin-left: 0px;
     width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
 }
 .tab {
     flex: 1;
@@ -2464,10 +2684,13 @@ body::before {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-md);
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .input-row.three-col {
     grid-template-columns: 1fr 1fr 1fr;
+    box-sizing: border-box;
 }
 
 .form-input {
@@ -2480,6 +2703,7 @@ body::before {
     /* Ensure consistent alignment */
     width: 100%;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 /* Ensure select elements align properly */
@@ -2492,6 +2716,7 @@ select.form-input {
     /* Ensure consistent alignment */
     width: 100%;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 .form-input:focus {
@@ -2512,6 +2737,8 @@ select.form-input {
 textarea.form-input {
     resize: vertical;
     min-height: 100px;
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 .request-btn {
@@ -2535,6 +2762,7 @@ textarea.form-input {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: var(--spacing-md);
+    box-sizing: border-box;
 }
 
 .request-btn:hover {
@@ -2551,6 +2779,8 @@ textarea.form-input {
         text-align: center;
         margin-top: auto; /* Push note to bottom */
         margin-bottom: 0;
+        box-sizing: border-box;
+        max-width: 100%;
     }
 
 /* Button Styles for Hero Section */
@@ -2570,6 +2800,8 @@ textarea.form-input {
     gap: var(--spacing-sm);
     min-height: 48px;
     text-align: center;
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 .btn-primary {
