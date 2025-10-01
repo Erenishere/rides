@@ -4,6 +4,92 @@
     $(window).on("load", function () {
         $("#preloader-active").fadeOut("slow");
     });
+    
+    // Mobile navigation CSS fixes
+    function addMobileNavCSS() {
+        var css = `
+            /* Mobile navigation fixes */
+            .burger-icon {
+                cursor: pointer !important;
+                z-index: 9999 !important;
+            }
+            
+            .mobile-header-active {
+                z-index: 9998 !important;
+            }
+            
+            .body-overlay-1 {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 9997;
+                display: none;
+            }
+            
+            .mobile-menu-active .body-overlay-1 {
+                display: block;
+            }
+            
+            .sidebar-visible {
+                transform: translateX(0) !important;
+            }
+            
+            .burger-close {
+                background-color: #333 !important;
+            }
+        `;
+        
+        var style = document.createElement('style');
+        style.type = 'text/css';
+        if (style.styleSheet) {
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(document.createTextNode(css));
+        }
+        document.head.appendChild(style);
+    }
+    
+    // Initialize CSS fixes
+    addMobileNavCSS();
+    
+    // Final comprehensive mobile nav check
+    $(window).on('load resize', function() {
+        console.log("Window resized - checking mobile nav");
+        
+        // Check if we're in mobile view
+        if ($(window).width() < 768) {
+            console.log("Mobile view detected");
+            
+            // Ensure burger icon exists and is visible
+            var burgerIcon = $(".burger-icon");
+            if (burgerIcon.length === 0) {
+                console.log("Creating burger icon for mobile view");
+                $("header").prepend('<div class="burger-icon"><span></span><span></span><span></span></div>');
+            }
+            
+            // Ensure mobile menu exists
+            var mobileMenu = $(".mobile-header-active");
+            if (mobileMenu.length === 0) {
+                console.log("Creating mobile menu container");
+                $("body").append('<div class="mobile-header-active"><div class="mobile-menu-close">×</div><nav class="mobile-menu"><ul><li><a href="index.html">Home</a></li><li><a href="booking-vehicle.html">Book Now</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div>');
+            }
+            
+            // Re-initialize mobile nav
+            setTimeout(function() {
+                $(".burger-icon").trigger('click');
+                setTimeout(function() {
+                    $(".mobile-menu-close").trigger('click');
+                    console.log("Mobile navigation test completed");
+                }, 500);
+            }, 1000);
+        }
+    });
+    
+    // Log when page is ready
+    console.log("Mobile navigation enhancements loaded!");
     /*-----------------
         Menu Stick
     -----------------*/
@@ -113,10 +199,20 @@
             endTrigger = $(".mobile-menu-close"),
             container = $(".mobile-header-active"),
             wrapper4 = $("body");
-        wrapper4.prepend('<div class="body-overlay-1"></div>');
+        
+        // Debug: Check if elements exist
+        console.log("Burger icon found:", navbarTrigger.length);
+        console.log("Mobile menu close found:", endTrigger.length);
+        console.log("Mobile header active found:", container.length);
+        
+        // Only add body-overlay-1 if it doesn't already exist
+        if ($('.body-overlay-1').length === 0) {
+            wrapper4.prepend('<div class="body-overlay-1"></div>');
+        }
         navbarTrigger.on("click", function (e) {
-            navbarTrigger.toggleClass("burger-close");
             e.preventDefault();
+            console.log("Burger icon clicked!");
+            navbarTrigger.toggleClass("burger-close");
             container.toggleClass("sidebar-visible");
             wrapper4.toggleClass("mobile-menu-active");
             window.scrollTo(0, 0);
@@ -132,6 +228,124 @@
         });
     }
     mobileHeaderActive();
+    
+    // Immediate mobile navigation fix
+    (function() {
+        // Check if mobile navigation elements exist
+        function checkMobileNav() {
+            var burgerIcon = $(".burger-icon");
+            var mobileMenu = $(".mobile-header-active");
+            
+            // Only create burger icon if it doesn't exist
+            if (burgerIcon.length === 0) {
+                console.warn("Burger icon not found! Creating one...");
+                // Create burger icon if it doesn't exist
+                $("header").prepend('<div class="burger-icon"><span></span><span></span><span></span></div>');
+                burgerIcon = $(".burger-icon");
+            }
+            
+            // Only create mobile menu if it doesn't exist
+            if (mobileMenu.length === 0) {
+                console.warn("Mobile menu container not found! Creating one...");
+                // Create mobile menu container if it doesn't exist
+                $("body").append('<div class="mobile-header-active"><div class="mobile-menu-close">×</div><nav class="mobile-menu"></nav></div>');
+                mobileMenu = $(".mobile-header-active");
+            }
+            
+            return { burgerIcon: burgerIcon, mobileMenu: mobileMenu };
+        }
+        
+        // Initialize mobile navigation with retry mechanism
+        function initMobileNav() {
+            var elements = checkMobileNav();
+            
+            if (elements.burgerIcon.length > 0 && elements.mobileMenu.length > 0) {
+                console.log("Mobile navigation elements found and initialized!");
+                
+                // Force immediate event binding
+                elements.burgerIcon.off('click').on('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log("Mobile nav clicked - toggling menu!");
+                    
+                    $(this).toggleClass("burger-close");
+                    elements.mobileMenu.toggleClass("sidebar-visible");
+                    $("body").toggleClass("mobile-menu-active");
+                    
+                    // Ensure overlay exists only if it doesn't already exist
+                    if ($(".body-overlay-1").length === 0) {
+                        $("body").prepend('<div class="body-overlay-1"></div>');
+                    }
+                });
+                
+                // Close button functionality
+                $(".mobile-menu-close").off('click').on('click', function() {
+                    console.log("Mobile menu close clicked!");
+                    elements.mobileMenu.removeClass("sidebar-visible");
+                    $("body").removeClass("mobile-menu-active");
+                    elements.burgerIcon.removeClass("burger-close");
+                });
+                
+                // Overlay click to close
+                $(document).off('click', '.body-overlay-1').on('click', '.body-overlay-1', function() {
+                    console.log("Overlay clicked - closing menu!");
+                    elements.mobileMenu.removeClass("sidebar-visible");
+                    $("body").removeClass("mobile-menu-active");
+                    elements.burgerIcon.removeClass("burger-close");
+                });
+                
+            } else {
+                console.error("Mobile navigation elements still not found!");
+            }
+        }
+        
+        // Initialize immediately and with delay
+        initMobileNav();
+        setTimeout(initMobileNav, 1000); // Retry after 1 second
+        
+        // Also initialize when DOM is fully loaded
+        $(document).ready(function() {
+            initMobileNav();
+        });
+        
+        // Additional initialization on window load
+        $(window).on('load', function() {
+            setTimeout(initMobileNav, 500);
+        });
+        
+    })();
+    
+    // Fallback mobile navigation handler
+    $(document).ready(function() {
+        // Ensure mobile navigation works even if elements are added dynamically
+        $(document).on('click', '.burger-icon', function(e) {
+            e.preventDefault();
+            console.log("Fallback burger icon clicked!");
+            var container = $(".mobile-header-active");
+            var wrapper4 = $("body");
+            
+            $(this).toggleClass("burger-close");
+            container.toggleClass("sidebar-visible");
+            wrapper4.toggleClass("mobile-menu-active");
+            window.scrollTo(0, 0);
+        });
+        
+        // Close mobile menu when clicking close button
+        $(document).on('click', '.mobile-menu-close', function() {
+            console.log("Mobile menu close clicked!");
+            $(".mobile-header-active").removeClass("sidebar-visible");
+            $("body").removeClass("mobile-menu-active");
+            $(".burger-icon").removeClass("burger-close");
+        });
+        
+        // Close mobile menu when clicking overlay
+        $(document).on('click', '.body-overlay-1', function() {
+            console.log("Body overlay clicked!");
+            $(".mobile-header-active").removeClass("sidebar-visible");
+            $("body").removeClass("mobile-menu-active");
+            $(".burger-icon").removeClass("burger-close");
+        });
+    });
     /*---------------------
         Mobile menu active
     ------------------------ */
@@ -575,6 +789,108 @@
         _input.val(_val + 1);
     });
 })(jQuery);
+
+// Add essential mobile navigation CSS
+function addMobileNavStyles() {
+    var css = `
+        /* Essential mobile navigation styles */
+        .burger-icon {
+            display: block;
+            width: 30px;
+            height: 25px;
+            position: relative;
+            cursor: pointer !important;
+            z-index: 9999;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+        
+        .burger-icon span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #333;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .burger-icon span:last-child {
+            margin-bottom: 0;
+        }
+        
+        .burger-close span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .burger-close span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .burger-close span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+        
+        .mobile-header-active {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background: #fff;
+            z-index: 9998;
+            transition: left 0.3s ease;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .mobile-header-active.sidebar-visible {
+            left: 0;
+        }
+        
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+        
+        .body-overlay-1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9997;
+            display: none;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-active .body-overlay-1 {
+            display: block;
+        }
+        
+        .mobile-menu-active {
+            overflow: hidden;
+        }
+        
+        @media (min-width: 768px) {
+            .burger-icon {
+                display: none;
+            }
+        }
+    `;
+    
+    // Add CSS to head
+    if (!$('#mobile-nav-styles').length) {
+        $('<style id="mobile-nav-styles">' + css + '</style>').appendTo('head');
+    }
+}
+
+// Add styles immediately
+addMobileNavStyles();
 // Check billed
 function switchBilled() {
     var checkBox = $("#cb_billed_type");
