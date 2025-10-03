@@ -261,6 +261,7 @@ html, body {
     
     /* Hero section adjustments */
     .hero-container {
+        background: var(--gradient-background-opposite);
         flex-direction: column;
         gap: var(--spacing-xl);
         padding: 0 var(--spacing-lg);
@@ -274,19 +275,19 @@ html, body {
     }
     
     .hero-title {
-        text-align: center;
+        
         margin-left: auto;
         margin-right: auto;
     }
     
     .hero-subtitle {
-        text-align: center;
-        margin-left: auto;
+        
+        margin-left: 0px;
         margin-right: auto;
     }
     
     .metrics {
-        justify-content: center;
+      
         margin-left: 0;
     }
     
@@ -294,6 +295,7 @@ html, body {
         margin-top: var(--spacing-xl);
         max-width: 100%;
         width: 100%;
+        margin-left: 30%;
     }
     
     /* Why FC Rides section adjustments */
@@ -1844,6 +1846,20 @@ html, body {
     
     .mobile-header-active.sidebar-visible {
         left: 0 !important;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+    .hero-content {
+        text-align: left;
+        align-items: flex-start;
+        width: 100%;
+        background: linear-gradient(0deg,
+            #1a237e 0%,
+            #0d1421 30%,
+            #070707 60%,
+            #070707 70%,
+            #1a237e 100%) !important;
     }
 }
 
