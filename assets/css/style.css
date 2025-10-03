@@ -3540,7 +3540,7 @@ body {
 .mobile-header-wrapper-style .mobile-header-wrapper-inner {
   padding: 0px 0px 0px 0px;
   height: 100%;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-logo {

@@ -3,7 +3,6 @@
     background: linear-gradient(180deg, #1a237e 0%, #0d1421 30%, #070707 60%, #070707 100%);
     padding: var(--spacing-3xl) 0 var(--spacing-xl);
     position: relative;
-    overflow: hidden;
     max-width: 100vw;
     box-sizing: border-box;
 }
@@ -29,7 +28,6 @@
     position: relative;
     z-index: 1;
     box-sizing: border-box;
-    overflow-x: hidden;
     width: 100%;
 }
 
@@ -42,7 +40,6 @@
     padding-bottom: var(--spacing-3xl);
     border-bottom: 1px solid var(--glass-border);
     max-width: 100%;
-    overflow-x: hidden;
     box-sizing: border-box;
 }
 
@@ -51,7 +48,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-3xl);
     max-width: 100%;
-    overflow-x: hidden;
     box-sizing: border-box;
 }
 
@@ -105,7 +101,7 @@
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); - Removed to prevent scrolling issues */
     width: 0;
     height: 1px;
     background: var(--acc);
@@ -114,7 +110,7 @@
 
 .footer-section a:hover {
     color: var(--acc);
-    transform: translateX(var(--spacing-xs));
+    /* transform: translateX(var(--spacing-xs)); - Removed to prevent scrolling issues */
 }
 
 .footer-section a:hover::before {
@@ -129,7 +125,7 @@
 
 .footer-section a:hover i {
     color: var(--acc-light);
-    transform: translateX(var(--spacing-xs));
+    /* transform: translateX(var(--spacing-xs)); - Removed to prevent scrolling issues */
 }
 
 /* Cities section */
@@ -137,12 +133,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
+    overflow: hidden !important;
 }
 
 .city-column {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+    overflow: hidden !important;
 }
 
 .city-column a {
@@ -162,7 +160,7 @@
     color: var(--acc);
     background: var(--glass-bg-light);
     border-color: var(--glass-border);
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); - Removed to prevent scrolling issues */
     box-shadow: var(--shadow-hover);
 }
 
@@ -176,6 +174,7 @@
     position: relative;
     z-index: 1;
     padding: var(--spacing-xl) var(--spacing-xl) 0;
+    overflow: hidden !important;
 }
 
 /* Social Media Section */
@@ -188,6 +187,7 @@
     justify-content: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
+    overflow: hidden !important;
 }
 
 .social-link {
@@ -203,7 +203,7 @@
     text-decoration: none;
     transition: all var(--transition-normal);
     position: relative;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 .social-link::before {
@@ -220,7 +220,6 @@
 }
 
 .social-link:hover {
-    transform: translateY(-3px) scale(1.05);
     box-shadow: var(--shadow-hover);
     border-color: var(--acc);
 }
@@ -246,6 +245,8 @@
     padding: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
     backdrop-filter: blur(10px);
+    overflow: hidden !important;
+    max-width: 100vw;
 }
 
 .newsletter-title {
@@ -255,6 +256,7 @@
     color: var(--accent-color);
     margin-bottom: var(--spacing-md);
     text-align: center;
+    overflow: hidden !important;
 }
 
 .newsletter-form {
@@ -262,6 +264,7 @@
     gap: var(--spacing-sm);
     max-width: 400px;
     margin: 0 auto;
+    overflow: hidden !important;
 }
 
 .newsletter-input {
@@ -300,7 +303,7 @@
 }
 
 .newsletter-btn:hover {
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); - Removed to prevent scrolling issues */
     box-shadow: var(--shadow-hover);
     background-size: 200% 100%;
 }
@@ -324,7 +327,7 @@
 .all-locations-btn:hover {
     background: var(--acc);
     color: var(--ink);
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); - Removed to prevent scrolling issues */
     box-shadow: var(--shadow-button);
 }
 
@@ -335,14 +338,14 @@
         grid-template-columns: 1fr;
         gap: var(--spacing-2xl);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
     
     .cities-grid {
         grid-template-columns: repeat(2, 1fr);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
     
@@ -350,14 +353,14 @@
         flex-direction: column;
         max-width: 300px;
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
     
     .newsletter-btn {
         width: 100%;
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
 }
@@ -366,14 +369,14 @@
     .footer {
         padding: var(--spacing-2xl) 0 var(--spacing-lg);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
     
     .footer-content {
         padding: 0 var(--spacing-lg);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
     
@@ -382,21 +385,21 @@
         margin-bottom: var(--spacing-2xl);
         padding-bottom: var(--spacing-2xl);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
     
     .footer-bottom-row {
         gap: var(--spacing-lg);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
     
     .cities-grid {
         grid-template-columns: 1fr;
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
     
@@ -404,14 +407,14 @@
         margin-top: var(--spacing-2xl);
         padding: var(--spacing-lg) var(--spacing-lg) 0;
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
     
     .social-icons {
         gap: var(--spacing-sm);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
     
@@ -419,28 +422,28 @@
         width: 36px;
         height: 36px;
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
     
     .social-link i {
         font-size: 1rem;
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
     
     .newsletter-section {
         padding: var(--spacing-lg);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
     
     .newsletter-form {
         max-width: 280px;
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden !important;
         box-sizing: border-box;
     }
 }
@@ -449,14 +452,14 @@
     .footer {
         padding: var(--spacing-xl) 0 var(--spacing-md);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
         box-sizing: border-box;
     }
     
     .footer-content {
         padding: 0 var(--spacing-md);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
         box-sizing: border-box;
     }
     
@@ -464,7 +467,7 @@
         font-size: 0.8rem;
         margin-bottom: var(--spacing-md);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
         box-sizing: border-box;
     }
     
@@ -473,7 +476,7 @@
         font-size: 0.8rem;
         padding: var(--spacing-xs);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
         box-sizing: border-box;
     }
     
@@ -481,14 +484,14 @@
         font-size: 0.75rem;
         padding: var(--spacing-md) var(--spacing-md) 0;
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
         box-sizing: border-box;
     }
     
     .cities-grid {
         gap: var(--spacing-sm);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
         box-sizing: border-box;
     }
     
@@ -496,7 +499,7 @@
         flex-wrap: wrap;
         gap: var(--spacing-sm);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
         box-sizing: border-box;
     }
     
@@ -504,14 +507,14 @@
         padding: var(--spacing-md);
         margin-bottom: var(--spacing-lg);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
         box-sizing: border-box;
     }
     
     .newsletter-title {
         font-size: 1rem;
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
         box-sizing: border-box;
     }
     
@@ -519,7 +522,7 @@
         flex-direction: column;
         max-width: 250px;
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
         box-sizing: border-box;
     }
     
@@ -528,7 +531,7 @@
         font-size: 0.8rem;
         padding: var(--spacing-xs) var(--spacing-sm);
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
         box-sizing: border-box;
     }
     
@@ -536,20 +539,19 @@
         padding: var(--spacing-xs) var(--spacing-md);
         font-size: 0.8rem;
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
         box-sizing: border-box;
     }
 }
 
 /* High DPI Display Support */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .footer-section a::before,
     .footer-section h3::after {
-        transform: translateY(-50%) scale(0.5);
+        /* transform: translateY(-50%) scale(0.5); - Removed as per user request */
     }
     
     .social-link::before {
-        transform: scale(0.5);
+        /* transform: scale(0.5); - Removed as per user request */
     }
 }
 

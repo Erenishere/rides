@@ -40,7 +40,7 @@
             <li role="none">
                 <a href="Chauffeur-Alliance.html" class="nav-link" role="menuitem" aria-label="Chauffeur Alliance">
                     <span class="nav-text">Chauffeur Alliance</span>
-                    <span class="nav-hover-effect"></span>
+                    <span class="nav-hover-effect"></span>5
                 </a>
             </li>
             <li role="none">
@@ -51,7 +51,7 @@
             </li>
             <li role="none">
                 <a href="cooperate.html" class="nav-link" role="menuitem" aria-label="About Us">
-                    <span class="nav-text">About</span>
+                    <span class="nav-text">cooperate Travels</span>
                     <span class="nav-hover-effect"></span>
                 </a>
             </li>
@@ -504,19 +504,6 @@
             const mobileMenu = document.querySelector('.mobile-header-active');
             const mobileClose = document.querySelector('.mobile-menu-close');
             const bodyOverlay = document.querySelector('.body-overlay-1');
-
-            // Nav link click effect - show bottom line on click
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    console.log('Nav link clicked:', this.querySelector('.nav-text').textContent);
-                    // Remove clicked class from all nav links
-                    navLinks.forEach(l => l.classList.remove('clicked'));
-                    // Add clicked class to clicked link
-                    this.classList.add('clicked');
-                    console.log('Added clicked class to:', this.querySelector('.nav-text').textContent);
-                });
-            });
 
             if (burgerIcon && mobileMenu) {
                 console.log("✅ Mobile navigation initialized on booking-extra page");

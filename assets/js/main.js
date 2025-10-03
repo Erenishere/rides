@@ -1329,6 +1329,31 @@ if ($(".mobile-header-wrapper-inner").length) {
 
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
+    // Set active navigation link based on current page
+    function setActiveNavLink() {
+        // Get the current page filename
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+        
+        // Remove active class from all links first
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // Add active class to the matching link
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && (href === currentPage || (currentPage === '' && href === 'index.html'))) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // Call the function to set active nav link
+    setActiveNavLink();
+    
     // Ensure Premium Client button always shows correct text
     function ensurePremiumClientText() {
         const premiumClientButtons = document.querySelectorAll('.nav-cta span');

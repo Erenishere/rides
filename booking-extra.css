@@ -1002,7 +1002,7 @@
     z-index: 1000;
     transition: right var(--transition-normal);
     padding: var(--spacing-xl);
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .mobile-header-active.sidebar-visible {

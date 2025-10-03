@@ -80,177 +80,72 @@ html, body {
     }
 }
 
-/* Small devices (576px to 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
     .features-grid-modern {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1.5rem !important;
-        padding: 0 20px !important;
-        max-width: 540px !important;
-        margin: 0 auto !important;
+        padding: 0 var(--spacing-md) !important;
         width: 100% !important;
         box-sizing: border-box !important;
     }
-    
+
     .feature-card-modern {
         width: 100% !important;
         margin: 0 auto !important;
         box-sizing: border-box !important;
-    }
-    
-    .feature-title-modern {
+        padding: var(--spacing-xl) var(--spacing-lg) !important;
         text-align: center !important;
-    }
-    
-    .feature-text-modern {
-        text-align: center !important;
-    }
-    
-    /* Hero section adjustments */
-    .hero-container {
-        padding: 0 15px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-    
-    .hero-content {
-        padding: 0 10px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-}
-
-/* Small devices (431px to 575px) */
-@media (min-width: 431px) and (max-width: 575px) {
-    .features-grid-modern {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-        padding: 0 20px !important;
-        max-width: 400px !important;
-        margin: 0 auto !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-    
-    .feature-card-modern {
-        width: 100% !important;
-        margin: 0 auto !important;
-        box-sizing: border-box !important;
-    }
-    
-    .feature-title-modern {
-        text-align: center !important;
-    }
-    
-    .feature-text-modern {
-        text-align: center !important;
-    }
-    
-    /* Hero section adjustments */
-    .hero-container {
-        padding: 0 15px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-    
-    .hero-content {
-        padding: 0 10px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-    
-    .hero-title {
-        font-size: 2rem !important;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem !important;
-    }
-}
-
-/* Extra Small Devices (phones less than 430px) */
-@media (max-width: 430px) {
-    /* Modern features grid container */
-    .features-grid-modern {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        width: 100% !important;
-        overflow-x: hidden;
-        max-width: 100vw;
-        box-sizing: border-box;
-        margin: 0 auto;
+        justify-content: flex-start !important;
     }
-    
-    .container-sub {
-        padding: 0 var(--spacing-sm) !important;
-        overflow-x: hidden;
-        max-width: 100vw;
-        box-sizing: border-box;
-        margin: 0 auto;
-    }
-    
-    .cardFleet {
-        padding: var(--spacing-md) !important;
-        min-height: auto !important;
-        overflow: hidden;
-        max-width: 100vw;
-        box-sizing: border-box;
-    }
-    
-    /* Individual modern feature cards */
-    .feature-card-modern {
-       
-        max-width: 350px !important;
-        margin-left: 15px !important;
-        margin-right: 15px !important;
-        margin-bottom: 2rem !important;
-        box-sizing: border-box !important;
-        overflow-x: hidden;
-    }
-    
-    /* Modern feature card content */
+
     .feature-icon-modern {
         display: flex !important;
         justify-content: center !important;
+        align-items: center !important;
         margin-bottom: 1rem !important;
-        overflow-x: hidden;
+        width: 100% !important;
     }
-    
+
     .feature-title-modern {
         text-align: center !important;
         font-size: 1.1rem !important;
-        margin-bottom: 0.5rem !important;
-        overflow-x: hidden;
     }
-    
+
     .feature-text-modern {
         text-align: center !important;
         font-size: 0.9rem !important;
         line-height: 1.5 !important;
         overflow-x: hidden;
     }
-    
+
+    /* Hero section adjustments */
+    .hero-container {
+        text-align: center !important;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        overflow-x: hidden;
+    }
+
     /* Icon background centering */
     .icon-bg {
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
         margin: 0 auto !important;
-        overflow-x: hidden;
+        width: 64px !important;
+        height: 64px !important;
     }
-    
+
     /* SVG icon sizing */
     .feature-icon-modern svg {
         width: 28px !important;
         height: 28px !important;
         overflow-x: hidden;
+}
     }
     
     /* Hero section adjustments */
@@ -392,7 +287,7 @@ html, body {
     
     /* Why FC Rides section adjustments */
     #why-us .row {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically on small screens */
         gap: var(--spacing-xl);
     }
     
@@ -400,6 +295,7 @@ html, body {
         flex: 0 0 100%;
         max-width: 100%;
         padding: 0;
+        width: 100%;
     }
     
     .why-content {
@@ -422,7 +318,7 @@ html, body {
     
     /* How It Works section adjustments */
     #how-it-works .row {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically on small screens */
         gap: var(--spacing-xl);
     }
     
@@ -430,6 +326,7 @@ html, body {
         flex: 0 0 100%;
         max-width: 100%;
         padding: 0;
+        width: 100%;
     }
 }
 
@@ -570,7 +467,7 @@ html, body {
     
     /* How It Works section adjustments */
     #how-it-works .row {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically on small screens */
         gap: var(--spacing-xl);
     }
     
@@ -578,6 +475,7 @@ html, body {
         flex: 0 0 100%;
         max-width: 100%;
         padding: 0;
+        width: 100%;
     }
     
     .steps-list {
@@ -1012,7 +910,7 @@ html, body {
     
     /* How It Works section adjustments */
     #how-it-works .row {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically on small screens */
         gap: var(--spacing-xl);
     }
     
@@ -1020,6 +918,7 @@ html, body {
         flex: 0 0 100%;
         max-width: 100%;
         padding: 0;
+        width: 100%;
     }
     
     .steps-list {
@@ -1629,7 +1528,7 @@ html, body {
     
     /* How It Works section adjustments */
     #how-it-works .row {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically on small screens */
         gap: var(--spacing-xl);
     }
     
@@ -1637,6 +1536,7 @@ html, body {
         flex: 0 0 100%;
         max-width: 100%;
         padding: 0;
+        width: 100%;
     }
     
     .steps-list {
