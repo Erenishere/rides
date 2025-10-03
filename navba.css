@@ -75,6 +75,17 @@
 
 /* Enhanced Navigation Styles - Modern Glass Morphism Design */
 
+/* Prevent any scrollbars in navigation */
+.header {
+    overflow: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+.header::-webkit-scrollbar {
+    display: none !important;
+}
+
 /* Desktop Navigation */
 .nav {
     display: flex;
@@ -82,7 +93,7 @@
     align-items: center;
     max-width: none; /* Changed from 1200px to none for full width */
     margin: 0 auto;
-    padding: 6px 11px; /* 30% reduction from original 8px 16px */
+    padding: 6px 8px; /* Further reduced right padding from 11px to 8px to move burger icon closer to right side */
     position: relative;
     z-index: 1000;
     background: #000000; /* Solid black background for better visibility */
@@ -121,6 +132,8 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .logo::after {
@@ -238,7 +251,7 @@
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md); /* Reduced from var(--spacing-lg) to move burger icon closer to right side */
     z-index: 1001;
 }
 
@@ -265,6 +278,12 @@
     justify-content: center;
 }
 
+.nav-cta span {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
 .nav-cta::before {
     content: '';
     position: absolute;
@@ -274,6 +293,7 @@
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s ease;
+    z-index: 1;
 }
 
 .nav-cta:hover::before {
@@ -311,7 +331,7 @@
         transform: translateY(-1px);
     }
 
-    /* Enhanced Book Now button for ultra-wide screens */
+    /* Enhanced Premium Client button for ultra-wide screens */
     .nav-cta {
         padding: 0.6rem 1.5rem; /* Reduced padding */
         font-size: 1rem;
@@ -592,7 +612,7 @@
     .nav-actions {
         display: flex !important;
         align-items: center !important;
-        gap: 10px !important;
+        gap: 5px !important; /* Reduced from 10px to 5px to move burger icon closer to right side */
     }
 
     /* Enhanced mobile menu active state for smaller screens */
@@ -638,7 +658,7 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
 /* Responsive Navigation - Consolidated from fleet.css */
 @media (max-width: 1024px) {
     .nav {
-        padding: var(--spacing-md) var(--spacing-lg);
+        padding: var(--spacing-md) var(--spacing-md); /* Reduced right padding from var(--spacing-lg) to var(--spacing-md) */
         min-height: 8px; /* 90% reduction to match faq navbar */
     }
 
@@ -648,6 +668,10 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
 
     .logo {
         font-size: 1.6rem;
+    }
+
+    .logo-subtitle {
+        display: none; /* Hide logo subtitle on mobile devices */
     }
 
     .nav-cta span {
@@ -665,7 +689,7 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
 
 @media (max-width: 1020px) {
     .nav {
-        padding: var(--spacing-md) var(--spacing-lg);
+        padding: var(--spacing-md) var(--spacing-md); /* Reduced right padding from var(--spacing-lg) to var(--spacing-md) */
         min-height: 8px; /* 90% reduction to match faq navbar */
     }
 
@@ -682,6 +706,10 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
         font-size: 1.5rem;
     }
 
+    .logo-subtitle {
+        display: none; /* Hide logo subtitle on mobile devices */
+    }
+
     .nav-cta {
         display: none; /* Hide Book Now button in mobile view */
     }
@@ -689,7 +717,7 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
 
 @media (max-width: 768px) {
     .nav {
-        padding: var(--spacing-md) var(--spacing-lg);
+        padding: var(--spacing-md) var(--spacing-sm); /* Reduced right padding from var(--spacing-lg) to var(--spacing-sm) */
         min-height: 6px; /* 90% reduction to match faq navbar */
     }
 
@@ -706,7 +734,7 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
     }
 
     .logo-subtitle {
-        font-size: 0.6rem;
+        display: none; /* Hide logo subtitle on mobile devices */
     }
 
     .nav-cta {
@@ -721,7 +749,7 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
 
 @media (max-width: 480px) {
     .nav {
-        padding: var(--spacing-sm) var(--spacing-md);
+        padding: var(--spacing-sm) var(--spacing-sm); /* Reduced right padding from var(--spacing-md) to var(--spacing-sm) */
         min-height: 5px; /* 90% reduction to match faq navbar */
     }
 
@@ -731,6 +759,10 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
 
     .logo {
         font-size: 1.3rem;
+    }
+
+    .logo-subtitle {
+        display: none; /* Hide logo subtitle on mobile devices */
     }
 
     .nav-cta {
@@ -794,4 +826,37 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
     outline: 2px solid var(--acc);
     outline-offset: 2px;
     border-radius: var(--radius-sm);
+}
+
+/* Enhanced mobile menu close button */
+.mobile-menu-close {
+    background: none;
+    border: none;
+    color: var(--ink);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-normal);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-close:hover {
+    color: var(--acc);
+    background: rgba(37, 150, 190, 0.1);
+    transform: scale(1.1);
+}
+
+.mobile-nav-header {
+    position: relative;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--glass-border);
 }

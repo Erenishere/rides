@@ -312,6 +312,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    overflow: visible;
 }
 
 .feature-card-modern {
@@ -320,6 +321,7 @@
     border-radius: 12px;
     padding: 2rem;
     backdrop-filter: blur(10px);
+    overflow: visible;
 }
 
 .feature-icon-modern {
@@ -373,6 +375,7 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    overflow: visible;
 }
 
 .requirement-item {

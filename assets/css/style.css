@@ -1819,6 +1819,8 @@ body {
   border-radius: 6px;
   padding: 30px;
   background-color: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .cardFleet .cardInfo {
   position: relative;
@@ -1969,20 +1971,21 @@ body {
 }
 .cardService .cardInfo .box-inner-info {
   overflow: hidden;
-  height: 0;
-  transition: height 0.3s ease-in;
+  height: auto;
+  transition: none;
 }
 .cardService .cardInfo .box-inner-info .cardDesc {
   color: #fff;
-  max-height: 48px;
-  overflow: hidden;
+  max-height: none;
+  overflow: visible;
 }
 .cardService .cardInfo .box-inner-info .cardLink {
   color: #fff;
+  display: none;
 }
 .cardService:hover .box-inner-info {
-  height: 130px;
-  transition: height 0.3s ease-in;
+  height: auto;
+  transition: none;
 }
 
 .cardNews {

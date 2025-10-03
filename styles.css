@@ -177,6 +177,31 @@ html, body {
     font-weight: var(--font-weight-medium);
 }
 
+/* Hide logo subtitle on mobile devices */
+@media (max-width: 1024px) {
+    .logo-subtitle {
+        display: none;
+    }
+}
+
+@media (max-width: 1020px) {
+    .logo-subtitle {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-subtitle {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-subtitle {
+        display: none;
+    }
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -484,12 +509,9 @@ html, body {
 }
 
 .mobile-nav-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: var(--spacing-lg);
+    position: relative;
+    padding: 15px 20px;
     border-bottom: 1px solid var(--glass-border);
-    margin-bottom: var(--spacing-xl);
 }
 
 .mobile-logo {
@@ -501,20 +523,31 @@ html, body {
     letter-spacing: 1px;
 }
 
+/* Enhanced mobile menu close button */
 .mobile-menu-close {
     background: none;
     border: none;
     color: var(--ink);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
     padding: var(--spacing-sm);
     border-radius: var(--radius-sm);
     transition: all var(--transition-normal);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mobile-menu-close:hover {
     color: var(--acc);
     background: rgba(37, 150, 190, 0.1);
+    transform: scale(1.1);
 }
 
 .mobile-menu {
@@ -567,6 +600,40 @@ html, body {
     bottom: var(--spacing-xl);
     left: var(--spacing-xl);
     right: var(--spacing-xl);
+}
+
+/* Mobile menu active state */
+.mobile-menu-active {
+    overflow: hidden;
+}
+
+/* Body overlay for mobile menu */
+.body-overlay-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.body-overlay-1.mobile-menu-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    color: var(--ink);
+    background-color: var(--bg);
+    margin: 0;
+    padding: 0;
 }
 
 .mobile-cta {
@@ -729,6 +796,9 @@ body::before {
     background: var(--gradient-background);
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: 100%;
     max-width: 100vw;
@@ -736,28 +806,88 @@ body::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    margin-top: 0; /* Removed negative margin to prevent overlap with navbar */
 }
 
 .box-slide-fleet {
     margin-top: 50px;
     width: 100%;
     max-width: 100vw;
-    overflow-x: hidden;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 0 var(--spacing-2xl);
+    overflow: hidden;
 }
 
 .hero-container {
-    display: grid;
-    grid-template-columns: 1fr 400px;
-    gap: var(--spacing-3xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-xl) var(--spacing-3xl);
+    padding: var(--spacing-3xl) var(--spacing-xl) var(--spacing-3xl);
     width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Tablet and desktop layout for hero section */
+@media (min-width: 768px) {
+    .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        gap: var(--spacing-2xl);
+        padding: var(--spacing-3xl) var(--spacing-xl) var(--spacing-3xl);
+    }
+    
+    .hero-content {
+        order: 1;
+        flex: 1;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .booking-form {
+        order: 2;
+        flex: 1;
+        margin-top: 0; /* Removed margin to prevent overlap with navbar */
+        align-self: flex-start; /* Align with heading and buttons */
+    }
+    
+    .hero-title {
+        text-align: left;
+        margin-right: auto;
+    }
+    
+    .hero-subtitle {
+        text-align: left;
+        margin-right: auto;
+    }
+    
+    .metrics {
+        justify-content: flex-start;
+        margin-right: auto;
+    }
+    
+    .hero-buttons {
+        justify-content: flex-start;
+        margin-right: auto;
+    }
 }
 
 .section .container-sub { 
@@ -777,6 +907,57 @@ body::before {
 .section[data-gradient="opposite"] {
     background: var(--gradient-background-opposite);
     color: var(--ink);
+}
+
+/* Why FC Rides Section Flexbox Fix */
+#why-us .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    gap: var(--spacing-3xl);
+}
+
+#why-us .col-lg-6 {
+    padding: 0 15px;
+}
+
+/* Tablet and Laptop View - Side-by-side layout */
+@media (min-width: 768px) {
+    #why-us .row {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    #why-us .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* How It Works Section Flexbox Fix */
+#how-it-works .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    gap: var(--spacing-3xl);
+}
+
+#how-it-works .col-lg-6 {
+    padding: 0 15px;
+}
+
+/* Tablet and Laptop View - Side-by-side layout */
+@media (min-width: 768px) {
+    #how-it-works .row {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    #how-it-works .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }
 
 /* How It Works Section */
@@ -840,6 +1021,19 @@ body::before {
     box-sizing: border-box;
 }
 
+/* Tablet and Laptop View - Side-by-side layout */
+@media (min-width: 768px) {
+    .bg-how-it-works .row {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .bg-how-it-works .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
 .how-it-works-content {
     position: relative;
     z-index: 1;
@@ -882,6 +1076,7 @@ body::before {
     width: 100%;
     max-width: 100vw;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .step-item.active,
@@ -1113,6 +1308,17 @@ body::before {
     box-sizing: border-box;
 }
 
+.hero-content {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 .dashboard-logo .logo {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
@@ -1169,6 +1375,7 @@ body::before {
     max-width: 100vw;
     box-sizing: border-box;
     text-align: center;
+    overflow: hidden;
 }
 
 .metric-card:nth-child(2) {
@@ -1598,7 +1805,7 @@ body::before {
     max-width: 100vw;
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: var(--spacing-2xl) 0;
 }
 
 .bg-our-fleet::before {
@@ -1631,7 +1838,7 @@ body::before {
     max-width: 100%;
     box-sizing: border-box;
     margin: 0 auto;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .form-tabs {
@@ -1661,12 +1868,11 @@ body::before {
     z-index: 1;
     box-sizing: border-box;
     max-width: 100%;
-    overflow: hidden;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .cardFleet:hover {
-    transform: translateY(-12px);
     box-shadow: 0 25px 50px rgba(37, 150, 190, 0.25);
     border-color: var(--acc);
 }
@@ -1688,6 +1894,7 @@ body::before {
     margin-bottom: var(--spacing-lg);
     text-align: center;
     width: 100%;
+    min-height: 120px;
 }
 
 .cardImage {
@@ -1769,6 +1976,7 @@ body::before {
     border-top: 1px solid var(--glass-border-light);
     width: 100%;
     flex-shrink: 0;
+    min-height: 60px;
 }
 
 .passenger, .luggage {
@@ -1933,6 +2141,13 @@ body::before {
     width: 100%;
     max-width: 100vw;
     box-sizing: border-box;
+    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.features-grid-modern::-webkit-scrollbar {
+    display: none;
 }
 
 .feature-card-modern {
@@ -1949,12 +2164,13 @@ body::before {
     max-width: 100vw;
     box-sizing: border-box;
     margin-bottom: var(--spacing-xl);
+    overflow: visible;
 }
 
 .feature-card-modern:hover {
-    transform: translateY(-12px);
     box-shadow: 0 25px 50px rgba(37, 150, 190, 0.25);
     border-color: var(--acc);
+    overflow: visible;
 }
 
 .feature-card-modern:hover .icon-bg {
@@ -2014,7 +2230,11 @@ body::before {
 
 /* Why FC Rides Section */
 .why-content {
-    padding-right: var(--spacing-xl);
+    
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .text-24-medium {
@@ -2052,6 +2272,9 @@ body::before {
     display: flex;
     gap: var(--spacing-xl);
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .stat-item {
@@ -2077,15 +2300,19 @@ body::before {
     width: 100%;
     max-width: 100vw;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .feature-highlight {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
-    padding: var(--spacing-lg);
+  
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
@@ -2095,11 +2322,11 @@ body::before {
     width: 100%;
     max-width: 100vw;
     box-sizing: border-box;
-    text-align: center;
+    overflow: visible;
 }
 
 .feature-highlight:hover {
-    transform: translateY(-12px);
+   
     box-shadow: 0 25px 50px rgba(37, 150, 190, 0.25);
     border-color: var(--acc);
 }
@@ -2132,6 +2359,10 @@ body::before {
     flex: 1;
     width: 100%;
     box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .feature-title-small {
@@ -2187,6 +2418,11 @@ body::before {
     max-width: 100%;
     width: 100%;
     margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
 }
 
 .hero-title {
@@ -2197,7 +2433,7 @@ body::before {
     margin-top: 120px;
     margin-bottom: var(--spacing-2xl);
     color: #ffffff;
-    text-align: left;
+    text-align: center;
     width: 100%;
     word-wrap: break-word;
 }
@@ -2208,10 +2444,13 @@ body::before {
     font-size: 1.1rem;
     color: var(--muted);
     margin-bottom: var(--spacing-xl);
-    line-height: 1.8;
-    text-align: left;
+    line-height: 2.8;
+    text-align: center;
     width: 100%;
     word-wrap: break-word;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-features {
@@ -2254,8 +2493,9 @@ body::before {
     display: flex;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-2xl);
-    margin-left: -12px;
+    margin-left: 0;
     width: 100%;
+    flex-direction: row;
 }
 
 .btn-primary {
@@ -2298,9 +2538,11 @@ body::before {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
     backdrop-filter: blur(20px);
     box-shadow: var(--shadow-primary);
+    min-height: 210px; /* Reduced height by 30% */
+    align-self: flex-start; /* Align with heading and buttons */
 }
 
 .form-tabs {
@@ -2424,10 +2666,12 @@ body::before {
 .metrics {
     display: flex;
     gap: calc(var(--spacing-xs) + 15px);
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-left: -12px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-2xl) auto;
 }
 
 .metric-btn {
@@ -2440,7 +2684,7 @@ body::before {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    min-width: 180px;
+    min-width: 140px;
     flex: 0 0 auto;
 }
 
@@ -2481,6 +2725,7 @@ body::before {
     width: 100%;
     max-width: 100vw;
     box-sizing: border-box;
+    padding: var(--spacing-2xl) 0;
 }
 
 .bg-our-fleet::before {
@@ -2498,14 +2743,15 @@ body::before {
 .fleet-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-xl);
+    gap: var(--spacing-xl); /* Reduced gap for smaller cards */
     position: relative;
     z-index: 1;
     width: 100%;
     max-width: 100vw;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 0 var(--spacing-xl);
+    padding: 0 var(--spacing-2xl);
+    overflow: hidden;
 }
 
 .cardFleet {
@@ -2513,12 +2759,13 @@ body::before {
     backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
-    padding: var(--spacing-lg);
+    overflow: hidden;
     transition: all var(--transition-normal);
     position: relative;
-    overflow: hidden;
     box-sizing: border-box;
     width: 100%;
+    margin: var(--spacing-lg) 0;
+    min-height: 315px; /* Reduced by 30% from 450px */
 }
 
 .cardFleet::before {
@@ -2534,9 +2781,14 @@ body::before {
 }
 
 .cardFleet:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-primary);
+    box-shadow: 0 25px 50px rgba(37, 150, 190, 0.25);
     border-color: var(--acc);
+    background: rgba(37, 150, 190, 0.1);
+    margin: auto;
+}
+
+.cardFleet:hover .cardInfo p {
+    color: var(--acc);
 }
 
 .cardFleet:hover::before {
@@ -2551,6 +2803,7 @@ body::before {
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
+    height: 126px; /* Reduced by 30% from 180px */
 }
 
 .cardImage img {
@@ -2562,17 +2815,23 @@ body::before {
 }
 
 .cardFleet:hover .cardImage img {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(37, 150, 190, 0.4);
 }
 
 .cardInfo {
     margin-bottom: var(--spacing-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .cardInfo p {
     color: var(--muted);
     line-height: 1.6;
     margin-bottom: var(--spacing-sm);
+    transition: color 0.3s ease;
 }
 
 .cardInfoBottom {
@@ -2583,6 +2842,7 @@ body::before {
     border-top: 1px solid var(--glass-border);
     box-sizing: border-box;
     width: 100%;
+    min-height: 60px;
 }
 
 .passenger, .luggage {
@@ -2636,15 +2896,18 @@ body::before {
     padding: 1.44rem;
     box-shadow: var(--shadow-primary);
     height: fit-content; /* Ensure form height adjusts to content */
-    min-height: 504px; /* Set minimum height to accommodate all tabs */
+    min-height: 210px; /* Reduced by 30% from 300px */
     display: flex;
     flex-direction: column;
-    margin-top: 120px;
+    margin-top: 60px; /* Reduced from 120px */
     margin-left: 0px;
     width: 100%;
     box-sizing: border-box;
     max-width: 100%;
+    margin-bottom: 30px;
+    align-self: flex-start; /* Align with heading and buttons */
 }
+
 .tab {
     flex: 1;
     background: transparent;

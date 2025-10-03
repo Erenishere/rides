@@ -77,7 +77,9 @@
                 $("body").append('<div class="mobile-header-active"><div class="mobile-menu-close">×</div><nav class="mobile-menu"><ul><li><a href="index.html">Home</a></li><li><a href="booking-vehicle.html">Book Now</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div>');
             }
             
-            // Re-initialize mobile nav
+            // Commented out the automatic opening of mobile menu
+            // This was causing the menu to open automatically on page load
+            /*
             setTimeout(function() {
                 $(".burger-icon").trigger('click');
                 setTimeout(function() {
@@ -85,6 +87,7 @@
                     console.log("Mobile navigation test completed");
                 }, 500);
             }, 1000);
+            */
         }
     });
     
@@ -1326,6 +1329,22 @@ if ($(".mobile-header-wrapper-inner").length) {
 
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
+    // Ensure Premium Client button always shows correct text
+    function ensurePremiumClientText() {
+        const premiumClientButtons = document.querySelectorAll('.nav-cta span');
+        premiumClientButtons.forEach(button => {
+            if (button.textContent.trim() !== 'Premium Client') {
+                button.textContent = 'Premium Client';
+            }
+        });
+    }
+
+    // Run on page load
+    ensurePremiumClientText();
+
+    // Also run periodically to catch any dynamic changes
+    setInterval(ensurePremiumClientText, 1000);
+
     const burgerIcon = document.querySelector('.burger-icon');
     const navMenu = document.querySelector('.nav-menu');
     
