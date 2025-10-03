@@ -308,7 +308,6 @@
 
 /* Ultra-wide screen optimizations (2560px+) */
 @media (min-width: 2560px) {
-{{ ... }}
     .nav {
         padding: 17px 22px; /* 30% reduction from 24px 32px */
         min-height: 28px; /* 30% reduction from 40px */

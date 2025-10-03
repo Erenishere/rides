@@ -138,15 +138,6 @@ html, body {
         overflow-x: hidden;
     }
 
-    /* Hero section adjustments */
-    .hero-container {
-        text-align: center !important;
-        font-size: 0.9rem !important;
-        line-height: 1.5 !important;
-        overflow-x: hidden;
-    }
-
-    /* Icon background centering */
     .icon-bg {
         display: flex !important;
         justify-content: center !important;
@@ -156,46 +147,57 @@ html, body {
         height: 64px !important;
     }
 
-    /* SVG icon sizing */
     .feature-icon-modern svg {
         width: 28px !important;
         height: 28px !important;
         overflow-x: hidden;
-}
     }
-    
+
     /* Hero section adjustments */
     .hero-container {
-        padding: 0 10px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: var(--spacing-lg) !important;
+        padding: 0 var(--spacing-md) !important;
+        text-align: center !important;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
         overflow-x: hidden;
         max-width: 100vw;
         box-sizing: border-box;
         margin: 0 auto;
     }
-    
+
     .hero-content {
-        padding: 0 5px !important;
+        padding: 0 var(--spacing-sm) !important;
         overflow-x: hidden;
         max-width: 100vw;
         box-sizing: border-box;
+        text-align: center;
+        align-items: center;
+        width: 100%;
     }
-    
+
     .hero-title {
         font-size: 1.8rem !important;
         line-height: 1.3 !important;
         overflow-x: hidden;
         max-width: 100vw;
         box-sizing: border-box;
+        margin-top: var(--spacing-xl);
     }
-    
+
     .hero-subtitle {
         font-size: 1rem !important;
         line-height: 1.5 !important;
         overflow-x: hidden;
         max-width: 100vw;
         box-sizing: border-box;
+        text-align: center;
     }
-    
+
+    /* Fleet section adjustments */
     .fleet-grid {
         display: grid !important;
         grid-template-columns: 1fr !important;
@@ -220,31 +222,16 @@ html, body {
         margin: 0 auto;
         padding: 0;
     }
-    
+
     /* How It Works section adjustments */
-    .steps-list {
-        overflow-x: hidden;
-        max-width: 100vw;
-        box-sizing: border-box;
-        margin: 0 auto;
-    }
-    
-    .step-item {
-        overflow-x: hidden;
-        max-width: 100vw;
-        box-sizing: border-box;
-    }
-    
-    .step-content {
-        overflow-x: hidden;
-        max-width: 100vw;
-        box-sizing: border-box;
-    }
-    
+    .steps-list,
+    .step-item,
+    .step-content,
     .ai-dashboard-preview {
         overflow-x: hidden;
         max-width: 100vw;
         box-sizing: border-box;
+        margin: 0 auto;
     }
 }
 
