@@ -865,6 +865,7 @@ body::before {
     }
     
     .booking-form {
+        max-width: 46% !important;
         order: 2;
         flex: 1;
         margin-top: 0; /* Removed margin to prevent overlap with navbar */
@@ -936,7 +937,7 @@ body::before {
     
     #why-us .col-lg-6 {
         flex: 0 0 50%;
-        max-width: 50%;
+        max-width: 46%;
     }
 }
 
@@ -964,7 +965,7 @@ body::before {
     
     #how-it-works .col-lg-6 {
         flex: 0 0 50%;
-        max-width: 50%;
+        max-width: 46%;
     }
 }
 
@@ -2146,6 +2147,8 @@ body::before {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: var(--spacing-2xl);
     margin-top: var(--spacing-3xl);
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -2309,15 +2312,19 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .feature-highlight {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
+    margin-left: auto;
+    margin-right: auto;
   
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
@@ -2435,12 +2442,12 @@ body::before {
 .hero-title {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-medium);
-    font-size: 3.125rem;
+    font-size: 2.125rem;
     line-height: 1.6;
-    margin-top: 120px;
+    margin-top: 80px;
     margin-bottom: var(--spacing-2xl);
     color: #ffffff;
-    text-align: center;
+   
     width: 100%;
     word-wrap: break-word;
 }
@@ -2452,7 +2459,7 @@ body::before {
     color: var(--muted);
     margin-bottom: var(--spacing-xl);
     line-height: 2.8;
-    text-align: center;
+   
     width: 100%;
     word-wrap: break-word;
     max-width: 800px;
@@ -2674,7 +2681,7 @@ body::before {
     display: flex;
     gap: calc(var(--spacing-xs) + 15px);
     align-items: center;
-    justify-content: center;
+  
     flex-wrap: wrap;
     width: 100%;
     max-width: 800px;
