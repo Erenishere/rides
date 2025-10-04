@@ -157,9 +157,9 @@
 .city-column a:hover {
     color: var(--acc);
     background: var(--glass-bg-light);
-    border-color: var(--glass-border);
+    border-color: transparent;
     /* transform: translateY(-2px); - Removed to prevent scrolling issues */
-    box-shadow: var(--shadow-hover);
+    box-shadow: none; /* Changed from var(--shadow-hover) to none */
 }
 
 /* Footer bottom */
