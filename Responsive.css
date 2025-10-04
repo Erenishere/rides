@@ -2425,6 +2425,7 @@ html, body {
     
     /* How It Works section - side-by-side layout */
     #how-it-works .row {
+        margin-left: 60px;
         flex-direction: row;
         align-items: center;
         gap: var(--spacing-3xl);
@@ -2520,7 +2521,7 @@ html, body {
     #how-it-works .row {
         flex-direction: row;
         align-items: center;
-        gap: var(--spacing-3xl);
+        gap: 0;
     }
     
     #how-it-works .col-lg-6 {
