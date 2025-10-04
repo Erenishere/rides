@@ -716,14 +716,23 @@ html, body {
     
     /* Fleet grid stacking on small devices */
     .fleet-grid {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
         width: 100%;
         box-sizing: border-box;
         overflow-x: hidden;
         max-width: 100vw;
         margin: 0 auto;
         padding: 0 var(--spacing-sm);
+    }
+    
+    @media (max-width: 375px) {
+        .fleet-grid {
+            grid-template-columns: 1fr !important;
+            gap: 0.75rem !important;
+            padding: 0 var(--spacing-xs) !important;
+        }
     }
     
     .cardFleet {
@@ -1177,14 +1186,23 @@ html, body {
     
     /* Fleet grid stacking on small devices */
     .fleet-grid {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
         width: 100%;
         box-sizing: border-box;
         overflow-x: hidden;
         max-width: 100vw;
         margin: 0 auto;
         padding: 0 var(--spacing-sm);
+    }
+    
+    @media (max-width: 375px) {
+        .fleet-grid {
+            grid-template-columns: 1fr !important;
+            gap: 0.75rem !important;
+            padding: 0 var(--spacing-xs) !important;
+        }
     }
     
     .cardFleet {
@@ -2149,10 +2167,20 @@ html, body {
     
     /* Fleet cards stacking on small devices */
     .fleet-grid {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
         width: 100%;
         box-sizing: border-box;
+        padding: 0 var(--spacing-sm);
+    }
+    
+    @media (max-width: 375px) {
+        .fleet-grid {
+            grid-template-columns: 1fr !important;
+            gap: 0.75rem !important;
+            padding: 0 var(--spacing-xs) !important;
+        }
     }
     
     .cardFleet {
@@ -2691,4 +2719,14 @@ html, body {
         padding: 0 15px;
     }
 }
+
+/* Specific fix for 375px screens */
+@media (max-width: 375px) {
+    .fleet-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+        padding: 0 var(--spacing-xs) !important;
+    }
+}
+
 /* End of file */

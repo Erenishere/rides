@@ -1849,6 +1849,37 @@ body::before {
     overflow: hidden;
 }
 
+/* Responsive breakpoints for fleet grid */
+@media (max-width: 1400px) {
+    .fleet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .fleet-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        padding: 0 var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .fleet-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+@media (max-width: 375px) {
+    .fleet-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+        padding: 0 var(--spacing-xs) !important;
+    }
+}
+
 .form-tabs {
     display: flex;
     margin-bottom: var(--spacing-md);
@@ -2768,6 +2799,37 @@ body::before {
     margin: 0 auto;
     padding: 0 var(--spacing-2xl);
     overflow: hidden;
+}
+
+/* Responsive breakpoints for fleet grid */
+@media (max-width: 1400px) {
+    .fleet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .fleet-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        padding: 0 var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .fleet-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+@media (max-width: 375px) {
+    .fleet-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+        padding: 0 var(--spacing-xs) !important;
+    }
 }
 
 .cardFleet {

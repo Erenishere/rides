@@ -428,10 +428,12 @@
 /* Responsive */
 @media (max-width: 768px) {
     .chauffeur-hero .hero-title {
+        
         font-size: 2.5rem;
     }
     
     .chauffeur-hero .hero-subtitle {
+        margin-left: auto;
         font-size: 1.2rem;
     }
     
