@@ -35,7 +35,7 @@
             #070707 0%,
             #070707 30%,
             #070707 60%,
-            #0d1421 70%,
+            #1a237e 80%,
             #1a237e 100%);
     --gradient-background-opposite: linear-gradient(180deg,
             #1a237e 0%,
@@ -76,14 +76,9 @@
 /* Enhanced Navigation Styles - Modern Glass Morphism Design */
 
 /* Prevent any scrollbars in navigation */
+/* Allow overlapping sections beneath navbar */
 .header {
-    overflow: hidden !important;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-}
-
-.header::-webkit-scrollbar {
-    display: none !important;
+    overflow: visible !important;
 }
 
 /* Desktop Navigation */
@@ -98,7 +93,7 @@
     z-index: 1000;
     background: #000000; /* Solid black background for better visibility */
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: none;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -184,13 +179,26 @@
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    border: none;
+    outline: none;
+}
+
+.nav-link:focus,
+.nav-link:focus-visible {
+    outline: none;
+    box-shadow: none;
 }
 
 .nav-link.active,
-.nav-link.clicked .nav-text,
 .nav-link:hover .nav-text {
     color: var(--acc);
     transform: translateY(-1px);
+}
+
+/* Removed visual artifacts for clicked state while maintaining functionality */
+.nav-link.clicked .nav-text {
+    color: var(--acc);
+    transform: none; /* Removed translateY to prevent visual jumping */
 }
 
 .nav-link::before {
@@ -222,10 +230,15 @@
 }
 
 .nav-link:hover .nav-text,
-.nav-link.active .nav-text,
-.nav-link.clicked .nav-text {
+.nav-link.active .nav-text {
     color: var(--acc);
     transform: translateY(-1px);
+}
+
+/* Removed visual artifacts for clicked state while maintaining functionality */
+.nav-link.clicked .nav-text {
+    color: var(--acc);
+    transform: none; /* Removed translateY to prevent visual jumping */
 }
 
 .nav-hover-effect {
@@ -244,10 +257,15 @@
     opacity: 1 !important;
 }
 
+/* Removed visual artifacts for clicked state while maintaining functionality */
 .nav-link.clicked .nav-hover-effect {
-    width: 80%;
-    background: var(--acc) !important;
+    /* width: 80%; Removed to prevent dots from appearing */
+    /* background: var(--acc) !important; Removed to prevent visual artifacts */
+    width: 0; /* Keep width at 0 to prevent visual artifacts */
+    background: transparent; /* Keep background transparent to prevent visual artifacts */
 }
+
+
 
 .nav-actions {
     display: flex;
@@ -305,7 +323,11 @@
 .nav-cta:hover {
     box-shadow: var(--shadow-button);
     border-color: var(--acc);
-    transform: none;
+    transform: scale(1.05);
+}
+
+.nav-cta:active {
+    transform: scale(0.95);
 }
 
 /* Ultra-wide screen optimizations (2560px+) */
@@ -325,7 +347,6 @@
         padding: var(--spacing-md) var(--spacing-lg);
     }
 
-    .nav-link.clicked .nav-text,
     .nav-link:hover .nav-text,
     .nav-link.active .nav-text {
         color: var(--acc) !important;
@@ -367,7 +388,11 @@
     .nav-cta:hover {
         box-shadow: var(--shadow-button);
         border-color: var(--acc);
-        transform: none;
+        transform: scale(1.05);
+    }
+    
+    .nav-cta:active {
+        transform: scale(0.95);
     }
 
     .nav-cta i {
@@ -404,7 +429,6 @@
         color: var(--ink) !important; /* Ensure white text */
     }
 
-    .nav-link.clicked .nav-text,
     .nav-link:hover .nav-text,
     .nav-link.active .nav-text {
         color: var(--acc) !important;
@@ -428,12 +452,16 @@
         color: var(--ink) !important; /* Ensure button text is white */
     }
 
-    /* Removed hover effect for Premium Client button on 1440px screens as per user request */
+    /* Scale effect for Premium Client button on 1440px screens */
     .nav-cta:hover {
         box-shadow: 0 4px 15px rgba(37, 150, 190, 0.4);
         border-color: var(--acc);
         background: var(--gradient-primary);
-        transform: none;
+        transform: scale(1.05);
+    }
+    
+    .nav-cta:active {
+        transform: scale(0.95);
     }
 
     .nav-cta::before {
@@ -749,6 +777,7 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
     .nav {
         padding: var(--spacing-md) var(--spacing-sm); /* Reduced right padding from var(--spacing-lg) to var(--spacing-sm) */
         min-height: 6px; /* 90% reduction to match faq navbar */
+        border-bottom: none !important;
     }
 
     .nav-menu {
@@ -849,7 +878,6 @@ body[class*="Chauffeur"] .mobile-header-active.sidebar-visible {
 
 /* Enhanced Accessibility Features */
 /* Focus styles for better keyboard navigation */
-.nav-link:focus,
 .mobile-nav-link:focus,
 .nav-cta:focus,
 .burger-icon:focus,

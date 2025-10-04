@@ -317,12 +317,11 @@ body::before {
 .fleet-grid {
     padding-bottom: 10px !important;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 cards per row on desktop */
+    grid-template-columns: repeat(2, 1fr) !important; /* 4 cards per row on desktop */
     gap: 2rem;
     align-items: start;
     width: 100%;
     max-width: 100vw;
-    overflow-x: hidden;
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0 var(--spacing-xl);
@@ -342,7 +341,6 @@ body::before {
         gap: 1.5rem;
         width: 100%;
         max-width: 100vw;
-        overflow-x: hidden;
         box-sizing: border-box;
         margin: 0 auto;
         padding: 0 var(--spacing-md);
@@ -353,7 +351,6 @@ body::before {
         min-height: 260px;
         width: 100%;
         max-width: 100vw;
-        overflow-x: hidden;
         box-sizing: border-box;
     }
 
@@ -408,16 +405,13 @@ body::before {
     padding: var(--spacing-2xl);
     backdrop-filter: blur(20px);
     position: relative;
-    overflow: hidden;
     transition: all var(--transition-normal);
     box-shadow: var(--shadow-primary);
     cursor: pointer;
-    transform: translateY(0);
     /* animation: float 6s ease-in-out infinite; - Removed floating animation as per user request */
     display: flex;
     flex-direction: column;
     height: 100%;
-    min-height: 280px;
     max-width: 100%;
     box-sizing: border-box;
 }
@@ -539,7 +533,6 @@ body::before {
     justify-content: space-between;
     max-width: 100%;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .fleet-description {

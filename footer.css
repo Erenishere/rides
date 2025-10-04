@@ -90,7 +90,7 @@
     text-decoration: none;
     font-size: 0.9rem;
     transition: all var(--transition-normal);
-    display: inline-block;
+    
     position: relative;
     padding-left: var(--spacing-sm);
 }
@@ -151,7 +151,6 @@
     position: relative;
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--radius-sm);
-    background: var(--glass-bg);
     border: 1px solid transparent;
 }
 
