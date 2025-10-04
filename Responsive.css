@@ -35,7 +35,7 @@ html, body {
     
     .fleet-grid {
         display: grid !important;
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: var(--spacing-2xl) !important;
         padding: 0 var(--spacing-xl) !important;
         max-width: 1200px !important;
@@ -182,7 +182,7 @@ html, body {
     }
 
     .hero-title {
-        font-size: 1.8rem !important;
+        font-size: 1.98rem !important;
         line-height: 1.3 !important;
         overflow-x: hidden;
         max-width: 100vw;
@@ -420,9 +420,10 @@ html, body {
     }
     
     .booking-form {
+        margin-left: 20%;
         padding: var(--spacing-sm);
         margin-top: var(--spacing-md);
-        width: 100%;
+        width: 60%;
     }
     
     /* Why FC Rides section adjustments */
@@ -963,7 +964,7 @@ html, body {
 
 @media (max-width: 768px) {
     .container-sub {
-        
+        padding: 0 var(--spacing-md);
         box-sizing: border-box;
         max-width: 100vw;
         overflow-x: hidden;
@@ -1054,7 +1055,7 @@ html, body {
     
     .booking-form {
         order: 2;
-        width: 100%;
+        width: 70%;
         max-width: 400px;
         margin: var(--spacing-xl) auto 0;
         padding: var(--spacing-lg);
@@ -1081,6 +1082,7 @@ html, body {
         word-wrap: break-word;
         box-sizing: border-box;
         overflow-x: hidden;
+        line-height: 3rem;
     }
     
     .hero-subtitle {
@@ -1091,6 +1093,7 @@ html, body {
         word-wrap: break-word;
         box-sizing: border-box;
         overflow-x: hidden;
+        line-height: 2rem;
     }
     
     .hero-buttons {
@@ -1764,6 +1767,7 @@ html, body {
         flex-direction: column;
         gap: var(--spacing-xl);
         align-items: center;
+        margin-left: 5px;
     }
     
     #why-us .col-lg-6 {
@@ -1798,6 +1802,7 @@ html, body {
         align-items: center;
         max-width: 500px;
         margin: 0 auto;
+        margin-bottom: 10px;
     }
 } 
     
@@ -1865,7 +1870,6 @@ html, body {
 
 @media (max-width: 660px) {
     .hero {
-        min-height: auto;
         padding: var(--spacing-xl) 0;
     }
     
@@ -2051,10 +2055,11 @@ html, body {
     }
     
     .booking-form {
+        margin-bottom: 15px;
         order: 2; /* Form on bottom */
         margin-top: var(--spacing-lg); /* Reduced margin */
         width: 100%;
-        max-width: 100%;
+        max-width: 80% !important;
         box-sizing: border-box;
         padding: var(--spacing-md);
         max-width: none;
@@ -2247,9 +2252,10 @@ html, body {
     }
     
     .booking-form {
+        margin-bottom: 2rem;
         padding: var(--spacing-sm);
         max-width: none;
-        width: 95%;
+        width: 80%;
     }
     
     .form-tabs {
@@ -2257,7 +2263,7 @@ html, body {
     }
     
     .tab {
-        padding: var(--spacing-xs);
+        padding: var(--spacing-md);
         font-size: 0.8rem;
     }
     
@@ -2271,7 +2277,7 @@ html, body {
     }
     
     .form-input {
-        padding: var(--spacing-xs);
+        padding: var(--spacing-md);
         font-size: 0.9rem;
     }
     
@@ -2415,6 +2421,7 @@ html, body {
     }
     
     .hero-title {
+        
         text-align: left;
         margin: auto;
     }
@@ -2506,6 +2513,7 @@ html, body {
     }
     
     .hero-title {
+        font-size: 2.72rem !important;
         text-align: left;
         margin-right: auto;
     }
@@ -2615,7 +2623,10 @@ html, body {
     
     .hero-title {
         text-align: left;
-        margin: auto;
+        margin-top: 0;
+        margin-bottom: var(--spacing-2xl);
+        margin-left: 0;
+        margin-right: auto;
     }
     
     .hero-subtitle {
@@ -2665,6 +2676,7 @@ html, body {
 }
 
 /* Fixed CSS syntax error */
+/* Fixed CSS syntax error */
 @media (min-width: 1024px) {
     /* Why FC Rides section - side-by-side layout */
     #why-us .row {
@@ -2679,3 +2691,4 @@ html, body {
         padding: 0 15px;
     }
 }
+/* End of file */

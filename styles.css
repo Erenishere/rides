@@ -796,7 +796,7 @@ body::before {
 /* Hero Section Background Wrapper */
 .hero {
     background: var(--gradient-background);
-    min-height: 100vh;
+    padding: var(--spacing-3xl) 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -807,7 +807,6 @@ body::before {
     overflow-x: hidden;
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
     margin-top: 0; /* Removed negative margin to prevent overlap with navbar */
 }
 
@@ -2316,6 +2315,8 @@ body::before {
 }
 
 .feature-highlight {
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2442,9 +2443,9 @@ body::before {
 .hero-title {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-medium);
-    font-size: 2.125rem;
+    font-size: 2.725rem;
     line-height: 1.6;
-    margin-top: 80px;
+    margin-top: 0;
     margin-bottom: var(--spacing-2xl);
     color: #ffffff;
    
@@ -2702,11 +2703,12 @@ body::before {
     flex: 0 0 auto;
 }
 
+/* Removed hover effect for metric buttons as per user request */
 .metric-btn:hover {
-    background: rgba(37, 150, 190, 0.1);
+    background: transparent;
     border-color: var(--acc);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(37, 150, 190, 0.2);
+    transform: none;
+    box-shadow: none;
 }
 
 .metric-number {
@@ -2913,9 +2915,9 @@ body::before {
     min-height: 210px; /* Reduced by 30% from 300px */
     display: flex;
     flex-direction: column;
-    margin-top: 60px; /* Reduced from 120px */
+     /* Reduced from 120px */
     margin-left: 0px;
-    width: 100%;
+    max-width: 40% !important;
     box-sizing: border-box;
     max-width: 100%;
     margin-bottom: 30px;

@@ -297,13 +297,15 @@
     z-index: 1;
 }
 
+/* Removed hover effect for Premium Client button as per user request */
 .nav-cta:hover::before {
-    left: 100%;
+    left: -100%;
 }
 
 .nav-cta:hover {
-    box-shadow: 0 12px 30px rgba(37, 150, 190, 0.5);
+    box-shadow: var(--shadow-button);
     border-color: var(--acc);
+    transform: none;
 }
 
 /* Ultra-wide screen optimizations (2560px+) */
@@ -357,13 +359,15 @@
         transition: left 0.5s ease;
     }
 
+    /* Removed hover effect for Premium Client button on ultra-wide screens as per user request */
     .nav-cta:hover::before {
-        left: 100%;
+        left: -100%;
     }
 
     .nav-cta:hover {
-        box-shadow: 0 12px 30px rgba(37, 150, 190, 0.5);
+        box-shadow: var(--shadow-button);
         border-color: var(--acc);
+        transform: none;
     }
 
     .nav-cta i {
@@ -408,7 +412,7 @@
     }
 
     .logo {
-        font-size: 2rem;
+        font-size: 1.8rem;
         letter-spacing: 3px;
         color: var(--ink) !important; /* Ensure logo is white */
     }
@@ -424,10 +428,12 @@
         color: var(--ink) !important; /* Ensure button text is white */
     }
 
+    /* Removed hover effect for Premium Client button on 1440px screens as per user request */
     .nav-cta:hover {
-        box-shadow: 0 8px 25px rgba(37, 150, 190, 0.6);
+        box-shadow: 0 4px 15px rgba(37, 150, 190, 0.4);
         border-color: var(--acc);
-        background: linear-gradient(135deg, #1a237e 0%, #4fc3f7 100%);
+        background: var(--gradient-primary);
+        transform: none;
     }
 
     .nav-cta::before {
@@ -442,7 +448,7 @@
     }
 
     .nav-cta:hover::before {
-        left: 100%;
+        left: -100%;
     }
 }
 
