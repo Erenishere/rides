@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - FC Rides - AI-Enhanced Premium transportation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navba.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <!-- Desktop Navigation -->
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link" aria-label="FC Rides - Home">
+                    <span class="logo">FC Rides</span>
+                    <span class="logo-subtitle">Premium transportation</span>
+                </a>
+            </div>
+
+            <ul class="nav-menu" role="menubar">
+                <li role="none">
+                    <a href="index.html" class="nav-link" role="menuitem" aria-label="Home">
+                        <span class="nav-text">Home</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="fleet.html" class="nav-link" role="menuitem" aria-label="Our Fleet">
+                        <span class="nav-text">Fleet</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="Chauffeur-Alliance.html" class="nav-link" role="menuitem" aria-label="Chauffeur Alliance">
+                        <span class="nav-text">Chauffeur Alliance</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="faq.html" class="nav-link active" role="menuitem" aria-label="Frequently Asked Questions" aria-current="page">
+                        <span class="nav-text">FAQ</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="cooperate.html" class="nav-link" role="menuitem" aria-label="Cooperate Travels">
+                        <span class="nav-text">Cooperate Travels</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href=" " class="btn-primary nav-cta" aria-label="Premium Client">
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <span>Premium Client</span>
+                </a>
+                <button class="burger-icon" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-header-active">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="body-overlay-1"></div>
+        <nav class="mobile-header-active" role="navigation" aria-label="Mobile navigation" aria-hidden="true" id="mobile-header-active">
+            <div class="mobile-nav-header">
+                <span class="mobile-logo">FC Rides</span>
+                <button class="mobile-menu-close" aria-label="Close mobile menu">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <ul class="mobile-menu" role="menubar">
+                <li role="none">
+                    <a href="index.html" class="mobile-nav-link" role="menuitem">Home</a>
+                </li>
+                <li role="none">
+                    <a href="fleet.html" class="mobile-nav-link" role="menuitem">Fleet</a>
+                </li>
+                <li role="none">
+                    <a href="Chauffeur-Alliance.html" class="mobile-nav-link" role="menuitem">Chauffeur Alliance</a>
+                </li>
+                <li role="none">
+                    <a href="faq.html" class="mobile-nav-link active" role="menuitem" aria-current="page">FAQ</a>
+                </li>
+                <li role="none">
+                    <a href="cooperate.html" class="mobile-nav-link" role="menuitem">Cooperate Travels</a>
+                </li>
+            </ul>
+            <div class="mobile-nav-footer">
+                <a href="booking-extra.html" class="btn-primary mobile-cta">
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <span>Premium Client</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Mobile navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerIcon = document.querySelector('.burger-icon');
+            const mobileMenu = document.querySelector('.mobile-header-active');
+            const mobileClose = document.querySelector('.mobile-menu-close');
+            const bodyOverlay = document.querySelector('.body-overlay-1');
+
+            // Nav link click effect - show bottom line on click
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    console.log('Nav link clicked:', this.querySelector('.nav-text').textContent);
+                    // Remove clicked class from all nav links
+                    navLinks.forEach(l => l.classList.remove('clicked'));
+                    // Add clicked class to clicked link
+                    this.classList.add('clicked');
+                    console.log('Added clicked class to:', this.querySelector('.nav-text').textContent);
+                });
+            });
+
+            if (burgerIcon && mobileMenu) {
+                console.log("✅ Mobile navigation initialized on faq page");
+
+                // Burger icon click
+                burgerIcon.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    // Toggle classes
+                    this.classList.toggle('burger-close');
+                    mobileMenu.classList.toggle('sidebar-visible');
+                    document.body.classList.toggle('mobile-menu-active');
+
+                    console.log("🍔 Mobile menu toggled - visible:", mobileMenu.classList.contains('sidebar-visible'));
+                });
+
+                // Close button click
+                if (mobileClose) {
+                    mobileClose.addEventListener('click', function() {
+                        burgerIcon.classList.remove('burger-close');
+                        mobileMenu.classList.remove('sidebar-visible');
+                        document.body.classList.remove('mobile-menu-active');
+                    });
+                }
+
+                // Overlay click
+                if (bodyOverlay) {
+                    bodyOverlay.addEventListener('click', function() {
+                        burgerIcon.classList.remove('burger-close');
+                        mobileMenu.classList.remove('sidebar-visible');
+                        document.body.classList.remove('mobile-menu-active');
+                    });
+                }
+            } else {
+                console.error("❌ Mobile navigation elements not found on faq page");
+            }
+
+            // Change Book Now button href based on screen size
+            function updateBookNowHref() {
+                const navCtas = document.querySelectorAll('.nav-cta, .mobile-cta');
+                navCtas.forEach(function(cta) {
+                    if (window.innerWidth <= 1020) {
+                        cta.href = 'booking-extra.html';
+                    } else {
+                        cta.href = 'booking-extra.html';
+                    }
+                });
+            }
+
+            // Update on page load
+            updateBookNowHref();
+
+            // Update on window resize
+            window.addEventListener('resize', updateBookNowHref);
+        });
+    </script>
+
+    <main class="main" id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Frequently Asked Questions</h1>
+                    <p class="hero-subtitle">Your Questions, Answered With First-Class Precision</p>
+                   
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Sections -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <p class="intro-text">At FC Rides, we believe premium service starts with clarity. Here are answers to the most common questions about our booking process, services, and policies — so you know exactly what to expect before you book.</p>
+
+                <!-- Booking & Reservations FAQ -->
+                <div class="faq-category">
+                    <h2 class="category-title">Booking & Reservations</h2>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">How far in advance should I book a ride?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">Most of our clients book several hours ahead — and we specialize in same-day bookings with just a few hours' notice. However, for large groups, multi-stop itineraries, or event transport, we recommend scheduling at least 24 hours in advance.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">Can I book a ride on-demand, like a rideshare?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">No. FC Rides is a premium chauffeur service, not an on-demand rideshare. This allows us to guarantee on-time performance, personalized service, and vehicle availability.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">How do I create an account?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">Simply enter your email or phone number — we use secure OTP (one-time passcode) login instead of passwords. Once verified, you can book rides, manage billing, view history, and more.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">What if I need to change or cancel a booking?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">You can modify or cancel most rides directly from your client portal. Cancellations made before the free cancellation window (usually 12 hours before pickup) incur no charge. Late cancellations or no-shows may be subject to a fee.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payments & Billing FAQ -->
+                <div class="faq-category">
+                    <h2 class="category-title">Payments & Billing</h2>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">What is the "Rider Pays" vs. "Company Pays" option?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">During booking, you'll see a Payment Toggle:<br>
+                                • <strong>Rider Pays:</strong> The passenger pays for the ride directly at checkout.<br>
+                                • <strong>Company Pays:</strong> The ride is billed to a corporate account and invoiced according to agreed terms.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">Can I receive monthly invoices instead of paying per ride?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">Yes. Corporate clients and travel partners can enable monthly invoicing through their Private Client accounts.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">Are gratuities included in the fare?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">Yes — all FC Rides fares are all-inclusive, with gratuities, taxes, and fees included in the total price. There are no hidden costs.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">What payment methods do you accept?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">We accept all major credit cards and corporate billing accounts. For agency and partner bookings, invoicing and direct bank transfers are also available.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicles & Services FAQ -->
+                <div class="faq-category">
+                    <h2 class="category-title">Vehicles & Services</h2>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">What vehicle options do you offer?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">Our fleet includes four premium categories:<br>
+                                • <strong>First Class Sedan</strong> – Up to 3 passengers, 2–3 suitcases<br>
+                                • <strong>First Class Premium Sedan</strong> – Up to 3 passengers, 2–3 large suitcases<br>
+                                • <strong>First Class SUV</strong> – Up to 6 passengers, 5–6 large suitcases<br>
+                                • <strong>First Class Sprinter</strong> – Up to 14 passengers, 10–12 suitcases</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">Can I request a specific vehicle model?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">We guarantee vehicle class, not specific models. However, if you have special requests (e.g., black-on-black, VIP seating layout), we will do our best to accommodate them.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">Do you offer hourly or multi-stop services?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">Yes. Hourly service and multi-stop itineraries are available for meetings, events, roadshows, and extended trips.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">Do you track flights for airport pickups?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">Yes. Our system automatically tracks flight arrival times and adjusts chauffeur dispatch to ensure on-time pickup — even if your flight is early or delayed.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extras & Add-Ons FAQ -->
+                <div class="faq-category">
+                    <h2 class="category-title">Extras & Add-Ons</h2>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">What amenities are included in every ride?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">All FC Rides include bottled water, device charging (USB-C, Lightning, and standard ports), climate control, and professional chauffeurs. Premium vehicles may also include Wi-Fi, premium sound systems, and refreshment centers.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">Can I request special amenities or arrangements?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">Yes. We can accommodate special requests such as child seats, pet travel arrangements, specific music preferences, or custom refreshments. Please note these requests in your booking or contact our concierge team at least 24 hours in advance.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button">Do you provide red carpet or meet-and-greet services?</button>
+                            </h3>
+                            <div class="accordion-collapse">
+                                <div class="accordion-body">Yes. For VIP arrivals, we offer meet-and-greet services with name-holding chauffeurs, priority luggage assistance, and seamless terminal navigation. These services are included with First Class Premium Sedan bookings and above.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+   <footer class="footer" id="contact">
+        <div class="footer-content">
+            <!-- Top Row -->
+            <div class="footer-top-row">
+                <!-- Company Info Section -->
+                <div class="footer-section">
+                    <h3>FC Rides</h3>
+                    <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: var(--spacing-lg);">
+                        Premium transportation reimagined with AI-driven precision, personalized comfort, and unmatched professionalism.
+                    </p>
+                    <div class="footer-social">
+                        <div class="social-icons">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Section -->
+                <div class="footer-section">
+                    <div class="newsletter-section">
+                        <h3 class="newsletter-title">Stay Updated</h3>
+                        <p style="color: var(--muted); font-size: 0.85rem; margin-bottom: var(--spacing-md); text-align: center;">
+                            Get the latest news and exclusive offers
+                        </p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email address" aria-label="Email address">
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="footer-bottom-row">
+                <!-- Navigation Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="Chauffeur-Alliance.html">Chauffeur Alliance</a></li>
+                        <li><a href="cooperate.html">Cooperate Travels</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Cities -->
+                <div class="footer-section">
+                    <h3>Popular Routes</h3>
+                    <div class="cities-grid">
+                        <div class="city-column">
+                            <a href="#">New York</a>
+                            <a href="#">Los Angeles</a>
+                            <a href="#">Miami</a>
+                        </div>
+                        <div class="city-column">
+                            <a href="#">San Francisco</a>
+                            <a href="#">Las Vegas</a>
+                            <a href="#">Seattle</a>
+                        </div>
+                        <div class="city-column">
+                            <a href="#">Dallas</a>
+                            <a href="#">Honolulu</a>
+                            <a href="#">Chicago</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2023 FC Rides. All rights reserved.</p>
+                <div style="margin-top: var(--spacing-sm);">
+                    <a href="#" style="color: var(--muted); text-decoration: none; margin: 0 var(--spacing-sm);">Terms & Conditions</a>
+                    <a href="#" style="color: var(--muted); text-decoration: none; margin: 0 var(--spacing-sm);">Privacy Policy</a>
+                    <a href="#" style="color: var(--muted); text-decoration: none; margin: 0 var(--spacing-sm);">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

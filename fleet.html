@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Fleet - FC Rides</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navba.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="fleet.css">
+</head>
+
+<body>
+   
+    <!-- Navigation Header -->
+    <header class="header">
+        <!-- Desktop Navigation -->
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link" aria-label="FC Rides - Home">
+                    <span class="logo">FC Rides</span>
+                    <span class="logo-subtitle">Premium transportation</span>
+                </a>
+            </div>
+
+            <ul class="nav-menu" role="menubar">
+                <li role="none">
+                    <a href="index.html" class="nav-link" role="menuitem" aria-label="Home">
+                        <span class="nav-text">Home</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="fleet.html" class="nav-link active" role="menuitem" aria-label="Our Fleet" aria-current="page">
+                        <span class="nav-text">Fleet</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="Chauffeur-Alliance.html" class="nav-link" role="menuitem" aria-label="Chauffeur Alliance">
+                        <span class="nav-text">Chauffeur Alliance</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="faq.html" class="nav-link" role="menuitem" aria-label="Frequently Asked Questions">
+                        <span class="nav-text">FAQ</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="cooperate.html" class="nav-link" role="menuitem" aria-label="Cooperate Travels">
+                        <span class="nav-text">Cooperate Travels</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href=" " class="btn-primary nav-cta" aria-label="Premium Client">
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <span>Premium Client</span>
+                </a>
+                <button class="burger-icon" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-header-active">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="body-overlay-1"></div>
+        <nav class="mobile-header-active" role="navigation" aria-label="Mobile navigation" aria-hidden="true" id="mobile-header-active">
+            <div class="mobile-nav-header">
+                <span class="mobile-logo">FC Rides</span>
+                <button class="mobile-menu-close" aria-label="Close mobile menu">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <ul class="mobile-menu" role="menubar">
+                <li role="none">
+                    <a href="index.html" class="mobile-nav-link" role="menuitem">Home</a>
+                </li>
+                <li role="none">
+                    <a href="fleet.html" class="mobile-nav-link active" role="menuitem" aria-current="page">Fleet</a>
+                </li>
+                <li role="none">
+                    <a href="Chauffeur-Alliance.html" class="mobile-nav-link" role="menuitem">Chauffeur Alliance</a>
+                </li>
+                <li role="none">
+                    <a href="faq.html" class="mobile-nav-link" role="menuitem">FAQ</a>
+                </li>
+                <li role="none">
+                    <a href="cooperate.html" class="mobile-nav-link" role="menuitem">Cooperate Travels</a>
+                </li>
+            </ul>
+            <div class="mobile-nav-footer">
+                <a href="booking-extra.html" class="btn-primary mobile-cta">
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <span>Premium Client</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Mobile navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerIcon = document.querySelector('.burger-icon');
+            const mobileMenu = document.querySelector('.mobile-header-active');
+            const mobileClose = document.querySelector('.mobile-menu-close');
+            const bodyOverlay = document.querySelector('.body-overlay-1');
+            
+            // Nav link click effect - show bottom line on click
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    console.log('Nav link clicked:', this.querySelector('.nav-text').textContent);
+                    // Remove clicked class from all nav links
+                    navLinks.forEach(l => l.classList.remove('clicked'));
+                    // Add clicked class to clicked link
+                    this.classList.add('clicked');
+                    console.log('Added clicked class to:', this.querySelector('.nav-text').textContent);
+                });
+            });
+            
+            if (burgerIcon && mobileMenu) {
+                console.log("✅ Mobile navigation initialized on fleet page");
+                
+                // Burger icon click
+                burgerIcon.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Toggle classes
+                    this.classList.toggle('burger-close');
+                    mobileMenu.classList.toggle('sidebar-visible');
+                    document.body.classList.toggle('mobile-menu-active');
+                    
+                    // Ensure proper positioning on mobile
+                    if (mobileMenu.classList.contains('sidebar-visible')) {
+                        mobileMenu.style.left = '0px';
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        mobileMenu.style.left = '-320px';
+                        document.body.style.overflow = '';
+                    }
+                    
+                    console.log("🍔 Mobile menu toggled - visible:", mobileMenu.classList.contains('sidebar-visible'));
+                });
+                
+                // Close button click
+                if (mobileClose) {
+                    mobileClose.addEventListener('click', function() {
+                        burgerIcon.classList.remove('burger-close');
+                        mobileMenu.classList.remove('sidebar-visible');
+                        document.body.classList.remove('mobile-menu-active');
+                        mobileMenu.style.left = '-320px';
+                        document.body.style.overflow = '';
+                    });
+                }
+                
+                // Overlay click
+                if (bodyOverlay) {
+                    bodyOverlay.addEventListener('click', function() {
+                        burgerIcon.classList.remove('burger-close');
+                        mobileMenu.classList.remove('sidebar-visible');
+                        document.body.classList.remove('mobile-menu-active');
+                        mobileMenu.style.left = '-320px';
+                        document.body.style.overflow = '';
+                    });
+                }
+            } else {
+                console.error("❌ Mobile navigation elements not found on fleet page");
+            }
+        });
+    </script>
+
+    <main class="main" id="main-content">
+        <!-- Combined Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content hero-text-center">
+                    <h1 class="hero-title" style="text-align: center;">Our Fleet</h1>
+                    <ul class="breadcrumb" style="justify-content: center;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                    </ul>
+                    <p class="hero-description">At FC Rides, every vehicle is part of a system designed for comfort, reliability, and intelligent service. Whether you're traveling for business, luxury, or logistics, our fleet is tailored to fit every journey — always with AI-powered dispatch, Comfort Profile™ personalization, and on-time precision.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fleet Cards Section -->
+        <section class="fleet-section">
+            <div class="fleet-container">
+                <div class="fleet-grid">
+                    <!-- First Class Sedan -->
+                    <div class="fleet-card">
+                        <div class="fleet-card-header">
+                            <h3 class="fleet-title">First Class Sedan</h3>
+                            <p class="fleet-subtitle">Executive Comfort. Everyday Excellence.</p>
+                        </div>
+                        <div class="fleet-card-img-container">
+                            <img src="img/first class sedan.png" alt="Luxury black sedan" class="fleet-card-img">
+                        </div>
+                        <div class="fleet-content">
+                            <p class="fleet-description">Perfect for business trips, airport transfers, or solo VIP travel — offering a quiet, seamless ride and personalized comfort.</p>
+                            <div class="fleet-specs">
+                                <div class="spec-item">
+                                    <span class="spec-icon"><i class="fas fa-users"></i></span>
+                                    <span class="spec-text">Passengers: <strong>Up to 3</strong></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-icon"><i class="fas fa-suitcase"></i></span>
+                                    <span class="spec-text">Luggage: <strong>Up to 2–3 standard suitcases</strong></span>
+                                </div>
+                            </div>
+                            <div class="fleet-best-for">
+                                <strong>Best For:</strong> Executive transfers, business meetings, airport pickups
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- First Class Premium Sedan -->
+                    <div class="fleet-card">
+                        <div class="fleet-card-header">
+                            <h3 class="fleet-title">First Class Premium Sedan</h3>
+                            <p class="fleet-subtitle">Flagship Luxury. Elevated Presence.</p>
+                        </div>
+                        <div class="fleet-card-img-container">
+                            <img src="img/Mercedes ben s500.png" class="fleet-card-img">
+                        </div>
+                        <div class="fleet-content">
+                            <p class="fleet-description">When you need to make the right impression, our premium sedans deliver space, style, and first-class comfort for high-profile occasions.</p>
+                            <div class="fleet-specs">
+                                <div class="spec-item">
+                                    <span class="spec-icon"><i class="fas fa-users"></i></span>
+                                    <span class="spec-text">Passengers: <strong>Up to 3</strong></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-icon"><i class="fas fa-suitcase"></i></span>
+                                    <span class="spec-text">Luggage: <strong>Up to 2–3 large suitcases</strong></span>
+                                </div>
+                            </div>
+                            <div class="fleet-best-for">
+                                <strong>Best For:</strong> VIP arrivals, corporate events, special occasions
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- First Class SUV -->
+                    <div class="fleet-card">
+                        <div class="fleet-card-header">
+                            <h3 class="fleet-title">Premium SUV</h3>
+                            <p class="fleet-subtitle">Spacious Travel. Uncompromising Luxury.</p>
+                        </div>
+                        <div class="fleet-card-img-container">
+                            <img src="img/premium suv.png" alt="Luxury black SUV with premium features" class="fleet-card-img">
+                        </div>
+                        <div class="fleet-content">
+                            <p class="fleet-description">More room, more presence — ideal for families, corporate groups, and multi-stop itineraries without sacrificing comfort.</p>
+                            <div class="fleet-specs">
+                                <div class="spec-item">
+                                    <span class="spec-icon"><i class="fas fa-users"></i></span>
+                                    <span class="spec-text">Passengers: <strong>Up to 6</strong></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-icon"><i class="fas fa-suitcase"></i></span>
+                                    <span class="spec-text">Luggage: <strong>Up to 5–6 large suitcases</strong></span>
+                                </div>
+                            </div>
+                            <div class="fleet-best-for">
+                                <strong>Best For:</strong> Group travel, airport transfers, roadshows
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- First Class Sprinter -->
+                    <div class="fleet-card">
+                        <div class="fleet-card-header">
+                            <h3 class="fleet-title">First Class Sprinter</h3>
+                            <p class="fleet-subtitle">Luxury Travel, Together.</p>
+                        </div>
+                        <div class="fleet-card-img-container">
+                            <img src="img/sprinter-removebg-preview.png" alt="Luxury sprinter van for group travel" class="fleet-card-img">
+                        </div>
+                        <div class="fleet-content">
+                            <p class="fleet-description">Our premium sprinters redefine group travel — spacious, connected, and designed for events, productions, and large-scale itineraries.</p>
+                            <div class="fleet-specs">
+                                <div class="spec-item">
+                                    <span class="spec-icon"><i class="fas fa-users"></i></span>
+                                    <span class="spec-text">Passengers: <strong>Up to 14</strong></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-icon"><i class="fas fa-suitcase"></i></span>
+                                    <span class="spec-text">Luggage: <strong>Up to 10–12 suitcases</strong></span>
+                                </div>
+                            </div>
+                            <div class="fleet-best-for">
+                                <strong>Best For:</strong> Corporate events, production teams, weddings, group transfers
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fleet Features Section -->
+        <section class="features-section">
+            <div class="features-container">
+                <div class="features-heading">
+                    <h2 class="features-title">Experience the FC Rides Difference</h2>
+                </div>
+
+                <div class="features-grid">
+                    <div class="fleet-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                        <h3>Comfort Profile™</h3>
+                        <p>Your preferred climate, music, and seat settings, remembered automatically</p>
+                    </div>
+                    <div class="fleet-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI-Optimized Dispatch & ETA</h3>
+                        <p>Always on time, always reliable</p>
+                    </div>
+                    <div class="fleet-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-bottle-water"></i>
+                        </div>
+                        <h3>Bottled Water & Device Charging</h3>
+                        <p>Included in every ride</p>
+                    </div>
+                    <div class="fleet-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Premium Security</h3>
+                        <p>Professional chauffeurs with highest safety standards</p>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="cta-section">
+                    <a href="booking-passenger.html" class="btn-primary">Book First Class</a>
+                    <p class="contact-text">or contact <a href="mailto:book@fcrides.com">book@fcrides.com</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <!-- Top Row -->
+            <div class="footer-top-row">
+                <!-- Company Info Section -->
+                <div class="footer-section">
+                    <h3>FC Rides</h3>
+                    <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: var(--spacing-lg);">
+                        Premium transportation reimagined with AI-driven precision, personalized comfort, and unmatched professionalism.
+                    </p>
+                    <div class="footer-social">
+                        <div class="social-icons">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Section -->
+                <div class="footer-section">
+                    <div class="newsletter-section">
+                        <h3 class="newsletter-title">Stay Updated</h3>
+                        <p style="color: var(--muted); font-size: 0.85rem; margin-bottom: var(--spacing-md); text-align: center;">
+                            Get the latest news and exclusive offers
+                        </p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email address" aria-label="Email address">
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="footer-bottom-row">
+                <!-- Navigation Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="Chauffeur-Alliance.html">Chauffeur Alliance</a></li>
+                        <li><a href="cooperate.html">Cooperate Travels</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Cities -->
+                <div class="footer-section">
+                    <h3>Popular Routes</h3>
+                    <div class="cities-grid">
+                        <div class="city-column">
+                            <a href="#">New York</a>
+                            <a href="#">Los Angeles</a>
+                            <a href="#">Miami</a>
+                        </div>
+                        <div class="city-column">
+                            <a href="#">San Francisco</a>
+                            <a href="#">Las Vegas</a>
+                            <a href="#">Seattle</a>
+                        </div>
+                        <div class="city-column">
+                            <a href="#">Dallas</a>
+                            <a href="#">Honolulu</a>
+                            <a href="#">Chicago</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2023 FC Rides. All rights reserved.</p>
+                <div style="margin-top: var(--spacing-sm);">
+                    <a href="#" style="color: var(--muted); text-decoration: none; margin: 0 var(--spacing-sm);">Terms & Conditions</a>
+                    <a href="#" style="color: var(--muted); text-decoration: none; margin: 0 var(--spacing-sm);">Privacy Policy</a>
+                    <a href="#" style="color: var(--muted); text-decoration: none; margin: 0 var(--spacing-sm);">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Change Book Now button href based on screen size
+        function updateBookNowHref() {
+            const navCtas = document.querySelectorAll('.nav-cta, .mobile-cta');
+            navCtas.forEach(function(cta) {
+                if (window.innerWidth <= 1020) {
+                    cta.href = 'booking-extra.html';
+                } else {
+                    cta.href = 'booking-extra.html';
+                }
+            });
+        }
+
+        // Update on page load
+        updateBookNowHref();
+
+        // Update on window resize
+        window.addEventListener('resize', updateBookNowHref);
+    </script>
+</body>
+</html>

@@ -1,0 +1,2858 @@
+/* Responsive Styles */
+
+/* Prevent overflow on all devices */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Modern Feature Cards Responsive Fixes
+   ========================================================================== */
+
+/* Large devices (992px and up) - Desktop layout */
+@media (min-width: 992px) {
+    .features-grid-modern {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+        gap: 2rem !important;
+        padding: 0 20px !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .feature-card-modern {
+        width: 100% !important;
+        max-width: 350px !important; /* Set a consistent max-width for cards */
+        margin: 0 auto !important; /* Center the cards */
+        box-sizing: border-box !important;
+    }
+    
+    .fleet-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: var(--spacing-2xl) !important;
+        padding: 0 var(--spacing-xl) !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Medium devices (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .features-grid-modern {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+        padding: 0 20px !important;
+        max-width: 720px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .feature-card-modern {
+        width: 100% !important;
+        max-width: 300px !important; /* Set a consistent max-width for cards */
+        margin: 0 auto !important; /* Center the cards */
+        box-sizing: border-box !important;
+    }
+    
+    .fleet-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: var(--spacing-xl) !important;
+        padding: 0 var(--spacing-lg) !important;
+        max-width: 800px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .cardFleet {
+        margin: 0 !important;
+    }
+    
+    .feature-title-modern {
+        font-size: 1rem !important;
+        text-align: center !important;
+    }
+    
+    .feature-text-modern {
+        font-size: 0.85rem !important;
+        text-align: center !important;
+    }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+   
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .features-grid-modern {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+        padding: 0 var(--spacing-md) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .feature-card-modern {
+        width: 100% !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+        padding: var(--spacing-xl) var(--spacing-lg) !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+
+    .feature-icon-modern {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-bottom: 1rem !important;
+        width: 100% !important;
+    }
+
+    .feature-title-modern {
+        text-align: center !important;
+        font-size: 1.1rem !important;
+    }
+
+    .feature-text-modern {
+        text-align: center !important;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        overflow-x: hidden;
+    }
+
+    .icon-bg {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto !important;
+        width: 64px !important;
+        height: 64px !important;
+    }
+
+    .feature-icon-modern svg {
+        width: 28px !important;
+        height: 28px !important;
+        overflow-x: hidden;
+    }
+
+    /* Hero section adjustments */
+    .hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: var(--spacing-lg) !important;
+        padding: 0 var(--spacing-md) !important;
+        text-align: center !important;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    .hero-content {
+        padding: 0 var(--spacing-sm) !important;
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: 1.98rem !important;
+        line-height: 1.3 !important;
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin-top: var(--spacing-xl);
+    }
+
+    .hero-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    /* Fleet section adjustments */
+    .fleet-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-lg) !important;
+        padding: 0 var(--spacing-md) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 auto !important;
+    }
+
+    .cardFleet {
+        width: 100% !important;
+        max-width: 420px !important;
+        margin: 0 auto !important;
+    }
+
+    .fleet-container {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    /* How It Works section adjustments */
+    .steps-list,
+    .step-item,
+    .step-content,
+    .ai-dashboard-preview {
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) and (min-width: 769px) {
+    .nav-menu {
+        display: none !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: rgba(0, 0, 0, 0.95) !important;
+        padding: 1rem 0 !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .nav-menu.active {
+        display: flex !important;
+    }
+
+    .burger-icon {
+        display: flex !important;
+    }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        
+        flex-direction: column;
+        gap: var(--spacing-xl);
+        padding: 0 var(--spacing-lg);
+        text-align: left;
+    }
+    
+    .hero-content {
+        text-align: left;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .hero-title {
+        
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-subtitle {
+        
+        margin-left: 0px;
+        margin-right: auto;
+    }
+    
+    .metrics {
+      
+        margin-left: 0;
+    }
+    
+    .booking-form {
+        margin-top: var(--spacing-xl);
+        max-width: 100%;
+        width: 100%;
+        margin-left: 30%;
+    }
+    
+    /* Why FC Rides section adjustments */
+    #why-us .row {
+        flex-direction: column; /* Stack vertically on small screens */
+        gap: var(--spacing-xl);
+    }
+    
+    #why-us .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .why-content {
+        padding-right: 0;
+        text-align: center;
+    }
+    
+    .why-features {
+        padding-left: 0;
+    }
+    
+    .feature-highlight {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .feature-icon-small {
+        margin: 0 auto var(--spacing-md) auto;
+    }
+    
+    /* How It Works section adjustments */
+    #how-it-works .row {
+        flex-direction: column; /* Stack vertically on small screens */
+        gap: var(--spacing-xl);
+    }
+    
+    #how-it-works .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .nav {
+        padding: var(--spacing-md) var(--spacing-lg) !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+    
+    .logo {
+        font-size: 1.5rem !important;
+    }
+    
+    .logo-subtitle {
+        font-size: 0.7rem !important;
+    }
+    
+    .nav-cta {
+        padding: var(--spacing-sm) var(--spacing-md) !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .nav-cta span {
+        display: none !important;
+    }
+    
+    .nav-cta i {
+        margin: 0 !important;
+    }
+    
+    .mobile-header-active {
+        width: 280px !important;
+        left: -280px !important;
+    }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 var(--spacing-md);
+        gap: var(--spacing-lg);
+        text-align: center;
+        align-items: center;
+    }
+    
+    .hero-content {
+        padding: 0 var(--spacing-sm);
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        margin-top: 70px;
+        text-align: center;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+    
+    .metrics {
+        justify-content: center;
+        margin-left: 0;
+        gap: var(--spacing-md);
+    }
+    
+    .metric-btn {
+        min-width: 140px;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .metric-number {
+        font-size: 1rem;
+    }
+    
+    .metric-label {
+        font-size: 0.6rem;
+    }
+    
+    .booking-form {
+        margin-left: 20%;
+        padding: var(--spacing-sm);
+        margin-top: var(--spacing-md);
+        width: 60%;
+    }
+    
+    /* Why FC Rides section adjustments */
+    #why-us .row {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+        align-items: center;
+    }
+    
+    #why-us .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .why-content {
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .why-features {
+        padding-left: 0;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .feature-highlight {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 500px;
+    }
+    
+    .feature-icon-small {
+        margin: 0 auto var(--spacing-md) auto;
+    }
+    
+    .feature-content {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .feature-title-small {
+        text-align: center;
+    }
+    
+    .feature-desc-small {
+        text-align: center;
+    }
+    
+    /* How It Works section adjustments */
+    #how-it-works .row {
+        flex-direction: column; /* Stack vertically on small screens */
+        gap: var(--spacing-xl);
+    }
+    
+    #how-it-works .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .steps-list {
+        padding: 0;
+    }
+    
+    .step-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin: 0 auto 1rem auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav {
+        padding: var(--spacing-sm) var(--spacing-md) !important;
+        gap: var(--spacing-md) !important;
+        overflow-x: hidden;
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+    
+    .logo {
+        font-size: 1.3rem !important;
+        overflow-x: hidden;
+    }
+    
+    .logo-subtitle {
+        display: none !important;
+    }
+    
+    .nav-cta {
+        padding: var(--spacing-xs) var(--spacing-sm) !important;
+        font-size: 0.75rem !important;
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .burger-icon {
+        width: 36px !important;
+        height: 36px !important;
+        overflow-x: hidden;
+        margin-left: 60px !important;
+    }
+    
+    .burger-line {
+        width: 20px !important;
+        overflow-x: hidden;
+    }
+    
+    .mobile-header-active {
+        width: 100% !important;
+        left: -100% !important;
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 var(--spacing-sm);
+        gap: var(--spacing-md);
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .hero-content {
+        order: 1;
+        padding: 0 var(--spacing-xs);
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        max-width: 100vw;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+        margin-top: 60px;
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    
+    .metrics {
+        justify-content: center;
+        margin-left: 0;
+        gap: var(--spacing-sm);
+    }
+    
+    .metric-btn {
+        min-width: 120px;
+        padding: var(--spacing-xs);
+    }
+    
+    .metric-number {
+        font-size: 0.9rem;
+    }
+    
+    .metric-label {
+        font-size: 0.55rem;
+    }
+    
+    .booking-form {
+        order: 2;
+        padding: var(--spacing-xs);
+        margin-top: var(--spacing-xl);
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    .fleet-grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-lg) !important;
+        padding: 0 var(--spacing-md) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 auto !important;
+    }
+    
+    .cardFleet {
+        width: 100% !important;
+        margin: 0 auto var(--spacing-lg) auto !important;
+        box-sizing: border-box !important;
+        max-width: 420px !important;
+    }
+    
+    .fleet-container {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+/* Specific fix for 570px breakpoint */
+@media (max-width: 570px) {
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        max-width: 100vw;
+        margin: 0 auto;
+        padding: 0 var(--spacing-sm);
+        text-align: center;
+        align-items: center;
+    }
+    
+    .hero-content {
+        order: 1;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        max-width: 100vw;
+        padding: 0;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .hero-title {
+        text-align: center;
+    }
+    
+    .hero-subtitle {
+        text-align: center;
+    }
+    
+    .metrics {
+        justify-content: center;
+        margin-left: 0;
+        gap: var(--spacing-xs);
+    }
+    
+    .metric-btn {
+        min-width: 100px;
+        padding: var(--spacing-xs);
+    }
+    
+    .metric-number {
+        font-size: 0.85rem;
+    }
+    
+    .metric-label {
+        font-size: 0.5rem;
+    }
+    
+    .booking-form {
+        order: 2;
+        margin-top: var(--spacing-xl);
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    /* Fleet grid stacking on small devices */
+    .fleet-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        max-width: 100vw;
+        margin: 0 auto;
+        padding: 0 var(--spacing-sm);
+    }
+    
+    @media (max-width: 375px) {
+        .fleet-grid {
+            grid-template-columns: 1fr !important;
+            gap: 0.75rem !important;
+            padding: 0 var(--spacing-xs) !important;
+        }
+    }
+    
+    .cardFleet {
+        width: 100%;
+        margin-bottom: var(--spacing-lg);
+        box-sizing: border-box;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    /* Ensure no horizontal overflow */
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .hero {
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .bg-our-fleet {
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .box-slide-fleet {
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .fleet-container {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+/* Specific breakpoint for 540px and below - How It Works section improvements */
+@media (max-width: 540px) {
+    .steps-list {
+        padding-right: 0;
+        padding-left: 0;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+    
+    .step-item {
+        padding: 1rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin-bottom: var(--spacing-lg);
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .step-item::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        margin: 0 auto 1rem auto;
+    }
+    
+    .dashboard-metrics {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .dashboard-main {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .bg-how-it-works .row {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .bg-how-it-works .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .ai-dashboard-preview {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding: 1rem;
+        margin-top: var(--spacing-xl);
+    }
+    
+    .dashboard-header {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    
+    .dashboard-logo {
+        align-items: center;
+    }
+    
+    .dashboard-time {
+        text-align: center;
+    }
+    
+    /* Ensure proper spacing between sections */
+    .mb-50 {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    /* Why FC Rides section adjustments */
+    #why-us .row {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+        align-items: center;
+    }
+    
+    #why-us .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .why-content {
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .why-features {
+        padding-left: 0;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .feature-highlight {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 500px;
+    }
+    
+    .feature-icon-small {
+        margin: 0 auto var(--spacing-md) auto;
+    }
+    
+    .feature-content {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .feature-title-small {
+        text-align: center;
+    }
+    
+    .feature-desc-small {
+        text-align: center;
+    }
+    
+    /* How It Works section adjustments */
+    #how-it-works .row {
+        flex-direction: column; /* Stack vertically on small screens */
+        gap: var(--spacing-xl);
+    }
+    
+    #how-it-works .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .steps-list {
+        padding: 0;
+    }
+    
+    .step-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin: 0 auto 1rem auto;
+    }
+    
+    .why-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-item {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-sub {
+        padding: 0 var(--spacing-md);
+        box-sizing: border-box;
+        max-width: 100vw;
+        overflow-x: hidden;
+        margin: 0 auto;
+    }
+    
+    .box-slide-fleet {
+        margin-top: var(--spacing-lg) !important;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .fleet-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 var(--spacing-md) !important;
+        gap: var(--spacing-lg); /* Reduced gap for smaller screens */
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        margin: 0 auto;
+    }
+    
+    .cardFleet {
+        margin-bottom: var(--spacing-lg);
+        min-height: auto !important;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    .fleet-container {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    /* Remove navbar spacing */
+    .header {
+        padding: 5px 0 0 0 !important; /* Keep top padding only */
+        min-height: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .nav {
+        padding: 5px 0 0 0 !important; /* Keep top padding only */
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+}
+
+@media (max-width: 660px) {
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-xl) 0;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+    
+    /* Fix for blue space on right side - ensure all hero elements are contained */
+    .hero * {
+        box-sizing: border-box;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        padding: 0 var(--spacing-md);
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+    
+    .hero-content {
+        order: 1;
+        align-items: center;
+        text-align: center;
+        padding: 0 var(--spacing-sm);
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    .booking-form {
+        order: 2;
+        width: 70%;
+        max-width: 400px;
+        margin: var(--spacing-xl) auto 0;
+        padding: var(--spacing-lg);
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-primary);
+        height: fit-content;
+        min-height: 504px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    .hero-title {
+        margin-top: 20px;
+        font-size: 2.5rem;
+        text-align: center;
+        width: 100%;
+        word-wrap: break-word;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        line-height: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        text-align: center;
+        max-width: 100%;
+        width: 100%;
+        word-wrap: break-word;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        line-height: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: var(--spacing-sm);
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+        min-width: 200px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+    .metrics {
+        justify-content: center;
+        width: 100%;
+        gap: var(--spacing-sm);
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+    .metric-btn {
+        flex: 1;
+        min-width: 100px;
+        max-width: 120px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+    .form-tabs {
+        display: flex;
+        gap: var(--spacing-sm);
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+    .tab {
+        flex: 1;
+        text-align: center;
+        padding: var(--spacing-sm);
+        font-size: 0.9rem;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+    .input-row {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+    .input-group {
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+    /* Ensure mobile menu is properly positioned */
+    .mobile-header-active {
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        transition: left 0.3s ease !important;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+    .mobile-header-active.sidebar-visible {
+        left: 0 !important;
+    }
+    
+    /* Fleet grid stacking on small devices */
+    .fleet-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        max-width: 100vw;
+        margin: 0 auto;
+        padding: 0 var(--spacing-sm);
+    }
+    
+    @media (max-width: 375px) {
+        .fleet-grid {
+            grid-template-columns: 1fr !important;
+            gap: 0.75rem !important;
+            padding: 0 var(--spacing-xs) !important;
+        }
+    }
+    
+    .cardFleet {
+        width: 100%;
+        margin-bottom: var(--spacing-lg);
+        box-sizing: border-box;
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    /* Ensure fleet section doesn0t cause overflow */
+    .box-slide-fleet {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .bg-our-fleet {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .fleet-container {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .steps-list {
+        padding-right: 0;
+        padding-left: 0;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+    
+    .step-item {
+        padding: 1rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .step-item::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        margin: 0 auto 1rem auto;
+    }
+    
+    .dashboard-metrics {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .dashboard-main {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .bg-how-it-works .row {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .bg-how-it-works .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .ai-dashboard-preview {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .steps-list {
+        padding: 0;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .step-item {
+        padding: 1rem;
+        gap: 1rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .step-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .step-description {
+        font-size: 1rem;
+    }
+    
+    .ai-dashboard-preview {
+        padding: 1rem;
+        min-height: 400px;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .dashboard-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .dashboard-time {
+        font-size: 0.8rem;
+    }
+    
+    .metric-card {
+        padding: 1rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .dashboard-main {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .map-placeholder, .chart-area {
+        padding: 1rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .bg-how-it-works {
+        padding: var(--spacing-2xl) 0;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .bg-how-it-works .container-sub {
+        padding: 0 var(--spacing-lg);
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .ai-dashboard-preview {
+        padding: 0.75rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .step-item {
+        padding: 0.75rem;
+        gap: 0.75rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+        margin: 0 auto 0.75rem auto;
+    }
+    
+    .step-title {
+        font-size: 1.2rem;
+    }
+    
+    .step-description {
+        font-size: 0.95rem;
+    }
+    
+    .metric-value {
+        font-size: 1.2rem;
+    }
+    
+    .activity-item {
+        gap: 0.75rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .activity-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .steps-list {
+        padding-left: 0;
+        margin-bottom: var(--spacing-lg);
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .steps-list li {
+        padding-left: 0;
+        margin-bottom: var(--spacing-lg);
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .steps-list li h4 {
+        font-size: 1.1rem;
+        color: var(--ink);
+        margin-bottom: var(--spacing-xs);
+        transition: color 0.3s ease;
+    }
+
+    .steps-list li p {
+        font-size: 0.95rem;
+        color: var(--muted);
+        line-height: 1.5;
+        opacity: 0.9;
+    }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 var(--spacing-xs);
+        gap: var(--spacing-sm);
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .hero-content {
+        padding: 0;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+        margin-top: 50px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .booking-form {
+        padding: var(--spacing-xs);
+        margin-top: var(--spacing-sm);
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    /* Why FC Rides section adjustments */
+    #why-us .row {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+        align-items: center;
+    }
+    
+    #why-us .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .why-content {
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .why-features {
+        padding-left: 0;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .feature-highlight {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-md);
+        align-items: center;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .feature-icon-small {
+        margin: 0 auto var(--spacing-md) auto;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .feature-content {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .feature-title-small {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .feature-desc-small {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    /* How It Works section adjustments */
+    #how-it-works .row {
+        flex-direction: column; /* Stack vertically on small screens */
+        gap: var(--spacing-xl);
+    }
+    
+    #how-it-works .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .steps-list {
+        padding: 0;
+    }
+    
+    .step-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.75rem;
+    }
+    
+    .step-number {
+        margin: 0 auto 0.75rem auto;
+    }
+    
+    .step-title {
+        font-size: 1.1rem;
+    }
+    
+    .step-description {
+        font-size: 0.9rem;
+    }
+    
+    .why-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-lg);
+    }
+    
+    .stat-item {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .nav {
+        padding: var(--spacing-md) var(--spacing-lg);
+        gap: var(--spacing-md);
+    }
+    
+    .nav-menu {
+        gap: var(--spacing-md);
+    }
+    
+    .logo {
+        font-size: 1.6rem;
+    }
+    
+    .nav-cta span {
+        display: none;
+    }
+    
+    .nav-cta i {
+        font-size: 1.2rem;
+    }
+    
+    /* Ensure navbar remains accessible when shrunk */
+    .header {
+        padding: 5px 0 0 0; /* Keep top padding only */
+        min-height: 50px;
+    }
+    
+    .nav {
+        min-height: 30px;
+        padding: 5px var(--spacing-lg) 0 var(--spacing-lg); /* Keep top padding only */
+    }
+    
+    /* Fix for navbar alignment at exactly 1024px */
+    .nav-brand {
+        min-width: 100px !important;
+    }
+    
+    .nav-actions {
+        min-width: 100px !important;
+    }
+    
+    .nav-menu {
+        justify-content: center !important;
+        flex: 1 !important;
+    }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 var(--spacing-md);
+    }
+    .metric-btn{
+        min-width: 144px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: var(--spacing-md) var(--spacing-sm);
+        border-bottom: none !important;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .burger-icon {
+        display: flex;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
+    }
+    
+    .logo-subtitle {
+        font-size: 0.6rem;
+    }
+    
+    .nav-cta {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    /* Ensure navbar remains accessible when shrunk */
+    .header {
+        padding: 5px 0 0 0; /* Keep top padding only */
+        min-height: 0;
+        margin: 0;
+    }
+    
+    .nav {
+        padding: 5px var(--spacing-lg) 0 var(--spacing-lg); /* Keep top padding only */
+    }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .hero-title {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        padding: var(--spacing-sm) var(--spacing-sm);
+        border-bottom: none !important;
+    }
+    
+    .mobile-header-active {
+        width: 280px;
+        left: -280px;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .nav-cta {
+        padding: var(--spacing-sm);
+    }
+    
+    .nav-cta i {
+        font-size: 1rem;
+    }
+    
+    /* Ensure navbar remains accessible when shrunk */
+    .header {
+        padding: 5px 0 0 0; /* Keep top padding only */
+        min-height: 0;
+        margin: 0;
+    }
+    
+    .nav {
+        padding: 5px var(--spacing-md) 0 var(--spacing-md); /* Keep top padding only */
+    }
+    
+    .nav-link {
+        padding: 5px var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+    
+    .nav-cta {
+        padding: 5px var(--spacing-sm);
+        font-size: 0.8rem;
+    }
+    
+    /* Hero section adjustments */
+    .hero-container {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .hero-title {
+        margin-top: 50px;
+        font-size: 1.4rem;
+    }
+    
+    /* Why FC Rides section adjustments */
+    #why-us .row {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+        align-items: center;
+        margin-left: 5px;
+    }
+    
+    #why-us .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .why-content {
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .why-features {
+        padding-left: 0;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .feature-highlight {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-md);
+        align-items: center;
+        max-width: 500px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+} 
+    
+    .buttons-container { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 10px; 
+        width: 100%;
+        margin-bottom: var(--spacing-lg);
+        box-sizing: border-box;
+    }
+    
+    .buttons-container .btn-primary,
+    .buttons-container .btn-secondary {
+        width: 100%;
+        max-width: none;
+        min-width: auto;
+        box-sizing: border-box;
+    }
+   
+    /* .hero-buttons {
+        display: none;
+    } */
+
+@media (max-width: 992px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        padding: 0 var(--spacing-xl) var(--spacing-xl);
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+    
+    /* Ensure mobile menu is properly positioned */
+    .mobile-header-active {
+        position: fixed !important;
+        top: 0 !important;
+        left: -320px !important;
+        width: 320px !important;
+        height: 100vh !important;
+        transition: left 0.3s ease !important;
+        z-index: 10000 !important;
+    }
+    
+    .mobile-header-active.sidebar-visible {
+        left: 0 !important;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+    .hero-content {
+        text-align: left;
+        align-items: flex-start;
+        width: 100%;
+        /* Removed problematic background gradient */
+    }
+}
+
+@media (max-width: 660px) {
+    .hero {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        padding: 0 var(--spacing-md);
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .hero-content {
+        align-items: center;
+        text-align: center;
+        padding: 0 var(--spacing-sm);
+        width: 100%;
+    }
+    
+    .hero-title {
+        margin-top: 20px;
+        font-size: 2.5rem;
+        text-align: center;
+        width: 100%;
+        word-wrap: break-word;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        text-align: center;
+        max-width: 100%;
+        width: 100%;
+        word-wrap: break-word;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: var(--spacing-sm);
+    }
+    
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+        min-width: 200px;
+    }
+    
+    .metrics {
+        justify-content: center;
+        width: 100%;
+        gap: var(--spacing-sm);
+    }
+    
+    .metric-btn {
+        flex: 1;
+        min-width: 100px;
+        max-width: 120px;
+    }
+    
+    .booking-form {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: var(--spacing-lg);
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-primary);
+        height: fit-content;
+        min-height: 136px !important; /* Reduced height by 50% total (30% + additional 20%) */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 40px; /* Reduced margin */
+    }
+    
+    .form-tabs {
+        display: flex;
+        gap: var(--spacing-sm);
+    }
+    
+    .tab {
+        flex: 1;
+        text-align: center;
+        padding: var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+    
+    .input-row {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .input-group {
+        width: 100%;
+    }
+    
+    /* Ensure mobile menu is properly positioned */
+    .mobile-header-active {
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        transition: left 0.3s ease !important;
+    }
+    
+    .mobile-header-active.sidebar-visible {
+        left: 0 !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .hero-container {
+        padding: 0 var(--spacing-sm);
+        gap: var(--spacing-lg);
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .hero-content {
+        order: 1; /* Content on top */
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        padding: 0;
+        align-items: center;
+        text-align: center;
+        margin-top: 5px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: var(--spacing-md);
+        line-height: 1.3;
+        word-wrap: break-word;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: var(--spacing-lg);
+        line-height: 1.5;
+        word-wrap: break-word;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .metrics {
+        justify-content: center;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+        flex-wrap: wrap;
+        box-sizing: border-box;
+    }
+    
+    .metric-btn {
+        flex: 0 0 auto;
+        min-width: auto;
+        max-width: none;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: var(--radius-sm);
+        box-sizing: border-box;
+    }
+    
+    .metric-number {
+        font-size: 1.1rem;
+    }
+    
+    .metric-label {
+        font-size: 0.65rem;
+    }
+    
+    .booking-form {
+        margin-bottom: 15px;
+        order: 2; /* Form on bottom */
+        margin-top: var(--spacing-lg); /* Reduced margin */
+        width: 100%;
+        max-width: 80% !important;
+        box-sizing: border-box;
+        padding: var(--spacing-md);
+        max-width: none;
+        width: 90%;
+        min-height: 210px; /* Reduced height by 30% */
+        align-self: flex-start; /* Align with heading and buttons */
+    }
+    
+    /* Ensure no horizontal overflow */
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    
+    .hero-buttons {
+        align-items: stretch;
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-lg);
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        max-width: none;
+        min-width: auto;
+        width: 100%;
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+    
+    .form-tabs {
+        margin-bottom: var(--spacing-md);
+        box-sizing: border-box;
+    }
+    
+    .tab {
+        padding: var(--spacing-sm);
+        font-size: 0.9rem;
+        box-sizing: border-box;
+    }
+    
+    .input-group {
+        margin-bottom: var(--spacing-sm);
+        box-sizing: border-box;
+    }
+    
+    .form-label {
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-xs);
+        box-sizing: border-box;
+    }
+    
+    .form-input {
+        padding: var(--spacing-sm);
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+    
+    .request-btn {
+        padding: var(--spacing-md);
+        font-size: 1rem;
+        margin-top: var(--spacing-sm);
+        box-sizing: border-box;
+        width: 100%;
+    }
+    
+    .form-note {
+        font-size: 0.8rem;
+        margin-top: var(--spacing-sm);
+        box-sizing: border-box;
+    }
+    
+    /* Ensure mobile menu is properly positioned */
+    .mobile-header-active {
+        left: -100% !important;
+        width: 100% !important;
+        max-width: 280px !important;
+        box-sizing: border-box;
+    }
+    
+    .mobile-header-active.sidebar-visible {
+        left: 0 !important;
+    }
+    
+    /* Fleet cards stacking on small devices */
+    .fleet-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 var(--spacing-sm);
+    }
+    
+    @media (max-width: 375px) {
+        .fleet-grid {
+            grid-template-columns: 1fr !important;
+            gap: 0.75rem !important;
+            padding: 0 var(--spacing-xs) !important;
+        }
+    }
+    
+    .cardFleet {
+        width: 100%;
+        margin-bottom: var(--spacing-lg);
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    /* Ensure fleet section doesn0t cause overflow */
+    .box-slide-fleet {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+    
+    .bg-our-fleet {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 425px) {
+    .hero-container {
+        padding: 0 var(--spacing-xs);
+        gap: var(--spacing-md);
+    }
+    
+    .hero-content {
+        padding: 0 var(--spacing-xs);
+        align-items: center;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+        text-align: center;
+        margin-bottom: var(--spacing-sm);
+        line-height: 1.2;
+        word-wrap: break-word;
+        max-width: 100%;
+        margin-top: 60px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+        text-align: center;
+        margin-bottom: var(--spacing-md);
+        line-height: 1.4;
+        word-wrap: break-word;
+        max-width: 100%;
+    }
+    
+    .metrics {
+        justify-content: center;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+        flex-wrap: wrap;
+    }
+    
+    .metric-btn {
+        flex: 0 0 auto;
+        min-width: auto;
+        max-width: none;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--radius-sm);
+    }
+    
+    .metric-number {
+        font-size: 1rem;
+    }
+    
+    .metric-label {
+        font-size: 0.6rem;
+    }
+    
+    .hero-buttons {
+        align-items: stretch;
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-md);
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        max-width: none;
+        min-width: auto;
+        width: 100%;
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.9rem;
+        box-sizing: border-box;
+    }
+    
+    .booking-form {
+        margin-bottom: 2rem;
+        padding: var(--spacing-sm);
+        max-width: none;
+        width: 80%;
+    }
+    
+    .form-tabs {
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .tab {
+        padding: var(--spacing-md);
+        font-size: 0.8rem;
+    }
+    
+    .input-group {
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .form-label {
+        font-size: 0.85rem;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .form-input {
+        padding: var(--spacing-md);
+        font-size: 0.9rem;
+    }
+    
+    .request-btn {
+        padding: var(--spacing-sm);
+        font-size: 0.9rem;
+        margin-top: var(--spacing-xs);
+        box-sizing: border-box;
+        width: 100%;
+    }
+    
+    .form-note {
+        font-size: 0.75rem;
+        margin-top: var(--spacing-xs);
+    }
+}
+
+/* Tablet and desktop layout for hero section */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero-container {
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        gap: var(--spacing-xl);
+        padding: var(--spacing-3xl) var(--spacing-xl);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .hero-content {
+        order: 1;
+        flex: 1;
+        align-items: flex-start;
+        text-align: left;
+        padding-right: var(--spacing-xl);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .booking-form {
+        margin-left: 0px !important;
+        order: 2;
+        flex: 0.6; /* Reduced width by 40% */
+        margin-top: 0; /* Removed margin to prevent overlap with navbar */
+        
+        min-height: 170px !important; /* Reduced height by 30% */
+        align-self: flex-start; /* Align with heading and buttons */
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-primary);
+        box-sizing: border-box;
+    }
+    
+    .hero-title {
+        text-align: left;
+        margin-right: auto;
+        margin-top: auto !important;
+        font-size: 2.77em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .hero-subtitle {
+        margin-top: 0px !important;
+        text-align: left;
+        margin-right: auto;
+        font-size: 1.0rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .metrics {
+        justify-content: flex-start;
+        margin-right: auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .metric-btn{
+        min-width: 110px !important;
+    }
+    
+    .hero-buttons {
+        justify-content: flex-start;
+        margin-right: auto;
+        flex-direction: row; /* Ensure row layout */
+        display: flex; /* Ensure flex display */
+        gap: var(--spacing-md); /* Add spacing between buttons */
+        width: auto; /* Allow natural width */
+        box-sizing: border-box;
+    }
+    
+    /* Why FC Rides section - side-by-side layout */
+    #why-us .row {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-3xl);
+    }
+    
+    #why-us .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 43%;
+        padding: 0 15px;
+    }
+    
+    /* How It Works section - side-by-side layout */
+    #how-it-works .row {
+        margin-left: 60px;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-3xl);
+    }
+    
+    #how-it-works .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 40%;
+        padding: 0 15px;
+    }
+    
+    .bg-how-it-works .row {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .bg-how-it-works .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Exactly 1024px specific layout */
+@media (width: 1024px) {
+    .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        gap: var(--spacing-3xl);
+        padding: 60px var(--spacing-md); /* Reduced top margin as per user preference */
+    }
+    
+    .hero-content {
+        order: 1;
+        flex: 1;
+        align-items: flex-start;
+        text-align: left;
+        padding-right: var(--spacing-2xl);
+    }
+    
+    .booking-form {
+        order: 2;
+        flex: 0.6; /* Reduced width by 40% */
+        margin-top: 0; /* Removed margin to prevent overlap with navbar */
+        padding: var(--spacing-2xl);
+        min-height: 210px; /* Reduced height by 30% */
+        align-self: flex-start; /* Align with heading and buttons */
+    }
+    
+    .hero-title {
+        text-align: left;
+        margin: auto;
+    }
+    
+    .hero-subtitle {
+        text-align: left;
+        margin-right: auto;
+    }
+    
+    .metrics {
+        justify-content: flex-start;
+        margin-right: auto;
+    }
+    
+    
+    
+    /* Buttons in hero section displayed in horizontal row with reduced top margin */
+    .hero-buttons {
+        justify-content: flex-start;
+        margin-right: auto;
+        flex-direction: row;
+        gap: var(--spacing-md);
+        display: flex;
+        width: auto;
+        margin-top: 60px; /* Reduced top margin as per user preference */
+    }
+    
+    /* Why FC Rides section - side-by-side layout */
+    #why-us .row {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-3xl);
+    }
+    
+    #why-us .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 15px;
+    }
+    
+    /* How It Works section - side-by-side layout */
+    #how-it-works .row {
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+    }
+    
+    #how-it-works .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 15px;
+    }
+    
+    .bg-how-it-works .row {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .bg-how-it-works .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* 1024px and above layout for hero section and sections */
+@media (min-width: 1025px) and (max-width: 1439px) {
+    .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        gap: var(--spacing-3xl);
+        padding: var(--spacing-3xl) var(--spacing-md);
+    }
+    
+    .hero-content {
+        order: 1;
+        flex: 1;
+        align-items: flex-start;
+        text-align: left;
+        padding-right: var(--spacing-2xl);
+    }
+    
+    .booking-form {
+        order: 2;
+        flex: 0.6; /* Reduced width by 40% */
+        margin-top: 0; /* Removed margin to prevent overlap with navbar */
+        padding: var(--spacing-2xl);
+        min-height: 210px; /* Reduced height by 30% */
+        align-self: flex-start; /* Align with heading and buttons */
+    }
+    
+    .hero-title {
+        
+        text-align: left;
+        margin: auto;
+    }
+    
+    .hero-subtitle {
+        text-align: left;
+        margin-right: auto;
+    }
+    
+    .metrics {
+        justify-content: flex-start;
+        margin-right: auto;
+    }
+    .metric-btn {
+        min-width: 197px !important;
+    }
+    
+    .hero-buttons {
+        justify-content: flex-start;
+        margin-right: auto;
+        flex-direction: row;
+        gap: var(--spacing-md);
+        display: flex;
+        width: auto;
+    }
+    
+    /* Why FC Rides section - side-by-side layout */
+    #why-us .row {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-3xl);
+    }
+    
+    #why-us .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 15px;
+    }
+    
+    /* How It Works section - side-by-side layout */
+    #how-it-works .row {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-3xl);
+    }
+    
+    #how-it-works .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 15px;
+    }
+    
+    .bg-how-it-works .row {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .bg-how-it-works .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* 1440px specific optimizations for hero section alignment */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        gap: var(--spacing-3xl);
+        padding: var(--spacing-3xl) var(--spacing-3xl);
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .hero-content {
+        order: 1;
+        flex: 1;
+        align-items: flex-start;
+        text-align: left;
+        padding-right: var(--spacing-3xl);
+    }
+    
+    .booking-form {
+        order: 2;
+        flex: 0.6; /* Reduced width by 40% */
+        margin-top: 0; /* Removed margin to prevent overlap with navbar */
+        padding: var(--spacing-3xl);
+        min-height: 210px; /* Reduced height by 30% */
+        align-self: flex-start; /* Align with heading and buttons */
+    }
+    
+    .hero-title {
+        font-size: 2.72rem !important;
+        text-align: left;
+        margin-right: auto;
+    }
+    
+    .hero-subtitle {
+        text-align: left;
+        margin-right: auto;
+    }
+    
+    .metrics {
+        justify-content: flex-start;
+        margin-right: auto;
+    }
+    
+    .hero-buttons {
+        justify-content: flex-start;
+        margin-right: auto;
+        flex-direction: row;
+        gap: var(--spacing-md);
+        display: flex;
+        width: auto;
+    }
+}
+
+/* 1920px and above optimizations for hero section alignment */
+@media (min-width: 1920px) {
+    .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        gap: var(--spacing-3xl);
+        padding: var(--spacing-3xl) var(--spacing-3xl);
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+    
+    .hero-content {
+        order: 1;
+        flex: 1;
+        align-items: flex-start;
+        text-align: left;
+        padding-right: var(--spacing-3xl);
+    }
+    
+    .booking-form {
+        order: 2;
+        flex: 0.6; /* Reduced width by 40% */
+        margin-top: 0; /* Removed margin to prevent overlap with navbar */
+        padding: var(--spacing-3xl);
+        min-height: 210px; /* Reduced height by 30% */
+        align-self: flex-start; /* Align with heading and buttons */
+    }
+    
+    .hero-title {
+        text-align: left;
+        margin-right: auto;
+    }
+    
+    .hero-subtitle {
+        text-align: left;
+        margin-right: auto;
+    }
+    
+    .metrics {
+        justify-content: flex-start;
+        margin-right: auto;
+    }
+    
+    .hero-buttons {
+        justify-content: flex-start;
+        margin-right: auto;
+        flex-direction: row;
+        gap: var(--spacing-md);
+        display: flex;
+        width: auto;
+    }
+}
+
+@media (min-width: 1025px) {
+    .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .hero-content {
+        
+        order: 1;
+        flex: 1;
+        align-items: flex-start;
+        text-align: left;
+        padding-right: var(--spacing-2xl);
+    }
+    
+    .booking-form {
+        order: 2;
+        flex: 0.6; /* Reduced width by 40% */
+        margin-top: 0; /* Removed margin to prevent overlap with navbar */
+        padding: var(--spacing-2xl);
+        min-height: 210px; /* Reduced height by 30% */
+        align-self: flex-start; /* Align with heading and buttons */
+    }
+    
+    .hero-title {
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: var(--spacing-2xl);
+        margin-left: 0;
+        margin-right: auto;
+        font-size: 3.7rem !important;
+    }
+    
+    .hero-subtitle {
+        text-align: left;
+        margin-right: auto;
+        margin-top: 0px !important;
+        margin-bottom: 25px !important;
+        font-size: 1.299rem !important;
+    }   
+    
+    .metrics {
+        justify-content: flex-start;
+        margin-right: auto;
+    }
+    
+    .hero-buttons {
+        justify-content: flex-start;
+        margin-right: auto;
+        flex-direction: row;
+        gap: var(--spacing-md);
+        display: flex;
+        width: auto;
+    }
+    
+    /* How It Works section - side-by-side layout */
+    #how-it-works .row {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-3xl);
+    }
+    
+    #how-it-works .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 45%;
+        padding: 0 15px;
+    }
+    
+    .bg-how-it-works .row {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .bg-how-it-works .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Fixed CSS syntax error */
+/* Fixed CSS syntax error */
+@media (min-width: 1024px) {
+    /* Why FC Rides section - side-by-side layout */
+    #why-us .row {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-3xl);
+    }
+    
+    #why-us .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 43%;
+        padding: 0 15px;
+    }
+}
+
+/* Specific fix for 375px screens */
+@media (max-width: 375px) {
+    .fleet-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+        padding: 0 var(--spacing-xs) !important;
+    }
+}
+
+/* End of file */

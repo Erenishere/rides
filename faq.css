@@ -1,0 +1,640 @@
+:root {
+    /* Core Colors */
+    --bg: #070707;
+    /* deep night */
+    --ink: #ffffff;
+    /* pure white text */
+    --muted: #ffffff;
+    /* white secondary text */
+    --acc:#2596be;
+    /* glacier blue */
+
+    /* Extended Color Palette */
+    --acc-dark: #2596be;
+    /* much darker glacier blue */
+    --acc-darker: #2596be;
+    /* very dark glacier blue for hover */
+    --acc-light: #2596be;
+    /* lighter glacier blue */
+    --bg-light: #0f0f0f;
+    /* slightly lighter background */
+    --bg-lighter: #1a1a1a;
+    /* even lighter background */
+    --bg-brightest: #2a2a2a;
+    /* brightest top background */
+    --bg-glow: #3a3a3a;
+    /* glowing light effect */
+
+    /* Glass Effects */
+    --glass-bg: rgba(37, 150, 190, 0.05);
+    --glass-border: rgba(37, 150, 190, 0.2);
+    --glass-bg-light: rgba(37, 150, 190, 0.1);
+    --glass-border-light: rgba(37, 150, 190, 0.3);
+
+    /* Shadows */
+    --shadow-primary: 0 20px 40px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 10px 30px rgba(37, 150, 190, 0.4);
+    --shadow-button: 0 8px 25px rgba(37, 150, 190, 0.3);
+
+    --gradient-primary: linear-gradient(135deg, #1a237e 0%, #2596be 100%);
+    --gradient-background: linear-gradient(180deg,
+            #070707 0%,
+            #070707 30%,
+            #070707 60%,
+            #0d1421 70%,
+            #1a237e 100%);
+    --gradient-background-opposite: linear-gradient(180deg,
+            #1a237e 0%,
+            #0d1421 30%,
+            #070707 60%,
+            #070707 70%,
+             #1a237e 100%);
+    --gradient-text: linear-gradient(135deg, var(--ink) 0%, #2596be 100%);
+
+    /* Typography */
+    --font-primary: 'Helvetica', Arial, sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 10px;
+    --radius-lg: 20px;
+    --radius-xl: 25px;
+    --radius-full: 30px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FAQ Page Styles */
+
+
+
+
+body {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(37, 150, 190, 0.03) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(37, 150, 190, 0.03) 0%, transparent 20%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Hero Section */
+.hero-section {
+    background: var(--gradient-background);
+    padding: 0.75rem 0 4rem; /* Further reduced top padding from 1rem due to even smaller navbar */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.05) 0%, transparent 25%),
+        radial-gradient(circle at 85% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 25%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-weight: 300;
+    text-align: center;
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+}
+
+.breadcrumb li {
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: '→';
+    margin-left: 1rem;
+    opacity: 0.6;
+}
+
+.breadcrumb a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--acc, #2596be);
+    opacity: 1;
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-top: -1px !important;
+    padding: 6rem 0 4rem;
+    background: var(--gradient-background-opposite);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+    border-radius: 0;
+    border: none;
+    min-height: 100vh;
+}
+
+.faq-section::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.05) 0%, transparent 25%),
+        radial-gradient(circle at 85% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 25%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive adjustments for FAQ sections */
+@media (max-width: 768px) {
+    .faq-container {
+        padding: 0 1rem;
+    }
+    
+    .faq-category {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .category-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-category {
+        padding: 1rem;
+    }
+    
+    .category-title {
+        font-size: 1.25rem;
+    }
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* FAQ Category */
+.faq-category {
+    background: rgba(26, 35, 126, 0.15);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 1px solid rgba(37, 150, 190, 0.2);
+    backdrop-filter: blur(15px);
+    transition: all var(--transition-normal);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-category:hover {
+    background: rgba(26, 35, 126, 0.25);
+    border-color: rgba(37, 150, 190, 0.4);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-heavy);
+    backdrop-filter: blur(20px);
+}
+
+.faq-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 150, 190, 0.1), transparent);
+    transition: left var(--transition-slow);
+    z-index: -1;
+}
+
+.faq-category:hover::before {
+    left: 100%;
+}
+
+.faq-category:hover {
+    background: rgba(26, 35, 126, 0.15);
+    border-color: rgba(26, 35, 126, 0.3);
+    transform: translateY(-2px);
+}
+
+.category-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Modern Accordion */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.accordion-item {
+    background: rgba(26, 35, 126, 0.1);
+    border: 1px solid rgba(37, 150, 190, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.accordion-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 150, 190, 0.1), transparent);
+    transition: left var(--transition-slow);
+    z-index: -1;
+}
+
+.accordion-item:hover::before {
+    left: 100%;
+}
+
+.accordion-item:hover {
+    border-color: rgba(37, 150, 190, 0.4);
+}
+
+.accordion-header {
+    margin: 0;
+}
+
+.accordion-button {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 1.5rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transition: all var(--transition-normal);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.accordion-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 150, 190, 0.1), transparent);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.accordion-button:hover::before {
+    left: 100%;
+}
+
+.accordion-button::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    transition: all var(--transition-normal);
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+}
+
+.accordion-button:not(.collapsed)::after {
+    content: '−';
+    color: var(--text-color);
+    transform: rotate(180deg);
+}
+
+.accordion-button:hover::after {
+    animation: pulse 1s infinite;
+    color: var(--primary-color);
+    transform: scale(1.2) rotate(45deg);
+}
+
+.accordion-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.accordion-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.accordion-collapse {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+.accordion-collapse.show {
+    height: auto;
+}
+
+.accordion-body {
+    padding: 0 1.5rem 1.5rem;
+    font-size: 1rem;
+    color: #ffffff;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.accordion-body strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 4rem 0;
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(37, 150, 190, 0.1) 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(37, 150, 190, 0.1) 0%, transparent 30%);
+    z-index: 0;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-title {
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.contact-description {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.contact-item a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 6rem 0 3rem;
+        margin-top: 0px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .faq-container,
+    .contact-container {
+        padding: 0 1.5rem;
+    }
+    
+    .intro-text {
+        font-size: 1rem;
+    }
+    
+    .category-title {
+        font-size: 1.5rem;
+    }
+    
+    .accordion-button {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+    }
+    
+    .accordion-body {
+        padding: 0 1.25rem 1.25rem;
+        font-size: 0.95rem;
+    }
+    
+    .contact-title {
+        font-size: 1.75rem;
+    }
+    
+    .contact-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 5rem 0 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .breadcrumb {
+        gap: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .faq-section,
+    .contact-section {
+        padding: 3rem 0;
+    }
+    
+    .faq-container,
+    .contact-container {
+        padding: 0 1rem;
+    }
+    
+    .intro-text {
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+    
+    .faq-category {
+        margin-bottom: 2rem;
+    }
+    
+    .category-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .accordion-button {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .accordion-body {
+        padding: 0 1rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .contact-title {
+        font-size: 1.5rem;
+    }
+    
+    .contact-description {
+        font-size: 0.95rem;
+    }
+    
+    .contact-item {
+        font-size: 1rem;
+    }
+}

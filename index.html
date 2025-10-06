@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navba.css">
+    <link rel="stylesheet" href="Responsive.css">
+    <link rel="stylesheet" href="footer.css">
+    <title>FC Rides - AI-Enhanced Premium Transportation</title>
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <!-- Desktop Navigation -->
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link" aria-label="FC Rides - Home">
+                    <span class="logo">FC Rides</span>
+                    <span class="logo-subtitle">Premium transportation</span>
+                </a>
+            </div>
+
+            <ul class="nav-menu" role="menubar">
+                <li role="none">
+                    <a href="index.html" class="nav-link active" role="menuitem" aria-label="Home" aria-current="page">
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="fleet.html" class="nav-link" role="menuitem" aria-label="Our Fleet">
+                        <span class="nav-text">Fleet</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="Chauffeur-Alliance.html" class="nav-link" role="menuitem" aria-label="Chauffeur Alliance">
+                        <span class="nav-text">Chauffeur Alliance</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="faq.html" class="nav-link" role="menuitem" aria-label="Frequently Asked Questions">
+                        <span class="nav-text">FAQ</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="cooperate.html" class="nav-link" role="menuitem" aria-label="Cooperate Travels">
+                        <span class="nav-text">Cooperate Travels</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="" class="btn-primary nav-cta" aria-label="Premium Client">
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <span>Premium Client</span>
+                </a>
+                <button class="burger-icon" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-header-active">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="body-overlay-1"></div>
+        <nav class="mobile-header-active" role="navigation" aria-label="Mobile navigation" aria-hidden="true" id="mobile-header-active">
+            <div class="mobile-nav-header">
+                <span class="mobile-logo">FC Rides</span>
+                <button class="mobile-menu-close" aria-label="Close mobile menu">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <ul class="mobile-menu" role="menubar">
+                <li role="none">
+                    <a href="index.html" class="mobile-nav-link active" role="menuitem" aria-current="page">Home</a>
+                </li>
+                <li role="none">
+                    <a href="fleet.html" class="mobile-nav-link" role="menuitem">Fleet</a>
+                </li>
+                <li role="none">
+                    <a href="Chauffeur-Alliance.html" class="mobile-nav-link" role="menuitem">Chauffeur Alliance</a>
+                </li>
+                <li role="none">
+                    <a href="faq.html" class="mobile-nav-link" role="menuitem">FAQ</a>
+                </li>
+                <li role="none">
+                    <a href="cooperate.html" class="mobile-nav-link" role="menuitem">Cooperate Travels</a>
+                </li>
+            </ul>
+            <div class="mobile-nav-footer">
+                <a href=" " class="btn-primary mobile-cta">
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <span>Premium Client</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    First Class<br>Chauffeur Service.<br>Powered by Intelligence.
+                </h1>
+                <p class="hero-subtitle">Luxury transportation reimagined with AI-driven precision, personalized comfort, and unmatched professionalism — from airport pickups to global corporate travel.</p>
+
+        
+
+                <!-- Key Metrics -->
+                <div class="metrics">
+                    <button class="metric-btn">
+                        <span class="metric-number">98.7%</span>
+                        <span class="metric-label">On Time</span>
+                    </button>
+                    <button class="metric-btn">
+                        <span class="metric-number">4.9★</span>
+                        <span class="metric-label">Avg Rating</span>
+                    </button>
+                    <button class="metric-btn">
+                        <span class="metric-number">< 3 min</span>
+                        <span class="metric-label">Response</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="booking-form">
+                <div class="form-tabs">
+                    <button class="tab active" data-tab="distance">Distance</button>
+                    <button class="tab" data-tab="hourly">Hourly</button>
+                </div>
+
+                <!-- Distance Tab Content -->
+                <div class="tab-content active" data-content="distance">
+                    <!-- Trip Details -->
+                    <div class="input-group">
+                        <label class="form-label">From</label>
+                        <input type="text" class="form-input" placeholder="Pickup Location">
+                    </div>
+
+                    <div class="input-group">
+                        <label class="form-label">To</label>
+                        <input type="text" class="form-input" placeholder="Destination">
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label class="form-label">Date</label>
+                            <input type="date" class="form-input">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Time</label>
+                            <input type="time" class="form-input">
+                        </div>
+                    </div>
+                    <!-- Preferred Vehicle section removed -->
+                </div>
+
+                <!-- Hourly Tab Content -->
+                <div class="tab-content" data-content="hourly">
+                    <!-- Trip Details -->
+                    <div class="input-group">
+                        <label class="form-label">Pickup Location</label>
+                        <input type="text" class="form-input" placeholder="Where should we pick you up?">
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label class="form-label">Date</label>
+                            <input type="date" class="form-input">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Start Time</label>
+                            <input type="time" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="form-label">Duration (hours)</label>
+                        <select class="form-input">
+                            <option value="1">1 Hour</option>
+                            <option value="2">2 Hours</option>
+                            <option value="3">3 Hours</option>
+                            <option value="4">4 Hours</option>
+                            <option value="5">5 Hours</option>
+                            <option value="6">6 Hours</option>
+                            <option value="8">8 Hours</option>
+                            <option value="12">12 Hours</option>
+                        </select>
+                    </div>
+                    <!-- Preferred Vehicle section removed -->
+                </div>
+
+                <!-- Special Requests section removed -->
+
+                <a href=" " class="request-btn">Request Ride</a>
+
+                <p class="form-note">No payment fees. We confirm details and send a secure link or invoice.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section class="section pt-120 pb-120 bg-our-fleet" id="fleet"> 
+        <div class="container-sub"> 
+            <div class="text-center mb-60">
+                <h2 class="heading-44-medium color-white">Our First Class Fleet</h2>
+                <p class="text-16 color-white mt-20">Experience luxury transportation with our carefully curated fleet of premium vehicles</p>
+                
+            </div>
+        </div>
+        <div class="box-slide-fleet mt-50">
+            <div class="fleet-grid">
+                <div class="cardFleet">
+                    <div class="cardInfo">
+                        <p class="text-14 color-text mb-30">Business-class comfort and elegance for everyday executive travel. Perfect for airport transfers, meetings, and solo VIP rides.</p>
+                    </div>
+                    <div class="cardImage mb-30"><img src="img/first class sedan.png" alt="First Class Sedan"></div>
+                    <div class="cardInfoBottom">
+                        <div class="passenger"><span class="icon-circle icon-passenger"></span><span class="text-14">Passengers<span>4</span></span></div>
+                        <div class="luggage"><span class="icon-circle"><i class="fas fa-suitcase"></i></span><span class="text-14">Luggage<span>2</span></span></div>
+                    </div>
+                </div>
+                <div class="cardFleet">
+                    <div class="cardInfo">
+                        <p class="text-14 color-text mb-30">Flagship luxury sedans offering the ultimate in comfort, technology, and prestige. Ideal for executives, special occasions, and VIP guests.</p>
+                    </div>
+                    <div class="cardImage mb-30"><img src="img/premium suv.png" alt="First Class Premium Sedan"></div>
+                    <div class="cardInfoBottom">
+                        <div class="passenger"><span class="icon-circle icon-passenger"></span><span class="text-14">Passengers<span>4</span></span></div>
+                        <div class="luggage"><span class="icon-circle icon-luggage"></span><span class="text-14">Luggage<span>3</span></span></div>
+                    </div>
+                </div>
+                <div class="cardFleet">
+                    <div class="cardInfo">
+                        <p class="text-14 color-text mb-30">Spacious, powerful, and refined — premium SUVs designed for group travel, families, and high-profile arrivals with presence.</p>
+                    </div>
+                    <div class="cardImage mb-30"><img src="img/premium suv.png" alt="First Class SUV"></div>
+                    <div class="cardInfoBottom">
+                        <div class="passenger"><span class="icon-circle icon-passenger"></span><span class="text-14">Passengers<span>6</span></span></div>
+                        <div class="luggage"><span class="icon-circle icon-luggage"></span><span class="text-14">Luggage<span>4</span></span></div>
+                    </div>
+                </div>
+                <div class="cardFleet wow ">
+                    <div class="cardInfo">
+                        <p class="text-14 color-text mb-30">Luxury on a larger scale. Executive sprinter vans for group transport, corporate events, production teams, and roadshows.</p>
+                    </div>
+                    <div class="cardImage mb-30"><img src="img/sprinter-removebg-preview.png" alt="First Class Sprinter"></div>
+                    <div class="cardInfoBottom">
+                        <div class="passenger"><span class="icon-circle icon-passenger"></span><span class="text-14">Passengers<span>8</span></span></div>
+                        <div class="luggage"><span class="icon-circle icon-luggage"></span><span class="text-14">Luggage<span>6</span></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why FC Rides Section -->
+    <section class="section pt-80 pb-80" id="why-us">
+        <div class="container-sub">
+            <div class="text-center mb-60">
+                <h2 class="heading-44-medium color-white">Why FC Rides</h2>
+                <h3 class="text-24-medium color-primary mb-30">The Future of Luxury Transportation</h3>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-40">
+                    <div class="why-content">
+                        <p class="text-16 mb-25">FC Rides is not just another car service — it's a new standard in premium travel. We merge the sophistication of a first-class chauffeur experience with cutting-edge AI technology to deliver comfort, reliability, and personalization at a level no traditional service can match.</p>
+                        <p class="text-16">Whether you're heading to the airport, managing corporate travel, or planning a high-profile event, every detail is handled intelligently — before you even step into the vehicle.</p>
+                        <div class="why-stats mt-40">
+                            <div class="stat-item">
+                                <h4 class="stat-number">98.7%</h4>
+                                <p class="stat-label">On-Time Performance</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4 class="stat-number">25K+</h4>
+                                <p class="stat-label">Satisfied Clients</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4 class="stat-number">24/7</h4>
+                                <p class="stat-label">Concierge Support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-40">
+                    <div class="why-features">
+                        <div class="feature-highlight">
+                            <div class="feature-icon-small">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 12l2 2 4-4"/>
+                                    <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                                    <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h5 class="feature-title-small">AI-Powered Intelligence</h5>
+                                <p class="feature-desc-small">Smart routing and predictive dispatch for optimal efficiency</p>
+                            </div>
+                        </div>
+                        <div class="feature-highlight">
+                            <div class="feature-icon-small">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h5 class="feature-title-small">Personalized Experience</h5>
+                                <p class="feature-desc-small">Custom comfort profiles tailored to your preferences</p>
+                            </div>
+                        </div>
+                        <div class="feature-highlight">
+                            <div class="feature-icon-small">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h5 class="feature-title-small">Premium Security</h5>
+                                <p class="feature-desc-small">Professional chauffeurs with highest safety standards</p>
+                            </div>
+                        </div>
+                        <div class="feature-highlight">
+                            <div class="feature-icon-small">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="1" x2="12" y2="23"/>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h5 class="feature-title-small">Transparent Pricing</h5>
+                                <p class="feature-desc-small">No surge pricing or hidden fees, ever</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We're Different Section -->
+    <section class="section pt-120 pb-120" id="how-different">
+        <div class="container-sub">
+            <div class="text-center mb-80">
+                <h2 class="heading-44-medium color-white">How We're Different</h2>
+                <p class="text-16 color-white mt-20">Six key advantages that set FC Rides apart from traditional transportation services</p>
+            </div>
+            <div class="features-grid-modern">
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                                <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                                <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"/>
+                                <path d="M12 21c0-1-1-3-3-3s-3 2-3 3 1 3 3 3 3-2 3-3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">AI-Powered Dispatch & ETA Prediction</h3>
+                    <p class="feature-text-modern">Our intelligent platform optimizes routes, matches you with the ideal chauffeur, and ensures on-time arrivals — every time.</p>
+                </div>
+                
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Comfort Profile™ Personalization</h3>
+                    <p class="feature-text-modern">Music, climate, seat position, refreshments — your preferences are saved and ready before pickup.</p>
+                </div>
+                
+                <div class="feature-card-modern ">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Seamless Booking</h3>
+                    <p class="feature-text-modern">On-demand or scheduled. One-click reservations, OTP-secured logins, and custom invoicing.</p>
+                </div>
+                
+                <div class="feature-card-modern ">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Transparent Pricing</h3>
+                    <p class="feature-text-modern">No surge, no surprises. What you see is what you pay.</p>
+                </div>
+                
+                <div class="feature-card-modern ">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M12 3.13a4 4 0 0 1 0 7.75"/>
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Corporate Billing & Partner Accounts</h3>
+                    <p class="feature-text-modern">Simplified travel management with centralized invoicing and exclusive rates.</p>
+                </div>
+                
+                <div class="feature-card-modern ">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12,6 12,12 16,14"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">24/7 Concierge Support</h3>
+                    <p class="feature-text-modern">Dedicated travel experts for planning, changes, and special requests anytime.</p>
+                </div>
+                
+                <div class="feature-card-modern ">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Premium Security</h3>
+                    <p class="feature-text-modern">Professional chauffeurs with highest safety standards and real-time tracking.</p>
+                </div>
+                
+                <div class="feature-card-modern ">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                <line x1="3" y1="6" x2="21" y2="6"/>
+                                <path d="M16 10a4 4 0 0 1-8 0"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Hourly Chauffeur</h3>
+                    <p class="feature-text-modern">Stay mobile on your schedule with flexible hourly bookings and dedicated drivers.</p>
+                </div>
+                
+                <div class="feature-card-modern ">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9,22 9,12 15,12 15,22"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Intercity & Long-Distance</h3>
+                    <p class="feature-text-modern">Comfortable travel between cities with transparent pricing and premium amenities.</p>
+                </div>
+                
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section pt-120 pb-20" id="how-it-works"> 
+        <div class="container-sub"> 
+            <div class="text-center mb-60">
+                <h2 class="heading-44-medium color-white">How It Works</h2>
+            </div>
+            <div class="how-it-works-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-50">
+                        <div class="steps-list">
+                            <div class="step-item active">
+                                <div class="step-number">01</div>
+                                <div class="step-content">
+                                    <h3 class="step-title">Create Your Route</h3>
+                                    <p class="step-description">Enter your pickup & dropoff locations or book by the hour with our AI-optimized dispatch system</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">02</div>
+                                <div class="step-content">
+                                    <h3 class="step-title">Choose Vehicle For You</h3>
+                                    <p class="step-description">Select from our first-class fleet with personalized comfort profiles and premium amenities</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">03</div>
+                                <div class="step-content">
+                                    <h3 class="step-title">Enjoy The Journey</h3>
+                                    <p class="step-description">Experience luxury transportation with professional chauffeurs and intelligent service</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-50">
+                        <div class="ai-dashboard-preview">
+                            <div class="dashboard-header">
+                                <div class="dashboard-logo">
+                                    <span class="logo">FC Rides</span>
+                                    <span class="ai-badge">AI Powered</span>
+                                </div>
+                                <div class="dashboard-time">Live Dashboard • 2:34 PM</div>
+                            </div>
+
+                            <!-- Dashboard Metrics Row -->
+                            <div class="dashboard-metrics">
+                                <div class="metric-card">
+                                    <div class="metric-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <polyline points="12,6 12,12 16,14"/>
+                                        </svg>
+                                    </div>
+                                    <div class="metric-content">
+                                        <div class="metric-value">98.7%</div>
+                                        <div class="metric-label">On-Time Rate</div>
+                                    </div>
+                                    <div class="metric-status status-good">↑ 2.1%</div>
+                                </div>
+
+                                <div class="metric-card">
+                                    <div class="metric-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="metric-content">
+                                        <div class="metric-value">24</div>
+                                        <div class="metric-label">Active Rides</div>
+                                    </div>
+                                    <div class="metric-status status-neutral">• Live</div>
+                                </div>
+                            </div>
+
+                            <!-- Dashboard Map/Chart Area -->
+                            <div class="dashboard-main">
+                                <div class="map-placeholder">
+                                    <div class="map-overlay">
+                                        <div class="map-pin active">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                                <circle cx="12" cy="10" r="3"/>
+                                            </svg>
+                                        </div>
+                                        <div class="map-pin">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                                <circle cx="12" cy="10" r="3"/>
+                                            </svg>
+                                        </div>
+                                        <div class="map-route"></div>
+                                    </div>
+                                    <div class="map-label">Real-time Route Optimization</div>
+                                </div>
+
+                                <div class="chart-area">
+                                    <div class="chart-placeholder">
+                                        <div class="chart-bars">
+                                            <div class="bar" data-height="40"></div>
+                                            <div class="bar active" data-height="65"></div>
+                                            <div class="bar" data-height="80"></div>
+                                            <div class="bar" data-height="55"></div>
+                                            <div class="bar" data-height="90"></div>
+                                            <div class="bar" data-height="70"></div>
+                                            <div class="bar" data-height="85"></div>
+                                        </div>
+                                        <div class="chart-label">Demand Prediction (Next 2hrs)</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Meets Service Section -->
+    <section class="section pt-120 pb-120" id="technology-service">
+        <div class="container-sub">
+            <div class="text-center mb-80">
+                <h2 class="heading-44-medium color-white">Technology Meets Service</h2>
+                <h3 class="text-24-medium color-primary mb-30">Where AI Meets Hospitality</h3>
+                <p class="text-16 color-white">FC Rides leverages intelligent systems to anticipate your needs before you request them</p>
+            </div>
+            <div class="features-grid-modern">
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Safety First</h3>
+                    <p class="feature-text-modern">Professional chauffeurs with the highest safety standards and real-time monitoring for your security.</p>
+                </div>
+                
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Transparent Pricing</h3>
+                    <p class="feature-text-modern">No surge pricing, no hidden fees. What you see is what you pay with our upfront pricing model.</p>
+                </div>
+                
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                                <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">AI-Powered Service</h3>
+                    <p class="feature-text-modern">Intelligent dispatch, personalized comfort profiles, and predictive service for the ultimate experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section class="section pt-120 pb-120" id="services">
+        <div class="container-sub">
+            <div class="text-center mb-80">
+                <h2 class="heading-44-medium color-white">Our Services</h2>
+                <p class="text-16 color-white mt-20">Comprehensive transportation solutions for every need</p>
+            </div>
+            <div class="features-grid-modern">
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16v-8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Airport Transfers</h3>
+                    <p class="feature-text-modern">Stress-free pickup and drop-off with flight tracking and personalized meet-and-greet.</p>
+                </div>
+                
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Corporate Travel</h3>
+                    <p class="feature-text-modern">Enterprise-level solutions for executives, teams, and client transportation.</p>
+                </div>
+                
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12,6 12,12 16,14"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Hourly Chauffeur</h3>
+                    <p class="feature-text-modern">Stay mobile on your schedule with flexible hourly bookings and dedicated drivers.</p>
+                </div>
+                
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9,22 9,12 15,12 15,22"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Intercity & Long-Distance</h3>
+                    <p class="feature-text-modern">Comfortable travel between cities with transparent pricing and premium amenities.</p>
+                </div>
+                
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M8 2v4"/>
+                                <path d="M16 2v4"/>
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <path d="M3 10h18"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Event & Group Services</h3>
+                    <p class="feature-text-modern">Tailored transportation for conferences, weddings, premieres, and large-scale events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <!-- Top Row -->
+            <div class="footer-top-row">
+                <!-- Company Info Section -->
+                <div class="footer-section">
+                    <h3>FC Rides</h3>
+                    <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: var(--spacing-lg);">
+                        Premium transportation reimagined with AI-driven precision, personalized comfort, and unmatched professionalism.
+                    </p>
+                    <div class="footer-social">
+                        <div class="social-icons">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Section -->
+                <div class="footer-section">
+                    <div class="newsletter-section">
+                        <h3 class="newsletter-title">Stay Updated</h3>
+                        <p style="color: var(--muted); font-size: 0.85rem; margin-bottom: var(--spacing-md); text-align: center;">
+                            Get the latest news and exclusive offers
+                        </p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email address" aria-label="Email address">
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="footer-bottom-row">
+                <!-- Navigation Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="Chauffeur-Alliance.html">Chauffeur Alliance</a></li>
+                        <li><a href="cooperate.html">Cooperate Travels</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Cities -->
+                <div class="footer-section">
+                    <h3>Popular Routes</h3>
+                    <div class="cities-grid">
+                        <div class="city-column">
+                            <a href="#">New York</a>
+                            <a href="#">Los Angeles</a>
+                            <a href="#">Miami</a>
+                        </div>
+                        <div class="city-column">
+                            <a href="#">San Francisco</a>
+                            <a href="#">Las Vegas</a>
+                            <a href="#">Seattle</a>
+                        </div>
+                        <div class="city-column">
+                            <a href="#">Dallas</a>
+                            <a href="#">Honolulu</a>
+                            <a href="#">Chicago</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2023 FC Rides. All rights reserved.</p>
+                <div style="margin-top: var(--spacing-sm);">
+                    <a href="#" style="color: var(--muted); text-decoration: none; margin: 0 var(--spacing-sm);">Terms & Conditions</a>
+                    <a href="#" style="color: var(--muted); text-decoration: none; margin: 0 var(--spacing-sm);">Privacy Policy</a>
+                    <a href="#" style="color: var(--muted); text-decoration: none; margin: 0 var(--spacing-sm);">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            // Handle tab clicks
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabType = this.getAttribute('data-tab');
+
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+
+                    // Hide all tab contents
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+
+                    // Show the corresponding tab content
+                    const targetContent = document.querySelector(`[data-content="${tabType}"]`);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+
+                    // Force reflow to ensure consistent heights
+                    const bookingForm = document.querySelector('.booking-form');
+                    if (bookingForm) {
+                        bookingForm.style.height = 'auto';
+                        // Reset to ensure consistent sizing
+                        setTimeout(() => {
+                            bookingForm.style.height = '';
+                        }, 10);
+                    }
+                });
+            });
+
+            // Optional: Auto-focus first input when tab is switched
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabType = this.getAttribute('data-tab');
+                    const targetContent = document.querySelector(`[data-content="${tabType}"]`);
+                    const firstInput = targetContent.querySelector('input, select');
+
+                    if (firstInput) {
+                        setTimeout(() => {
+                            firstInput.focus();
+                        }, 100);
+                    }
+                });
+            });
+
+            // Form validation and enhancement
+            const form = document.querySelector('.booking-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(form);
+                    
+                    // Show confirmation message
+                    alert('Thank you for your request! We will confirm your booking shortly.');
+                    
+                    // Reset form
+                    form.reset();
+                });
+                
+                // Add real-time validation
+                const inputs = form.querySelectorAll('input, select, textarea');
+                inputs.forEach(input => {
+                    input.addEventListener('blur', function() {
+                        if (this.value.trim() !== '') {
+                            this.classList.add('valid');
+                        } else {
+                            this.classList.remove('valid');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+    <script>
+        // Mobile navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerIcon = document.querySelector('.burger-icon');
+            const mobileMenu = document.querySelector('.mobile-header-active');
+            const mobileClose = document.querySelector('.mobile-menu-close');
+            const bodyOverlay = document.querySelector('.body-overlay-1');
+            
+            // Nav link click effect - show bottom line on click
+            // Nav link click effect - show bottom line on click
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    console.log('Nav link clicked:', this.querySelector('.nav-text').textContent);
+                    // Remove clicked class from all nav links
+                    navLinks.forEach(l => l.classList.remove('clicked'));
+                    // Add clicked class to clicked link
+                    this.classList.add('clicked');
+                    console.log('Added clicked class to:', this.querySelector('.nav-text').textContent);
+                });
+            });
+            
+            if (burgerIcon && mobileMenu) {
+                console.log("✅ Mobile navigation initialized on index page");
+                
+                // Burger icon click
+                burgerIcon.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Toggle classes
+                    this.classList.toggle('burger-close');
+                    mobileMenu.classList.toggle('sidebar-visible');
+                    document.body.classList.toggle('mobile-menu-active');
+                    
+                    // Ensure proper positioning on mobile
+                    if (mobileMenu.classList.contains('sidebar-visible')) {
+                        mobileMenu.style.left = '0px';
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        mobileMenu.style.left = '-320px';
+                        document.body.style.overflow = '';
+                    }
+                    
+                    console.log("🍔 Mobile menu toggled - visible:", mobileMenu.classList.contains('sidebar-visible'));
+                });
+                
+                // Close button click
+                if (mobileClose) {
+                    mobileClose.addEventListener('click', function() {
+                        burgerIcon.classList.remove('burger-close');
+                        mobileMenu.classList.remove('sidebar-visible');
+                        document.body.classList.remove('mobile-menu-active');
+                        mobileMenu.style.left = '-320px';
+                        document.body.style.overflow = '';
+                    });
+                }
+                
+                // Overlay click
+                if (bodyOverlay) {
+                    bodyOverlay.addEventListener('click', function() {
+                        burgerIcon.classList.remove('burger-close');
+                        mobileMenu.classList.remove('sidebar-visible');
+                        document.body.classList.remove('mobile-menu-active');
+                        mobileMenu.style.left = '-320px';
+                        document.body.style.overflow = '';
+                    });
+                }
+            } else {
+                console.error("❌ Mobile navigation elements not found on index page");
+            }
+        });
+    </script>
+</body>
+
+</html>

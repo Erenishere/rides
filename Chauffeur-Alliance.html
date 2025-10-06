@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navba.css">
+    <link rel="stylesheet" href="Responsive.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="Chauffeur-Alliance.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chauffeur Alliance - FC Rides</title>
+    <style>
+        /* Enhanced mobile menu close button */
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            color: var(--ink);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-normal);
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 1001;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mobile-menu-close:hover {
+            color: var(--acc);
+            background: rgba(37, 150, 190, 0.1);
+            transform: scale(1.1);
+        }
+        
+        .mobile-nav-header {
+            position: relative;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link" aria-label="FC Rides - Home">
+                    <span class="logo">FC Rides</span>
+                    <span class="logo-subtitle">Premium transportation</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu" role="menubar">
+                <li role="none">
+                    <a href="index.html" class="nav-link" role="menuitem" aria-label="Home">
+                        <span class="nav-text">Home</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="fleet.html" class="nav-link" role="menuitem" aria-label="Our Fleet">
+                        <span class="nav-text">Fleet</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="Chauffeur-Alliance.html" class="nav-link active" role="menuitem" aria-label="Chauffeur Alliance" aria-current="page">
+                        <span class="nav-text">Chauffeur Alliance</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="faq.html" class="nav-link" role="menuitem" aria-label="Frequently Asked Questions">
+                        <span class="nav-text">FAQ</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="cooperate.html" class="nav-link" role="menuitem" aria-label="Cooperate Travels">
+                        <span class="nav-text">Cooperate Travels</span>
+                        <span class="nav-hover-effect"></span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href=" " class="btn-primary nav-cta" aria-label="Premium Client">
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <span>Premium Client</span>
+                </a>
+                <button class="burger-icon" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-header-active">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="body-overlay-1"></div>
+    <nav class="mobile-header-active" role="navigation" aria-label="Mobile navigation" aria-hidden="true" id="mobile-header-active">
+        <div class="mobile-nav-header">
+            <span class="mobile-logo">FC Rides</span>
+            <button class="mobile-menu-close" aria-label="Close mobile menu">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+        <ul class="mobile-menu" role="menubar">
+            <li role="none">
+                <a href="index.html" class="mobile-nav-link" role="menuitem">Home</a>
+            </li>
+            <li role="none">
+                <a href="fleet.html" class="mobile-nav-link" role="menuitem">Fleet</a>
+            </li>
+            <li role="none">
+                <a href="Chauffeur-Alliance.html" class="mobile-nav-link active" role="menuitem" aria-current="page">Chauffeur Alliance</a>
+            </li>
+            <li role="none">
+                <a href="faq.html" class="mobile-nav-link" role="menuitem">FAQ</a>
+            </li>
+            <li role="none">
+                <a href="cooperate.html" class="mobile-nav-link" role="menuitem">Cooperate Travels</a>
+            </li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <a href="booking-extra.html" class="btn-primary mobile-cta">
+                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                <span>Premium Client</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero chauffeur-hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Chauffeur Alliance
+                </h1>
+                <p class="hero-subtitle">Drive With Excellence. Partner With Innovation.</p>
+                <p class="hero-description">At FC Rides, we believe chauffeurs are more than drivers — they're the face of every client journey. Our mission is to redefine what premium transportation means by combining AI-powered technology, personalized service, and first-class vehicles into one seamless experience.</p>
+                <p class="hero-description">We're building a network of exceptional chauffeurs and transportation partners who share our commitment to professionalism, reliability, and hospitality. If you take pride in delivering flawless service and want to be part of a growing, next-generation transportation platform, we'd love to work with you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join Section -->
+    <section class="section pt-120 pb-120" id="why-join">
+        <div class="container-sub">
+            <div class="text-center mb-60">
+                <h2 class="heading-44-medium color-white wow fadeInUp">Why Join FC Rides</h2>
+                <h3 class="text-24-medium color-primary mb-30 wow fadeInUp">Consistent, High-Value Bookings</h3>
+                <p class="text-16 color-white wow fadeInUp">We work with corporate clients, luxury travelers, hotels, travel agencies, and event organizers — meaning you get reliable, premium trips instead of short, low-value rides. Our bookings are often scheduled hours or days in advance, giving you time to plan and maximize your earnings.</p>
+            </div>
+            <div class="features-grid-modern">
+                <div class="feature-card-modern wow fadeInUp">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Transparent Earnings & Flexible Payouts</h3>
+                    <p class="feature-text-modern">We believe in clear, fair compensation. Drivers earn a fixed commission per trip with no hidden fees. And because our system allows manual overrides on payouts, premium bookings can mean higher earnings when the job demands more.</p>
+                    <ul class="feature-list">
+                        <li>Real-time earnings tracking</li>
+                        <li>Fast, reliable payouts</li>
+                        <li>Transparent commission structure</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card-modern wow fadeInUp">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                                <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Work Smarter With AI-Powered Technology</h3>
+                    <p class="feature-text-modern">Our intelligent dispatch system optimizes routes, matches you with the right trips, and helps ensure on-time performance — so you spend less time waiting and more time driving. Plus, our Comfort Profile™ system ensures you always know client preferences before pickup.</p>
+                </div>
+                
+                <div class="feature-card-modern wow fadeInUp">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Professional, Premium Clients</h3>
+                    <p class="feature-text-modern">Our riders include CEOs, VIP guests, hotel partners, travel agencies, and corporate accounts — meaning respectful clients, cleaner vehicles, and better gratuities. This isn't a typical rideshare crowd — this is a first-class clientele.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opportunities Section -->
+    <section class="section pt-120 pb-120 bg-our-fleet" id="opportunities">
+        <div class="container-sub">
+            <div class="text-center mb-60">
+                <h2 class="heading-44-medium color-white wow fadeInUp">Opportunities for Chauffeurs</h2>
+                <p class="text-16 color-white mt-20 wow fadeInUp">Join our growing network of professional drivers</p>
+            </div>
+            <div class="features-grid-modern">
+                <div class="feature-card-modern wow fadeInUp">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Independent Professional Chauffeurs</h3>
+                    <p class="feature-text-modern">Work directly with FC Rides and accept rides that match your availability and vehicle class.</p>
+                </div>
+                
+                <div class="feature-card-modern wow fadeInUp">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9,22 9,12 15,12 15,22"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Fleet Owners</h3>
+                    <p class="feature-text-modern">Have multiple vehicles? Partner with us to scale your business and receive consistent high-value bookings.</p>
+                </div>
+                
+                <div class="feature-card-modern wow fadeInUp">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Licensed Transportation Companies</h3>
+                    <p class="feature-text-modern">Join our partner network and access our booking system to keep your fleet busy year-round.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="section pt-120 pb-120" id="requirements">
+        <div class="container-sub">
+            <div class="text-center mb-60">
+                <h2 class="heading-44-medium color-white wow fadeInUp">Requirements & Standards</h2>
+                <p class="text-16 color-white mt-20 wow fadeInUp">We maintain strict quality standards to ensure a consistent client experience. All chauffeurs and partner companies must meet the following:</p>
+            </div>
+            <div class="requirements-grid">
+                <div class="requirement-item wow fadeInUp">
+                    <div class="requirement-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="requirement-content">
+                        <p class="requirement-title">Valid driver's license and appropriate commercial permits</p>
+                    </div>
+                </div>
+                <div class="requirement-item wow fadeInUp">
+                    <div class="requirement-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="requirement-content">
+                        <p class="requirement-title">Fully insured, well-maintained premium vehicle</p>
+                    </div>
+                </div>
+                <div class="requirement-item wow fadeInUp">
+                    <div class="requirement-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="requirement-content">
+                        <p class="requirement-title">Clean driving record and professional appearance</p>
+                    </div>
+                </div>
+                <div class="requirement-item wow fadeInUp">
+                    <div class="requirement-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="requirement-content">
+                        <p class="requirement-title">Strong communication skills and customer service focus</p>
+                    </div>
+                </div>
+                <div class="requirement-item wow fadeInUp">
+                    <div class="requirement-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="requirement-content">
+                        <p class="requirement-title">Commitment to punctuality, discretion, and safety</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Love Section -->
+    <section class="section pt-120 pb-120 bg-our-fleet" id="what-you-love">
+        <div class="container-sub">
+            <div class="text-center mb-60">
+                <h2 class="heading-44-medium color-white wow fadeInUp">What You'll Love About Driving With FC Rides</h2>
+            </div>
+            <div class="features-grid-modern">
+                <div class="feature-card-modern wow fadeInUp">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12,6 12,12 16,14"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Premium clientele — no random street hails or low-cost passengers</h3>
+                </div>
+                
+                <div class="feature-card-modern wow fadeInUp">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Pre-scheduled bookings — know your day in advance</h3>
+                </div>
+                
+                <div class="feature-card-modern wow fadeInUp">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Advanced technology — automated dispatch, ETA prediction, and client details at your fingertips</h3>
+                </div>
+                
+                <div class="feature-card-modern wow fadeInUp">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">24/7 driver support — real humans ready to help</h3>
+                </div>
+                
+                <div class="feature-card-modern wow fadeInUp">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="feature-title-modern">Opportunity to grow — from solo chauffeur to fleet partner</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join the Future Section -->
+    <section class="section pt-120 pb-120" id="join-future">
+        <div class="container-sub">
+            <div class="text-center mb-60">
+                <h2 class="heading-44-medium color-white wow fadeInUp">Join the Future of Luxury Transportation</h2>
+                <p class="text-16 color-white mt-20 wow fadeInUp">At FC Rides, we're building something bigger than a rideshare service — we're building a premium transportation network where drivers are treated as partners, not gig workers.</p>
+                <p class="text-16 color-white wow fadeInUp">If you're ready to elevate your career, increase your earnings, and deliver a level of service that stands above the rest, we want to hear from you.</p>
+            </div>
+            <div class="text-center">
+                <a href="mailto:partners@fcrides.com" class="btn-primary apply-btn">Apply to Drive With FC Rides</a>
+                <div class="contact-info mt-40">
+                    <p class="text-16 color-white"><strong>Call us:</strong> (310) 626-8728</p>
+                    <p class="text-16 color-white"><strong>Email:</strong> partners@fcrides.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <!-- Top Row -->
+            <div class="footer-top-row">
+                <!-- Company Info Section -->
+                <div class="footer-section">
+                    <h3>FC Rides</h3>
+                    <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: var(--spacing-lg);">
+                        Premium transportation reimagined with AI-driven precision, personalized comfort, and unmatched professionalism.
+                    </p>
+                    <div class="footer-social">
+                        <div class="social-icons">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Section -->
+                <div class="footer-section">
+                    <div class="newsletter-section">
+                        <h3 class="newsletter-title">Stay Updated</h3>
+                        <p style="color: var(--muted); font-size: 0.85rem; margin-bottom: var(--spacing-md); text-align: center;">
+                            Get the latest news and exclusive offers
+                        </p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email address" aria-label="Email address">
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="footer-bottom-row">
+                <!-- Navigation Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="Chauffeur-Alliance.html">Chauffeur Alliance</a></li>
+                        <li><a href="cooperate.html">Cooperate Travels</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Cities -->
+                <div class="footer-section">
+                    <h3>Popular Routes</h3>
+                    <div class="cities-grid">
+                        <div class="city-column">
+                            <a href="#">New York</a>
+                            <a href="#">Los Angeles</a>
+                            <a href="#">Miami</a>
+                        </div>
+                        <div class="city-column">
+                            <a href="#">San Francisco</a>
+                            <a href="#">Las Vegas</a>
+                            <a href="#">Seattle</a>
+                        </div>
+                        <div class="city-column">
+                            <a href="#">Dallas</a>
+                            <a href="#">Honolulu</a>
+                            <a href="#">Chicago</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2023 FC Rides. All rights reserved.</p>
+                <div style="margin-top: var(--spacing-sm);">
+                    <a href="#" style="color: var(--muted); text-decoration: none; margin: 0 var(--spacing-sm);">Terms & Conditions</a>
+                    <a href="#" style="color: var(--muted); text-decoration: none; margin: 0 var(--spacing-sm);">Privacy Policy</a>
+                    <a href="#" style="color: var(--muted); text-decoration: none; margin: 0 var(--spacing-sm);">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced mobile navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerIcon = document.querySelector('.burger-icon');
+            const mobileMenu = document.querySelector('.mobile-header-active');
+            const mobileClose = document.querySelector('.mobile-menu-close');
+            const bodyOverlay = document.querySelector('.body-overlay-1');
+            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+            // Function to close mobile menu
+            function closeMobileMenu() {
+                burgerIcon.classList.remove('burger-close');
+                mobileMenu.classList.remove('sidebar-visible');
+                document.body.classList.remove('mobile-menu-active');
+            }
+
+            // Function to open mobile menu
+            function openMobileMenu() {
+                burgerIcon.classList.add('burger-close');
+                mobileMenu.classList.add('sidebar-visible');
+                document.body.classList.add('mobile-menu-active');
+            }
+
+            if (burgerIcon && mobileMenu) {
+                // Burger icon click
+                burgerIcon.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log("Burger icon clicked");
+                    
+                    if (mobileMenu.classList.contains('sidebar-visible')) {
+                        closeMobileMenu();
+                    } else {
+                        openMobileMenu();
+                    }
+                });
+
+                // Close button click
+                if (mobileClose) {
+                    mobileClose.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        console.log("Close button clicked");
+                        closeMobileMenu();
+                    });
+                }
+
+                // Overlay click
+                if (bodyOverlay) {
+                    bodyOverlay.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        console.log("Overlay clicked");
+                        closeMobileMenu();
+                    });
+                }
+
+                // Close menu when clicking on any mobile link
+                if (mobileLinks.length > 0) {
+                    mobileLinks.forEach(link => {
+                        link.addEventListener('click', function() {
+                            closeMobileMenu();
+                        });
+                    });
+                }
+            } else {
+                console.log("Mobile navigation elements not found");
+            }
+        });
+    </script>
+</body>
+
+</html>
