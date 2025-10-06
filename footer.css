@@ -150,13 +150,33 @@
     display: inline-block;
     position: relative;
     padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--radius-sm);
-    border: 1px solid transparent;
+    border-radius: 0; /* Remove border-radius for quick link appearance */
+    border: none; /* Remove border for quick link appearance */
+    background: transparent; /* Ensure no background */
+    transition: color 0.2s ease; /* Smooth color transition */
 }
 
-/* Removed hover effects for city links */
+/* Quick link hover effect - subtle color change only */
 .city-column a:hover {
-    color: var(--ink);
+    color: var(--acc); /* Change color on hover for quick link effect */
+    text-decoration: none; /* Ensure no underline */
+    border: none; /* Ensure no border appears on hover */
+    background: transparent; /* Ensure no background change */
+    transform: none; /* Ensure no movement */
+    border-radius: 0; /* Ensure no border radius */
+}
+
+/* Quick link active and focus states - ensure no button-like vibe */
+.city-column a:active,
+.city-column a:focus {
+    color: var(--acc); /* Maintain color on active/focus */
+    text-decoration: none; /* Ensure no underline */
+    border: none; /* Ensure no border appears */
+    background: transparent; /* Ensure no background change */
+    transform: none; /* Ensure no movement */
+    border-radius: 0; /* Ensure no border radius */
+    outline: none; /* Remove default focus outline */
+    box-shadow: none; /* Ensure no box shadow */
 }
 
 /* Footer bottom */
@@ -454,6 +474,30 @@
         max-width: 100vw;
         overflow-x: hidden !important;
         box-sizing: border-box;
+        border: none; /* Ensure no border on mobile */
+    }
+    
+    /* Mobile quick link hover effect */
+    .city-column a:hover {
+        color: var(--acc);
+        text-decoration: none;
+        border: none;
+        background: transparent;
+        transform: none;
+        border-radius: 0;
+    }
+    
+    /* Mobile quick link active and focus states */
+    .city-column a:active,
+    .city-column a:focus {
+        color: var(--acc);
+        text-decoration: none;
+        border: none;
+        background: transparent;
+        transform: none;
+        border-radius: 0;
+        outline: none;
+        box-shadow: none;
     }
     
     .footer-bottom {

@@ -998,7 +998,8 @@
     height: 100%;
     background: var(--bg);
     backdrop-filter: blur(20px);
-    border-left: 1px solid var(--glass-border);
+    border: none; /* Remove any border that might cause blue line */
+    /* Removed border-left to eliminate blue line */
     z-index: 1000;
     transition: right var(--transition-normal);
     padding: var(--spacing-xl);
@@ -1007,6 +1008,7 @@
 
 .mobile-header-active.sidebar-visible {
     right: 0;
+    border: none; /* Remove any border that might cause blue line */
 }
 
 .mobile-nav-header {

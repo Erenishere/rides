@@ -505,7 +505,7 @@ html, body {
     height: 100%;
     background: var(--bg);
     backdrop-filter: blur(20px);
-    border-left: 1px solid var(--glass-border);
+    border: none; /* Remove any border that might cause blue line */
     z-index: 1000;
     transition: right var(--transition-normal);
     padding: var(--spacing-xl);
@@ -514,6 +514,7 @@ html, body {
 
 .mobile-header-active.sidebar-visible {
     right: 0;
+    border: none; /* Remove any border that might cause blue line */
 }
 
 /* Mobile button consistency */
@@ -1983,7 +1984,7 @@ body::before {
     max-height: 100%;
     width: auto;
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     transition: transform 0.5s ease;
     border-radius: var(--radius-md);
 }
@@ -2901,6 +2902,7 @@ body::before {
 }
 
 .cardImage {
+    background-color: transparent;
     position: relative;
     overflow: hidden;
     border-radius: var(--radius-md);
