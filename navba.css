@@ -579,7 +579,7 @@
     /* Override any page-specific styles */
     position: fixed !important;
     top: 0 !important;
-    width: 300px !important;
+    min-width: 375px !important;
     height: 100vh !important;
     z-index: 10000 !important;
     background: #000 !important; /* Fallback background */
