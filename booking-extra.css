@@ -993,7 +993,7 @@
 .mobile-header-active {
     position: fixed;
     top: 0;
-    right: -100%;
+    left: -100%;
     width: 320px;
     height: 100%;
     background: var(--bg);
@@ -1001,13 +1001,13 @@
     border: none; /* Remove any border that might cause blue line */
     /* Removed border-left to eliminate blue line */
     z-index: 1000;
-    transition: right var(--transition-normal);
+    transition: left var(--transition-normal);
     padding: var(--spacing-xl);
     overflow-y: hidden;
 }
 
 .mobile-header-active.sidebar-visible {
-    right: 0;
+    left: 0;
     border: none; /* Remove any border that might cause blue line */
 }
 
