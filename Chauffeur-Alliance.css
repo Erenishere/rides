@@ -207,7 +207,7 @@
 }
 
 .nav-text {
-    font-size: 0.95rem;
+    font-size: 0.99rem;
     position: relative;
     z-index: 1;
     transition: all var(--transition-normal);
