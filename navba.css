@@ -700,7 +700,9 @@
         width: 260px !important;
         left: -260px !important; /* Changed from right to left */
     }
+    
 }
+
 
 /* Chauffeur-Alliance page specific fix */
 body[class*="chauffeur"] .mobile-header-active,

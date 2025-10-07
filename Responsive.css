@@ -586,8 +586,8 @@ html, body {
     }
     
     .burger-icon {
-        width: 36px !important;
-        height: 27px !important;
+        width: 30px !important;
+        height: 25px !important;
         overflow-x: hidden;
         margin-left: 60px !important;
     }
@@ -2223,6 +2223,7 @@ html, body {
     
     .mobile-header-active.sidebar-visible {
         left: 0 !important;
+        width: 375px !important;
     }
     
     /* Fleet cards stacking on small devices */
@@ -2241,7 +2242,10 @@ html, body {
             gap: 0.75rem !important;
             padding: 0 var(--spacing-xs) !important;
         }
+     
+       
     }
+
     
     .cardFleet {
         width: 100%;
