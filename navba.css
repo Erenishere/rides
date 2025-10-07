@@ -230,6 +230,7 @@
 
 .nav-link:hover .nav-text,
 .nav-link.active .nav-text {
+    background: #000000;
     color: var(--acc);
     transform: translateY(-1px);
 }

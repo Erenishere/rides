@@ -996,6 +996,8 @@ body::before {
     margin-bottom: 1rem;
 }
 
+
+
 .fleet-feature p {
     font-size: 1rem;
     color: #ffffff;
@@ -1009,6 +1011,10 @@ body::before {
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+.cta-section a{
+    color: #ffffff;
+    text-decoration: none
 }
 
 .cta-section::before {

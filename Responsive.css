@@ -2221,10 +2221,7 @@ html, body {
         box-sizing: border-box;
     }
     
-    .mobile-header-active.sidebar-visible {
-        left: 0 !important;
-        width: 375px !important;
-    }
+   
     
     /* Apply mobile header styles to all pages at 430px breakpoint */
     body .mobile-header-active {

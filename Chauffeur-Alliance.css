@@ -641,7 +641,12 @@
     margin: 0.5rem 0;
     font-size: 1rem;
 }
-
+.section .paa{
+    margin-left: 42px;
+}
+.section .cen{
+    text-align: left;
+}
 /* Responsive */
 @media (max-width: 768px) {
     .chauffeur-hero .hero-title {
