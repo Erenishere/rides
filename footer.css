@@ -85,6 +85,9 @@
 .footer-section li {
     margin-bottom: var(--spacing-sm);
 }
+.footer-section a:hover {
+    color:#1a237e;
+}
 
 .footer-section a {
     color: var(--text-color);
@@ -154,6 +157,9 @@
     border: none; /* Remove border for quick link appearance */
     background: transparent; /* Ensure no background */
     transition: color 0.2s ease; /* Smooth color transition */
+}
+.cities-grid a:hover{
+    color: #1a237e;
 }
 
 /* Quick link hover effect - subtle color change only */
